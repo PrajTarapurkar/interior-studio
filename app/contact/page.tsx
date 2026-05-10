@@ -124,7 +124,7 @@ export default function ContactPage() {
       </p>
 
       <h3 className="text-[30px] font-semibold text-white tracking-tight leading-none">
-        +91 9730011051
+        7709 943 271
       </h3>
 
     </div>
@@ -147,7 +147,7 @@ export default function ContactPage() {
       </p>
 
       <h3 className="text-[28px] font-semibold text-white tracking-tight break-all leading-none">
-        praj@interiorstudio.com
+        kulalinteriors@gmail.com
       </h3>
 
     </div>
@@ -158,7 +158,7 @@ export default function ContactPage() {
   <div className="flex items-center gap-8 bg-white/[0.04] border border-white/10 rounded-[28px] px-10 py-5 hover:bg-white/[0.07] transition-all duration-300">
 
     {/* ICON */}
-    <div className="text-[#d6b98c] text-5xl leading-none flex-shrink-0 pl-2">
+    <div className="text-[#d6b98c] text-4xl leading-none flex-shrink-0 pl-2">
       ⌂
     </div>
 
@@ -169,13 +169,33 @@ export default function ContactPage() {
         Location
       </p>
 
-      <h3 className="text-[28px] font-semibold text-white tracking-tight leading-none">
-        Pune, Maharashtra, India
-      </h3>
+     <a
+  href="https://maps.google.com/?q=Pune,Maharashtra,India"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-[28px] font-semibold text-white tracking-tight leading-none hover:text-[#d6b98c] transition duration-300"
+>
+  Pune, Maharashtra, India
+</a>
 
     </div>
 
   </div>
+
+</div>
+{/* GOOGLE MAP */}
+<div className="mt-8 overflow-hidden rounded-[28px] border border-white/10">
+
+  <iframe
+  src="https://www.google.com/maps?q=Kulal%20Interiors&output=embed"
+  width="100%"
+  height="260"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  className="grayscale hover:grayscale-0 transition duration-500"
+></iframe>
 
 </div>
 
@@ -195,15 +215,22 @@ export default function ContactPage() {
 
         <input
           type="text"
-          placeholder="Your Name"
+          placeholder="Name"
           className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-5 text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
         />
 
         <input
           type="email"
-          placeholder="Your Email"
+          placeholder="Email"
           className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-5 text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
         />
+
+<input
+          type="Contact"
+          placeholder="Contact number"
+          className="w-full bg-black/40 border border-white/10 rounded-2xl px-6 py-5 text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
+        />
+        
 
         <input
           type="text"
