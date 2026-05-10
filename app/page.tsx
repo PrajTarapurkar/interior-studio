@@ -3,28 +3,38 @@ export default function Home() {
     <main className="bg-white text-white overflow-hidden">
 
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full z-50 px-8 py-6">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-xl border-b border-white/10 shadow-2xl">
 
         <div className="max-w-7xl mx-auto flex justify-between items-center">
 
-          <h1 className="text-3xl font-bold tracking-wide">
-            Interior Studio
-          </h1>
+          <div className="flex items-center gap-3">
+
+  <img
+    src="/images/logo.png"
+    alt="Logo"
+    className="h-20 w-auto drop-shadow-2xl"
+  />
+
+  <h1 className="text-2xl font-bold tracking-wide">
+    Interior Studio
+  </h1>
+
+</div>
 
           <div className="hidden md:flex gap-10 text-sm uppercase tracking-widest">
             <a href="#" className="hover:text-gray-300 transition">
               Home
             </a>
 
-            <a href="#" className="hover:text-gray-300 transition">
-              Projects
-            </a>
+            <a href="/projects" className="hover:text-[#d6b98c] transition duration-300">
+  Projects
+</a>
 
             <a href="#" className="hover:text-gray-300 transition">
               Services
             </a>
 
-            <a href="#" className="hover:text-gray-300 transition">
+            <a href="/contact" className="hover:text-gray-300 transition">
               Contact
             </a>
           </div>
@@ -47,9 +57,9 @@ export default function Home() {
         {/* Content */}
         <div className="relative z-10 max-w-5xl">
 
-          <p className="uppercase tracking-[0.3em] text-sm text-gray-300 mb-6">
-            Luxury Interior Design
-          </p>
+          <p className="uppercase tracking-[0.35em] text-[10px] text-[#d6b98c] mt-1">
+  Luxury Interior Design
+</p>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
             Designing Timeless Modern Spaces
@@ -59,10 +69,7 @@ export default function Home() {
             Creating elegant interiors that blend modern sophistication with timeless comfort and functionality.
           </p>
 
-          <button className="mt-10 bg-white text-black px-10 py-5 rounded-full text-lg font-medium hover:bg-gray-200 transition duration-300">
-            View Projects
-          </button>
-
+         
         </div>
 
       </section>
@@ -361,19 +368,27 @@ export default function Home() {
 
     <div className="flex gap-6 text-sm uppercase tracking-widest">
 
-      <a href="#" className="hover:text-white transition">
-        Instagram
-      </a>
+  {/* Instagram */}
+  <a
+    href="https://instagram.com/_praj_tarapurkar_10"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-[#d6b98c] transition"
+  >
+    Instagram
+  </a>
 
-      <a href="#" className="hover:text-white transition">
-        Pinterest
-      </a>
+  {/* Facebook */}
+  <a
+    href="https://facebook.com/yourusername"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-[#d6b98c] transition"
+  >
+    Facebook
+  </a>
 
-      <a href="#" className="hover:text-white transition">
-        Behance
-      </a>
-
-    </div>
+</div>
 
   </div>
 
