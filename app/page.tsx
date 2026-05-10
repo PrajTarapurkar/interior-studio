@@ -5,39 +5,44 @@ export default function Home() {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-xl border-b border-white/10 shadow-2xl">
 
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
+       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 py-4">
 
           <div className="flex items-center gap-3">
 
   <img
     src="/images/logo.png"
     alt="Logo"
-    className="h-20 w-auto drop-shadow-2xl"
+    className="h-14 md:h-20 w-auto drop-shadow-2xl"
   />
 
-  <h1 className="text-2xl font-bold tracking-wide">
+  <h1 className="text-lg md:text-2xl font-bold tracking-wide">
     Interior Studio
   </h1>
 
 </div>
 
-          <div className="hidden md:flex gap-10 text-sm uppercase tracking-widest">
-            <a href="#" className="hover:text-gray-300 transition">
-              Home
-            </a>
+          <div className="flex items-center gap-4 md:gap-10 text-[11px] md:text-sm uppercase tracking-[0.18em] font-medium overflow-x-auto whitespace-nowrap">
 
-            <a href="/projects" className="hover:text-[#d6b98c] transition duration-300">
-  Projects
-</a>
+  <a href="/" className="hover:text-[#d6b98c] transition">
+    Home
+  </a>
 
-            <a href="#" className="hover:text-gray-300 transition">
-              Services
-            </a>
+  <a
+    href="/projects"
+    className="hover:text-[#d6b98c] transition duration-300"
+  >
+    Projects
+  </a>
 
-            <a href="/contact" className="hover:text-gray-300 transition">
-              Contact
-            </a>
-          </div>
+  <a href="/#services" className="hover:text-[#d6b98c] transition">
+    Services
+  </a>
+
+  <a href="/contact" className="hover:text-[#d6b98c] transition">
+    Contact
+  </a>
+
+</div>
 
         </div>
 
