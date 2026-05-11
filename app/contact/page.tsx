@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function ContactPage() {
   return (
-    <main className="bg-[#0a0a0a] min-h-screen text-white overflow-hidden relative">
+    <main className="bg-[#0a0a0a] min-h-screen text-white overflow-x-hidden relative">
 
       {/* Animated Background Glow */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
@@ -18,24 +18,24 @@ export default function ContactPage() {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-2xl border-b border-white/10">
 
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 py-4 md:py-5">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-3 md:px-8 py-3 md:py-5 gap-3">
 
           {/* Logo */}
-          <div className="flex items-center gap-3 md:gap-6">
+          <div className="flex items-center gap-2 md:gap-6 min-w-0">
 
             <img
               src="/images/logo.png"
               alt="Logo"
-              className="h-12 w-12 md:h-16 md:w-16 rounded-full object-cover shadow-[0_0_25px_rgba(214,185,140,0.4)] hover:scale-105 transition duration-300"
+              className="h-10 w-10 md:h-16 md:w-16 rounded-full object-cover shadow-[0_0_25px_rgba(214,185,140,0.4)] hover:scale-105 transition duration-300 flex-shrink-0"
             />
 
-            <div>
+            <div className="min-w-0">
 
-              <h1 className="text-lg md:text-4xl font-semibold leading-none tracking-wide">
+              <h1 className="text-sm sm:text-lg md:text-4xl font-semibold leading-none tracking-wide truncate">
                 Interior Studio
               </h1>
 
-              <p className="text-[#d6b98c] uppercase tracking-[0.35em] text-[8px] md:text-[10px] mt-1 md:mt-2">
+              <p className="text-[#d6b98c] uppercase tracking-[0.25em] text-[6px] sm:text-[8px] md:text-[10px] mt-1">
                 Luxury Interior Design
               </p>
 
@@ -44,21 +44,33 @@ export default function ContactPage() {
           </div>
 
           {/* Nav Links */}
-          <div className="hidden md:flex items-center gap-10 text-sm uppercase tracking-[0.18em] font-medium">
+          <div className="flex items-center gap-1 sm:gap-2 md:gap-3 text-[9px] sm:text-[10px] md:text-sm uppercase tracking-[0.12em] md:tracking-[0.18em] font-medium overflow-x-auto no-scrollbar">
 
-            <a href="/" className="hover:text-[#d6b98c] hover:scale-110 transition duration-300">
+            <a
+              href="/"
+              className="px-3 sm:px-4 md:px-5 py-2 rounded-full whitespace-nowrap hover:bg-white/10 hover:text-[#d6b98c] transition duration-300"
+            >
               Home
             </a>
 
-            <a href="/projects" className="hover:text-[#d6b98c] hover:scale-110 transition duration-300">
+            <a
+              href="/projects"
+              className="px-3 sm:px-4 md:px-5 py-2 rounded-full whitespace-nowrap hover:bg-white/10 hover:text-[#d6b98c] transition duration-300"
+            >
               Projects
             </a>
 
-            <a href="/#services" className="hover:text-[#d6b98c] hover:scale-110 transition duration-300">
+            <a
+              href="/#services"
+              className="px-3 sm:px-4 md:px-5 py-2 rounded-full whitespace-nowrap hover:bg-white/10 hover:text-[#d6b98c] transition duration-300"
+            >
               Services
             </a>
 
-            <a href="/contact" className="text-[#d6b98c]">
+            <a
+              href="/contact"
+              className="px-3 sm:px-4 md:px-5 py-2 rounded-full whitespace-nowrap bg-[#d6b98c] text-black shadow-[0_0_25px_rgba(214,185,140,0.35)]"
+            >
               Contact
             </a>
 
@@ -69,7 +81,7 @@ export default function ContactPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-36 md:pt-52 pb-20 md:pb-32 bg-black text-center overflow-hidden">
+      <section className="relative pt-28 md:pt-52 pb-16 md:pb-32 bg-black text-center overflow-hidden">
 
         {/* Glow */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(214,185,140,0.18),transparent_55%)]"></div>
@@ -81,7 +93,7 @@ export default function ContactPage() {
           className="relative z-10 max-w-5xl mx-auto px-5"
         >
 
-          <p className="uppercase tracking-[0.4em] text-[10px] md:text-sm text-[#d6b98c] mb-6">
+          <p className="uppercase tracking-[0.35em] text-[10px] md:text-sm text-[#d6b98c] mb-5">
             Contact Us
           </p>
 
@@ -94,7 +106,7 @@ export default function ContactPage() {
 
           </h1>
 
-          <p className="mt-8 md:mt-10 text-base md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-6 md:mt-10 text-sm sm:text-base md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
 
             We craft luxurious interiors designed around elegance,
             comfort, and timeless sophistication for modern living.
@@ -106,9 +118,9 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="relative z-10 py-16 md:py-28 px-4 md:px-10 bg-[#0a0a0a]">
+      <section className="relative z-10 py-12 md:py-28 px-4 md:px-10 bg-[#0a0a0a]">
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 items-start">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-start">
 
           {/* LEFT SIDE */}
           <motion.div
@@ -118,10 +130,10 @@ export default function ContactPage() {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="bg-gradient-to-br from-[#111111] to-[#1c1c1c] rounded-[28px] md:rounded-[42px] border border-white/10 px-6 py-8 md:px-12 md:py-14 shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
+            className="bg-gradient-to-br from-[#111111] to-[#1c1c1c] rounded-[28px] md:rounded-[42px] border border-white/10 px-5 py-6 md:px-12 md:py-14 shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
           >
 
-            <p className="uppercase tracking-[0.35em] text-[10px] md:text-sm text-[#d6b98c] mb-5 md:mb-6">
+            <p className="uppercase tracking-[0.3em] text-[10px] md:text-sm text-[#d6b98c] mb-4 md:mb-6">
               Luxury Consultation
             </p>
 
@@ -129,7 +141,7 @@ export default function ContactPage() {
               Contact Info
             </h2>
 
-            <p className="mt-6 md:mt-8 text-sm md:text-lg text-gray-400 leading-[1.9]">
+            <p className="mt-5 md:mt-8 text-sm md:text-lg text-gray-400 leading-[1.8]">
 
               Whether it’s a luxury residence, modern workspace,
               or premium commercial interior — our studio crafts
@@ -143,7 +155,7 @@ export default function ContactPage() {
               {/* PHONE */}
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="flex items-center gap-5 md:gap-8 bg-white/[0.04] border border-white/10 rounded-[24px] md:rounded-[28px] px-5 py-5 md:px-10 hover:bg-white/[0.07] transition-all duration-300"
+                className="flex items-center gap-4 md:gap-8 bg-white/[0.04] border border-white/10 rounded-[22px] md:rounded-[28px] px-4 py-4 md:px-10 md:py-5 hover:bg-white/[0.07] transition-all duration-300"
               >
 
                 <div className="text-[#d6b98c] text-2xl md:text-3xl flex-shrink-0">
@@ -152,11 +164,11 @@ export default function ContactPage() {
 
                 <div>
 
-                  <p className="uppercase tracking-[0.3em] text-[9px] md:text-[11px] text-[#d6b98c] mb-1">
+                  <p className="uppercase tracking-[0.25em] text-[9px] md:text-[11px] text-[#d6b98c] mb-1">
                     Phone
                   </p>
 
-                  <h3 className="text-lg md:text-[30px] font-semibold text-white tracking-tight">
+                  <h3 className="text-base md:text-[30px] font-semibold text-white tracking-tight">
                     7709 943 271
                   </h3>
 
@@ -167,20 +179,20 @@ export default function ContactPage() {
               {/* EMAIL */}
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="flex items-center gap-5 md:gap-8 bg-white/[0.04] border border-white/10 rounded-[24px] md:rounded-[28px] px-5 py-5 md:px-10 hover:bg-white/[0.07] transition-all duration-300"
+                className="flex items-center gap-4 md:gap-8 bg-white/[0.04] border border-white/10 rounded-[22px] md:rounded-[28px] px-4 py-4 md:px-10 md:py-5 hover:bg-white/[0.07] transition-all duration-300"
               >
 
                 <div className="text-[#d6b98c] text-2xl md:text-3xl flex-shrink-0">
                   ✉
                 </div>
 
-                <div>
+                <div className="min-w-0">
 
-                  <p className="uppercase tracking-[0.3em] text-[9px] md:text-[11px] text-[#d6b98c] mb-1">
+                  <p className="uppercase tracking-[0.25em] text-[9px] md:text-[11px] text-[#d6b98c] mb-1">
                     Email
                   </p>
 
-                  <h3 className="text-sm md:text-[28px] font-semibold text-white break-all">
+                  <h3 className="text-xs sm:text-sm md:text-[28px] font-semibold text-white break-all">
                     kulalinteriors@gmail.com
                   </h3>
 
@@ -191,7 +203,7 @@ export default function ContactPage() {
               {/* LOCATION */}
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="flex items-center gap-5 md:gap-8 bg-white/[0.04] border border-white/10 rounded-[24px] md:rounded-[28px] px-5 py-5 md:px-10 hover:bg-white/[0.07] transition-all duration-300"
+                className="flex items-center gap-4 md:gap-8 bg-white/[0.04] border border-white/10 rounded-[22px] md:rounded-[28px] px-4 py-4 md:px-10 md:py-5 hover:bg-white/[0.07] transition-all duration-300"
               >
 
                 <div className="text-[#d6b98c] text-2xl md:text-4xl flex-shrink-0">
@@ -200,7 +212,7 @@ export default function ContactPage() {
 
                 <div>
 
-                  <p className="uppercase tracking-[0.3em] text-[9px] md:text-[11px] text-[#d6b98c] mb-1">
+                  <p className="uppercase tracking-[0.25em] text-[9px] md:text-[11px] text-[#d6b98c] mb-1">
                     Location
                   </p>
 
@@ -222,7 +234,7 @@ export default function ContactPage() {
             {/* GOOGLE MAP */}
             <motion.div
               whileHover={{ scale: 1.01 }}
-              className="mt-8 overflow-hidden rounded-[24px] md:rounded-[28px] border border-white/10"
+              className="mt-8 overflow-hidden rounded-[22px] md:rounded-[28px] border border-white/10"
             >
 
               <iframe
@@ -249,54 +261,54 @@ export default function ContactPage() {
               ease: "easeInOut",
               delay: 0.5
             }}
-            className="bg-gradient-to-br from-[#111111] to-[#1c1c1c] rounded-[28px] md:rounded-[36px] border border-white/10 p-6 md:p-14 shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
+            className="bg-gradient-to-br from-[#111111] to-[#1c1c1c] rounded-[28px] md:rounded-[36px] border border-white/10 p-5 md:p-14 shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
           >
 
-            <p className="uppercase tracking-[0.35em] text-[10px] md:text-sm text-[#d6b98c] mb-5">
+            <p className="uppercase tracking-[0.3em] text-[10px] md:text-sm text-[#d6b98c] mb-5">
               Get In Touch With Us
             </p>
 
-            <h2 className="text-3xl md:text-6xl font-bold tracking-tight mb-8 md:mb-10 text-white">
+            <h2 className="text-3xl md:text-6xl font-bold tracking-tight mb-6 md:mb-10 text-white">
               Leave a Message
             </h2>
 
-            <form className="space-y-4 md:space-y-5">
+            <form className="space-y-4">
 
               <input
                 type="text"
                 placeholder="Name"
-                className="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 md:px-6 md:py-5 text-base md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
+                className="w-full bg-black/40 border border-white/10 rounded-2xl px-4 py-4 md:px-6 md:py-5 text-sm md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
               />
 
               <input
                 type="email"
                 placeholder="Email"
-                className="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 md:px-6 md:py-5 text-base md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
+                className="w-full bg-black/40 border border-white/10 rounded-2xl px-4 py-4 md:px-6 md:py-5 text-sm md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
               />
 
               <input
                 type="text"
                 placeholder="Contact Number"
-                className="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 md:px-6 md:py-5 text-base md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
+                className="w-full bg-black/40 border border-white/10 rounded-2xl px-4 py-4 md:px-6 md:py-5 text-sm md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
               />
 
               <input
                 type="text"
                 placeholder="Project Type"
-                className="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 md:px-6 md:py-5 text-base md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
+                className="w-full bg-black/40 border border-white/10 rounded-2xl px-4 py-4 md:px-6 md:py-5 text-sm md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
               />
 
               <textarea
                 rows={5}
                 placeholder="Tell us about your project..."
-                className="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 md:px-6 md:py-5 text-base md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition resize-none"
+                className="w-full bg-black/40 border border-white/10 rounded-2xl px-4 py-4 md:px-6 md:py-5 text-sm md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition resize-none"
               ></textarea>
 
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
                 type="submit"
-                className="bg-[#d6b98c] text-black px-8 py-4 md:px-10 md:py-5 rounded-full text-base md:text-lg font-semibold hover:bg-white transition duration-300 shadow-[0_10px_30px_rgba(214,185,140,0.35)]"
+                className="w-full sm:w-auto bg-[#d6b98c] text-black px-8 py-4 md:px-10 md:py-5 rounded-full text-sm md:text-lg font-semibold hover:bg-white transition duration-300 shadow-[0_10px_30px_rgba(214,185,140,0.35)]"
               >
                 Submit Form
               </motion.button>
