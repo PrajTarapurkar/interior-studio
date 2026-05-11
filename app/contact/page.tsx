@@ -20,24 +20,24 @@ export default function ContactPage() {
 
   <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-5 md:px-8 py-3 md:py-4">
 
-    {/* Left Side */}
+    {/* LEFT SIDE */}
     <div className="flex items-center gap-2 md:gap-4 min-w-0">
 
       {/* Logo */}
       <img
         src="/images/logo.png"
         alt="Logo"
-        className="h-12 w-12 sm:h-14 sm:w-14 md:h-20 md:w-20 rounded-full object-cover shadow-[0_0_30px_rgba(214,185,140,0.35)] flex-shrink-0"
+        className="h-10 w-10 sm:h-12 sm:w-12 md:h-20 md:w-20 rounded-full object-cover shadow-[0_0_30px_rgba(214,185,140,0.35)] flex-shrink-0"
       />
 
-      {/* Brand */}
-      <div className="leading-none min-w-0">
+      {/* Brand Text */}
+      <div className="leading-none">
 
-        <h1 className="text-[22px] sm:text-[28px] md:text-[42px] font-bold text-white tracking-[-0.04em]">
+        <h1 className="text-[15px] sm:text-[18px] md:text-[42px] font-bold text-white tracking-[-0.04em]">
           InteriorStudio
         </h1>
 
-        <p className="uppercase tracking-[0.35em] text-[6px] sm:text-[8px] md:text-[10px] text-[#d6b98c] mt-1 md:mt-2 whitespace-nowrap">
+        <p className="uppercase tracking-[0.28em] text-[5px] sm:text-[6px] md:text-[10px] text-[#d6b98c] mt-1 md:mt-2">
           Luxury Interior Design
         </p>
 
@@ -45,8 +45,8 @@ export default function ContactPage() {
 
     </div>
 
-    {/* Navigation */}
-    <div className="flex items-center gap-2 sm:gap-4 md:gap-10 text-[9px] sm:text-[11px] md:text-sm uppercase tracking-[0.18em] font-medium text-white">
+    {/* RIGHT SIDE NAVIGATION */}
+    <div className="flex items-center gap-2 sm:gap-3 md:gap-10 text-[8px] sm:text-[9px] md:text-sm uppercase tracking-[0.12em] md:tracking-[0.2em] font-medium text-white">
 
       <a
         href="/"
@@ -69,7 +69,6 @@ export default function ContactPage() {
         Services
       </a>
 
-      {/* Active Link */}
       <a
         href="/contact"
         className="text-[#d6b98c] whitespace-nowrap"
@@ -84,7 +83,7 @@ export default function ContactPage() {
 </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-28 md:pt-52 pb-16 md:pb-32 bg-black text-center overflow-hidden">
+      <section className="relative pt-40 sm:pt-44 md:pt-52 pb-16 md:pb-32 bg-black text-center overflow-hidden">
 
         {/* Glow */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(214,185,140,0.18),transparent_55%)]"></div>
@@ -100,14 +99,14 @@ export default function ContactPage() {
             Contact Us
           </p>
 
-          <h1 className="text-4xl sm:text-5xl md:text-8xl font-bold leading-[1.05]">
+          <h1 className="text-3xl sm:text-5xl md:text-8xl font-bold leading-[1.05]">
 
-            Let’s Create
-            <span className="block text-[#d6b98c]">
-              Beautiful Spaces
-            </span>
+  Let’s Create
+  <span className="block text-[#d6b98c]">
+    Beautiful Spaces
+  </span>
 
-          </h1>
+</h1>
 
           <p className="mt-6 md:mt-10 text-sm sm:text-base md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
 
