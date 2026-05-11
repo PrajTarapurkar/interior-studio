@@ -7,73 +7,73 @@ export default function ProjectsPage() {
     <main className="bg-[#f8f5f1] min-h-screen text-black overflow-hidden">
 
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-2xl border-b border-white/10 shadow-2xl">
+<nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-2xl border-b border-white/10 shadow-2xl">
 
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 py-3 md:py-4">
+  <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 py-3 md:py-4">
 
-          {/* Left Side */}
-          <div className="flex items-center gap-3">
+    {/* Left Side */}
+    <div className="flex items-center gap-3">
 
-            {/* Logo */}
-            <img
-              src="/images/logo.png"
-              alt="Logo"
-              className="h-12 w-12 md:h-20 md:w-20 rounded-full object-cover shadow-[0_0_25px_rgba(255,215,160,0.35)]"
-            />
+      {/* Logo */}
+      <img
+        src="/images/logo.png"
+        alt="Logo"
+        className="h-12 w-12 md:h-20 md:w-20 rounded-full object-cover shadow-[0_0_25px_rgba(255,215,160,0.35)]"
+      />
 
-            {/* Text */}
-            <div className="leading-tight">
+      {/* Text */}
+      <div className="leading-tight">
 
-              <h1 className="text-lg md:text-3xl font-bold text-white leading-none">
-                Interior
-                <br className="md:hidden" />
-                Studio
-              </h1>
+        <h1 className="text-lg md:text-3xl font-bold text-white leading-none">
+          Interior
+          <br className="md:hidden" />
+          Studio
+        </h1>
 
-              <p className="hidden md:block uppercase tracking-[0.35em] text-[10px] text-[#d6b98c] mt-1">
-                Luxury Interior Design
-              </p>
+        <p className="hidden md:block uppercase tracking-[0.35em] text-[10px] text-[#d6b98c] mt-1">
+          Luxury Interior Design
+        </p>
 
-            </div>
+      </div>
 
-          </div>
+    </div>
 
-          {/* Navigation */}
-          <div className="flex items-center gap-3 md:gap-10 text-[10px] md:text-sm uppercase tracking-[0.15em] md:tracking-[0.2em] font-medium text-white">
+    {/* Navigation */}
+    <div className="flex items-center gap-3 md:gap-10 text-[10px] md:text-sm uppercase tracking-[0.15em] md:tracking-[0.2em] font-medium text-white">
 
-            <a
-              href="/"
-              className="hover:text-[#d6b98c] transition duration-300"
-            >
-              Home
-            </a>
+      <a
+        href="/"
+        className="hover:text-[#d6b98c] transition duration-300"
+      >
+        Home
+      </a>
 
-            <a
-              href="/projects"
-              className="text-[#d6b98c]"
-            >
-              Projects
-            </a>
+      <a
+        href="/projects"
+        className="hover:text-[#d6b98c] transition duration-300"
+      >
+        Projects
+      </a>
 
-            <a
-              href="/#services"
-              className="hover:text-[#d6b98c] transition duration-300"
-            >
-              Services
-            </a>
+      <a
+        href="/#services"
+        className="hover:text-[#d6b98c] transition duration-300"
+      >
+        Services
+      </a>
 
-            <a
-              href="/contact"
-              className="hover:text-[#d6b98c] transition duration-300"
-            >
-              Contact
-            </a>
+      <a
+        href="/contact"
+        className="text-[#d6b98c]"
+      >
+        Contact
+      </a>
 
-          </div>
+    </div>
 
-        </div>
+  </div>
 
-      </nav>
+</nav>
 
       {/* Hero Header */}
       <section className="relative pt-36 md:pt-52 pb-20 md:pb-32 text-center bg-black text-white overflow-hidden">
