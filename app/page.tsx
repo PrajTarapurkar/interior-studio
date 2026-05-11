@@ -343,25 +343,25 @@ export default function Home() {
       +91 7709 943 271
     </p>
 
-    {/* Premium Rectangular Map */}
-<a
-  href="https://www.google.com/search?client=ms-android-samsung-ss&hs=FuW&sca_esv=7cae0ba7a4b07b45&sxsrf=ANbL-n49-Qy11r5Qd7ZJS2KNmVYbWLjCPA%3A1778404975800&kgmid=%2Fg%2F11wx8p1g75&q=Kulal%20Interiors&shem=rimspwouoe&shndl=30&source=sh%2Fx%2Floc%2Fact%2Fm1%2F2&kgs=d225d3d8f74ca2e0"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="mt-8 hover:scale-[1.02] transition duration-300"
->
+    {/* Small Round Map */}
+    <a
+      href="https://www.google.com/search?client=ms-android-samsung-ss&hs=FuW&sca_esv=7cae0ba7a4b07b45&sxsrf=ANbL-n49-Qy11r5Qd7ZJS2KNmVYbWLjCPA%3A1778404975800&kgmid=%2Fg%2F11wx8p1g75&q=Kulal%20Interiors&shem=rimspwouoe&shndl=30&source=sh%2Fx%2Floc%2Fact%2Fm1%2F2&kgs=d225d3d8f74ca2e0"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:scale-105 transition duration-300"
+    >
 
-  <iframe
-  src="https://maps.google.com/maps?q=Pune,%20Maharashtra,%20India&t=&z=13&ie=UTF8&iwloc=&output=embed"
-  width="850"
-  height="120"
-    style={{ border: 0 }}
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-    className="rounded-3xl border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.45)]"
-  ></iframe>
+      <iframe
+        src="https://maps.google.com/maps?q=Pune,%20Maharashtra,%20India&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        width="120"
+        height="120"
+        style={{ border: 0 }}
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        className="rounded-full border-4 border-[#d6b98c] shadow-[0_0_25px_rgba(214,185,140,0.35)]"
+      ></iframe>
 
-</a>
+    </a>
 
   </div>
 
