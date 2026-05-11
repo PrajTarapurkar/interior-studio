@@ -15,70 +15,73 @@ export default function ContactPage() {
 
       </div>
 
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-2xl border-b border-white/10">
+     {/* Navbar */}
+<nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-2xl border-b border-white/5 shadow-2xl">
 
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-3 md:px-8 py-3 md:py-5 gap-3">
+  <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-5 md:px-8 py-3 md:py-4">
 
-          {/* Logo */}
-          <div className="flex items-center gap-2 md:gap-6 min-w-0">
+    {/* Left Side */}
+    <div className="flex items-center gap-2 md:gap-4 min-w-0">
 
-            <img
-              src="/images/logo.png"
-              alt="Logo"
-              className="h-10 w-10 md:h-16 md:w-16 rounded-full object-cover shadow-[0_0_25px_rgba(214,185,140,0.4)] hover:scale-105 transition duration-300 flex-shrink-0"
-            />
+      {/* Logo */}
+      <img
+        src="/images/logo.png"
+        alt="Logo"
+        className="h-12 w-12 sm:h-14 sm:w-14 md:h-20 md:w-20 rounded-full object-cover shadow-[0_0_30px_rgba(214,185,140,0.35)] flex-shrink-0"
+      />
 
-            <div className="min-w-0">
+      {/* Brand */}
+      <div className="leading-none min-w-0">
 
-              <h1 className="text-sm sm:text-lg md:text-4xl font-semibold leading-none tracking-wide truncate">
-                Interior Studio
-              </h1>
+        <h1 className="text-[22px] sm:text-[28px] md:text-[42px] font-bold text-white tracking-[-0.04em]">
+          InteriorStudio
+        </h1>
 
-              <p className="text-[#d6b98c] uppercase tracking-[0.25em] text-[6px] sm:text-[8px] md:text-[10px] mt-1">
-                Luxury Interior Design
-              </p>
+        <p className="uppercase tracking-[0.35em] text-[6px] sm:text-[8px] md:text-[10px] text-[#d6b98c] mt-1 md:mt-2 whitespace-nowrap">
+          Luxury Interior Design
+        </p>
 
-            </div>
+      </div>
 
-          </div>
+    </div>
 
-          {/* Nav Links */}
-          <div className="flex items-center gap-1 sm:gap-2 md:gap-3 text-[9px] sm:text-[10px] md:text-sm uppercase tracking-[0.12em] md:tracking-[0.18em] font-medium flex-wrap justify-end">
+    {/* Navigation */}
+    <div className="flex items-center gap-2 sm:gap-4 md:gap-10 text-[9px] sm:text-[11px] md:text-sm uppercase tracking-[0.18em] font-medium text-white">
 
-            <a
-              href="/"
-              className="px-2 sm:px-4 md:px-5 py-1.5 md:py-2 rounded-full whitespace-nowrap hover:bg-white/10 hover:text-[#d6b98c] transition duration-300"
-            >
-              Home
-            </a>
+      <a
+        href="/"
+        className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
+      >
+        Home
+      </a>
 
-            <a
-              href="/projects"
-              className="px-2 sm:px-4 md:px-5 py-1.5 md:py-2 rounded-full whitespace-nowrap hover:bg-white/10 hover:text-[#d6b98c] transition duration-300"
-            >
-              Projects
-            </a>
+      <a
+        href="/projects"
+        className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
+      >
+        Projects
+      </a>
 
-            <a
-              href="/#services"
-              className="px-2 sm:px-4 md:px-5 py-1.5 md:py-2 rounded-full whitespace-nowrap hover:bg-white/10 hover:text-[#d6b98c] transition duration-300"
-            >
-              Services
-            </a>
+      <a
+        href="/#services"
+        className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
+      >
+        Services
+      </a>
 
-            <a
-              href="/contact"
-              className="px-2 sm:px-4 md:px-5 py-1.5 md:py-2 rounded-full whitespace-nowrap bg-[#d6b98c] text-black shadow-[0_0_25px_rgba(214,185,140,0.35)]"
-            >
-              Contact
-            </a>
+      {/* Active Link */}
+      <a
+        href="/contact"
+        className="text-[#d6b98c] whitespace-nowrap"
+      >
+        Contact
+      </a>
 
-          </div>
+    </div>
 
-        </div>
+  </div>
 
-      </nav>
+</nav>
 
       {/* Hero Section */}
       <section className="relative pt-28 md:pt-52 pb-16 md:pb-32 bg-black text-center overflow-hidden">

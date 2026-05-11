@@ -7,28 +7,30 @@ export default function ProjectsPage() {
     <main className="bg-[#f8f5f1] min-h-screen text-black overflow-hidden">
 
       {/* Navbar */}
-<nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-2xl border-b border-white/5 shadow-2xl">
+<nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-2xl border-b border-white/10 shadow-2xl">
 
-  <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-5 md:px-8 py-3 md:py-4">
+  <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 py-3 md:py-4">
 
     {/* Left Side */}
-    <div className="flex items-center gap-2 md:gap-4 min-w-0">
+    <div className="flex items-center gap-3">
 
       {/* Logo */}
       <img
         src="/images/logo.png"
         alt="Logo"
-        className="h-12 w-12 sm:h-14 sm:w-14 md:h-20 md:w-20 rounded-full object-cover shadow-[0_0_30px_rgba(214,185,140,0.35)] flex-shrink-0"
+        className="h-12 w-12 md:h-20 md:w-20 rounded-full object-cover shadow-[0_0_25px_rgba(255,215,160,0.35)]"
       />
 
-      {/* Brand */}
-      <div className="leading-none min-w-0">
+      {/* Text */}
+      <div className="leading-tight">
 
-        <h1 className="text-[22px] sm:text-[28px] md:text-[42px] font-bold text-white tracking-[-0.04em]">
-          InteriorStudio
+        <h1 className="text-lg md:text-3xl font-bold text-white leading-none">
+          Interior
+          <br className="md:hidden" />
+          Studio
         </h1>
 
-        <p className="uppercase tracking-[0.35em] text-[6px] sm:text-[8px] md:text-[10px] text-[#d6b98c] mt-1 md:mt-2 whitespace-nowrap">
+        <p className="hidden md:block uppercase tracking-[0.35em] text-[10px] text-[#d6b98c] mt-1">
           Luxury Interior Design
         </p>
 
@@ -37,33 +39,32 @@ export default function ProjectsPage() {
     </div>
 
     {/* Navigation */}
-    <div className="flex items-center gap-2 sm:gap-4 md:gap-10 text-[9px] sm:text-[11px] md:text-sm uppercase tracking-[0.18em] font-medium text-white">
+    <div className="flex items-center gap-3 md:gap-10 text-[10px] md:text-sm uppercase tracking-[0.15em] md:tracking-[0.2em] font-medium text-white">
 
       <a
         href="/"
-        className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
+        className="hover:text-[#d6b98c] transition duration-300"
       >
         Home
       </a>
 
       <a
         href="/projects"
-        className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
+        className="hover:text-[#d6b98c] transition duration-300"
       >
         Projects
       </a>
 
       <a
         href="/#services"
-        className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
+        className="hover:text-[#d6b98c] transition duration-300"
       >
         Services
       </a>
 
-      {/* Active Link */}
       <a
         href="/contact"
-        className="text-[#d6b98c] whitespace-nowrap"
+        className="text-[#d6b98c]"
       >
         Contact
       </a>
