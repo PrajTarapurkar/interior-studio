@@ -319,39 +319,64 @@ export default function Home() {
     </p>
 
     {/* Contact Info */}
-    <div className="mt-14 flex flex-col md:flex-row justify-center gap-10 text-lg">
+<div className="mt-14 flex flex-col md:flex-row justify-center items-start gap-16 text-lg">
 
-      <div>
-        <p className="text-gray-400 mb-2">
-          Email
-        </p>
+  {/* Email */}
+  <div className="text-center">
+    <p className="text-gray-400 mb-2">
+      Email
+    </p>
 
-        <p>
-          praj@interiorstudio.com
-        </p>
-      </div>
+    <p>
+      kulalinteriors@gmail.com
+    </p>
+  </div>
 
-      <div>
-        <p className="text-gray-400 mb-2">
-          Phone
-        </p>
+  {/* Phone + Map */}
+  <div className="flex flex-col items-center">
 
-        <p>
-          +91 9730011051
-        </p>
-      </div>
+    <p className="text-gray-400 mb-2">
+      Phone
+    </p>
 
-      <div>
-        <p className="text-gray-400 mb-2">
-          Location
-        </p>
+    <p className="mb-6">
+      +91 7709 943 271
+    </p>
 
-        <p>
-          Joyville Hadapsar Annex, India
-        </p>
-      </div>
+    {/* Premium Rectangular Map */}
+<a
+  href="https://www.google.com/search?client=ms-android-samsung-ss&hs=FuW&sca_esv=7cae0ba7a4b07b45&sxsrf=ANbL-n49-Qy11r5Qd7ZJS2KNmVYbWLjCPA%3A1778404975800&kgmid=%2Fg%2F11wx8p1g75&q=Kulal%20Interiors&shem=rimspwouoe&shndl=30&source=sh%2Fx%2Floc%2Fact%2Fm1%2F2&kgs=d225d3d8f74ca2e0"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-8 hover:scale-[1.02] transition duration-300"
+>
 
-    </div>
+  <iframe
+  src="https://maps.google.com/maps?q=Pune,%20Maharashtra,%20India&t=&z=13&ie=UTF8&iwloc=&output=embed"
+  width="850"
+  height="120"
+    style={{ border: 0 }}
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    className="rounded-3xl border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.45)]"
+  ></iframe>
+
+</a>
+
+  </div>
+
+  {/* Location */}
+  <div className="text-center">
+    <p className="text-gray-400 mb-2">
+      Location
+    </p>
+
+    <p>
+      Pune, Maharashtra, India
+    </p>
+  </div>
+
+</div>
 
     {/* Button */}
     <button className="mt-12 bg-white text-black px-10 py-5 rounded-full text-lg hover:bg-gray-200 transition">
@@ -375,7 +400,7 @@ export default function Home() {
 
   {/* Instagram */}
   <a
-    href="https://instagram.com/_praj_tarapurkar_10"
+    href="https://www.instagram.com/kulal_interiors?igsh=OHhwNm9yMHd6aDll"
     target="_blank"
     rel="noopener noreferrer"
     className="hover:text-[#d6b98c] transition"
