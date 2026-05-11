@@ -44,32 +44,32 @@ export default function ContactPage() {
           </div>
 
           {/* Nav Links */}
-          <div className="flex items-center gap-1 sm:gap-2 md:gap-3 text-[9px] sm:text-[10px] md:text-sm uppercase tracking-[0.12em] md:tracking-[0.18em] font-medium overflow-x-auto no-scrollbar">
+          <div className="flex items-center gap-1 sm:gap-2 md:gap-3 text-[9px] sm:text-[10px] md:text-sm uppercase tracking-[0.12em] md:tracking-[0.18em] font-medium flex-wrap justify-end">
 
             <a
               href="/"
-              className="px-3 sm:px-4 md:px-5 py-2 rounded-full whitespace-nowrap hover:bg-white/10 hover:text-[#d6b98c] transition duration-300"
+              className="px-2 sm:px-4 md:px-5 py-1.5 md:py-2 rounded-full whitespace-nowrap hover:bg-white/10 hover:text-[#d6b98c] transition duration-300"
             >
               Home
             </a>
 
             <a
               href="/projects"
-              className="px-3 sm:px-4 md:px-5 py-2 rounded-full whitespace-nowrap hover:bg-white/10 hover:text-[#d6b98c] transition duration-300"
+              className="px-2 sm:px-4 md:px-5 py-1.5 md:py-2 rounded-full whitespace-nowrap hover:bg-white/10 hover:text-[#d6b98c] transition duration-300"
             >
               Projects
             </a>
 
             <a
               href="/#services"
-              className="px-3 sm:px-4 md:px-5 py-2 rounded-full whitespace-nowrap hover:bg-white/10 hover:text-[#d6b98c] transition duration-300"
+              className="px-2 sm:px-4 md:px-5 py-1.5 md:py-2 rounded-full whitespace-nowrap hover:bg-white/10 hover:text-[#d6b98c] transition duration-300"
             >
               Services
             </a>
 
             <a
               href="/contact"
-              className="px-3 sm:px-4 md:px-5 py-2 rounded-full whitespace-nowrap bg-[#d6b98c] text-black shadow-[0_0_25px_rgba(214,185,140,0.35)]"
+              className="px-2 sm:px-4 md:px-5 py-1.5 md:py-2 rounded-full whitespace-nowrap bg-[#d6b98c] text-black shadow-[0_0_25px_rgba(214,185,140,0.35)]"
             >
               Contact
             </a>
