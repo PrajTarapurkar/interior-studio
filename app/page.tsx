@@ -528,91 +528,96 @@ export default function Home() {
 
 </motion.section>
 
-{/* SOCIAL MEDIA FOOTER */}
+{/* PREMIUM FOOTER */}
 <motion.section
-  initial={{ opacity: 0, y: 60 }}
+  initial={{ opacity: 0, y: 40 }}
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8 }}
   viewport={{ once: false, amount: 0.2 }}
-  className="relative py-10 md:py-14 bg-[#0a0a0a] border-t border-white/10 overflow-hidden"
+  className="relative bg-black py-10 px-4 overflow-hidden"
 >
 
-  {/* Glow */}
-  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[250px] h-[250px] bg-[#d6b98c]/10 blur-[120px] rounded-full"></div>
+  {/* GOLD GLOW */}
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[200px] bg-[#d6b98c]/10 blur-[120px] rounded-full"></div>
 
-  <div className="relative z-10 max-w-5xl mx-auto px-4">
+  <div className="relative z-10 max-w-7xl mx-auto">
 
-    {/* Main Box */}
-    <div className="bg-gradient-to-r from-[#111111] to-[#1a1a1a] border border-white/10 rounded-[30px] px-6 py-8 md:px-10 md:py-10 shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
+    {/* MAIN RECTANGLE */}
+    <div className="relative overflow-hidden rounded-[28px] border border-[#d6b98c]/40 bg-gradient-to-r from-[#0f0f0f] via-[#111111] to-[#0f0f0f] px-6 md:px-16 py-7 md:py-8 shadow-[0_15px_60px_rgba(0,0,0,0.5)]">
 
-      {/* Top Content */}
-      <div className="flex flex-col items-center justify-center text-center">
+      {/* TOP & BOTTOM LIGHT */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-[2px] bg-[#d6b98c] blur-sm"></div>
 
-        {/* Logo */}
-        <div className="relative mb-5">
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-40 h-[2px] bg-[#d6b98c] blur-sm"></div>
 
-          <div className="absolute inset-0 bg-[#d6b98c]/20 blur-2xl rounded-full"></div>
+      <div className="flex flex-col md:flex-row items-center justify-between gap-8">
 
-          <img
-            src="/images/logo.png"
-            alt="Kulal Interiors"
-            className="relative h-16 w-16 md:h-20 md:w-20 rounded-full object-cover border border-white/10"
-          />
+        {/* LEFT SIDE */}
+        <div className="text-center md:text-left">
+
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-[0.18em] leading-none">
+
+            <span className="text-white">
+              KULAL
+            </span>
+
+            <span className="text-[#d6b98c] ml-3">
+              INTERIORS
+            </span>
+
+          </h2>
+
+          <p className="mt-4 text-[10px] md:text-sm uppercase tracking-[0.45em] text-gray-400">
+
+            Luxury Interior Design Studio
+
+          </p>
 
         </div>
 
-        {/* Brand Name */}
-        <h2 className="text-3xl md:text-5xl font-extrabold tracking-[0.18em] text-white">
-          KULAL
-          <span className="block text-[#d6b98c]">
-            INTERIORS
-          </span>
-        </h2>
+        {/* DIVIDER */}
+        <div className="hidden md:block h-24 w-[1px] bg-white/10"></div>
 
-        <p className="mt-3 text-gray-400 text-sm md:text-base tracking-[0.2em] uppercase">
-          Luxury Interior Design Studio
-        </p>
+        {/* SOCIAL ICONS */}
+        <div className="flex items-center gap-5 md:gap-7">
 
-      </div>
+          {/* INSTAGRAM */}
+          <motion.a
+            whileHover={{ y: -5, scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="h-16 w-16 md:h-20 md:w-20 rounded-full border border-[#d6b98c]/60 flex items-center justify-center text-white hover:text-[#d6b98c] hover:bg-[#d6b98c]/10 transition duration-300"
+          >
+            <FaInstagram className="text-2xl md:text-4xl" />
+          </motion.a>
 
-      {/* Social Icons */}
-      <div className="flex items-center justify-center gap-5 md:gap-8 mt-8">
+          {/* LINKEDIN */}
+          <motion.a
+            whileHover={{ y: -5, scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="h-16 w-16 md:h-20 md:w-20 rounded-full border border-[#d6b98c]/60 flex items-center justify-center text-white hover:text-[#d6b98c] hover:bg-[#d6b98c]/10 transition duration-300"
+          >
+            <FaLinkedinIn className="text-2xl md:text-4xl" />
+          </motion.a>
 
-        {/* Instagram */}
-        <motion.a
-          whileHover={{ y: -5, scale: 1.08 }}
-          whileTap={{ scale: 0.95 }}
-          href="https://instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="h-14 w-14 md:h-16 md:w-16 rounded-2xl border border-white/15 bg-white/[0.03] flex items-center justify-center text-white hover:text-[#d6b98c] hover:border-[#d6b98c]/40 transition duration-300"
-        >
-          <FaInstagram className="text-2xl md:text-3xl" />
-        </motion.a>
+          {/* YOUTUBE */}
+          <motion.a
+            whileHover={{ y: -5, scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
+            href="https://youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="h-16 w-16 md:h-20 md:w-20 rounded-full border border-[#d6b98c]/60 flex items-center justify-center text-white hover:text-[#d6b98c] hover:bg-[#d6b98c]/10 transition duration-300"
+          >
+            <FaYoutube className="text-2xl md:text-4xl" />
+          </motion.a>
 
-        {/* LinkedIn */}
-        <motion.a
-          whileHover={{ y: -5, scale: 1.08 }}
-          whileTap={{ scale: 0.95 }}
-          href="https://linkedin.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="h-14 w-14 md:h-16 md:w-16 rounded-2xl border border-white/15 bg-white/[0.03] flex items-center justify-center text-white hover:text-[#d6b98c] hover:border-[#d6b98c]/40 transition duration-300"
-        >
-          <FaLinkedinIn className="text-2xl md:text-3xl" />
-        </motion.a>
-
-        {/* YouTube */}
-        <motion.a
-          whileHover={{ y: -5, scale: 1.08 }}
-          whileTap={{ scale: 0.95 }}
-          href="https://youtube.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="h-14 w-14 md:h-16 md:w-16 rounded-2xl border border-white/15 bg-white/[0.03] flex items-center justify-center text-white hover:text-[#d6b98c] hover:border-[#d6b98c]/40 transition duration-300"
-        >
-          <FaYoutube className="text-2xl md:text-3xl" />
-        </motion.a>
+        </div>
 
       </div>
 
@@ -621,7 +626,6 @@ export default function Home() {
   </div>
 
 </motion.section>
-
 
     </main>
   );
