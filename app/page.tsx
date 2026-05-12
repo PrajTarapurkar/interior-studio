@@ -212,118 +212,180 @@ export default function Home() {
 
       </motion.section>
 
-      {/* Luxury Showcase Slider */}
+      {/* OUR PRESENCE SECTION */}
       <motion.section
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: false, amount: 0.2 }}
-        className="py-20 md:py-28 bg-[#0b0b0b] overflow-hidden"
+        className="relative py-20 md:py-32 bg-[#050505] overflow-hidden"
       >
 
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        {/* Background Glow */}
+        <div className="absolute top-20 left-10 w-[250px] h-[250px] bg-[#d6b98c]/10 rounded-full blur-[120px]"></div>
+
+        <div className="absolute bottom-10 right-10 w-[300px] h-[300px] bg-white/5 rounded-full blur-[140px]"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
 
           {/* Heading */}
-          <div className="mb-14 md:mb-20">
+          <div className="text-center mb-14 md:mb-20">
 
-            <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-xs md:text-sm mb-4">
-              Luxury Interiors
+            <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-xs md:text-sm mb-5">
+              Our Presence
             </p>
 
-            <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight max-w-4xl">
+            <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
 
-              Explore Our
+              We Provide Services
               <span className="block text-[#d6b98c]">
-                Signature Spaces
+                Across Multiple Locations
               </span>
 
             </h2>
 
-            <p className="mt-6 text-gray-400 text-base md:text-xl max-w-3xl leading-relaxed">
+            <p className="mt-6 text-gray-400 text-base md:text-xl max-w-3xl mx-auto leading-relaxed">
 
-              Discover premium interiors crafted with timeless elegance,
-              modern sophistication, and luxurious comfort.
+              Delivering luxurious and timeless interior experiences
+              across major cities and premium Pune locations.
 
             </p>
 
           </div>
 
-        </div>
+          {/* Highlight Cities */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
 
-        {/* Scrollable Slider */}
-        <div className="flex gap-5 md:gap-8 overflow-x-auto px-4 md:px-8 pb-4 snap-x snap-mandatory scrollbar-hide">
+            {[
+              {
+                city: "Pune",
+                text: "Premium Interior Solutions",
+              },
+              {
+                city: "Mumbai",
+                text: "Luxury Residential Spaces",
+              },
+              {
+                city: "Parbhani",
+                text: "Modern Elegant Interiors",
+              },
+            ].map((item, index) => (
 
-          {[
-            {
-              image: "/images/project1.jpg",
-              title: "Luxury Living Room",
-              city: "Pune",
-            },
-            {
-              image: "/images/project2.jpg",
-              title: "Modern Bedroom",
-              city: "Mumbai",
-            },
-            {
-              image: "/images/project3.jpg",
-              title: "Premium Kitchen",
-              city: "Bangalore",
-            },
-            {
-              image: "/images/project1.jpg",
-              title: "Elegant Workspace",
-              city: "Delhi",
-            },
-            {
-              image: "/images/project2.jpg",
-              title: "Royal Penthouse",
-              city: "Hyderabad",
-            },
-            {
-              image: "/images/project3.jpg",
-              title: "Luxury Dining Area",
-              city: "Chennai",
-            },
-          ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.15,
+                }}
+                whileHover={{
+                  y: -8,
+                  scale: 1.03,
+                }}
+                className="relative overflow-hidden rounded-[30px] border border-[#d6b98c]/20 bg-gradient-to-br from-[#151515] to-[#1f1f1f] p-8 shadow-[0_20px_70px_rgba(0,0,0,0.45)]"
+              >
 
-            <motion.div
-              key={index}
-              whileHover={{ y: -10, scale: 1.02 }}
-              transition={{ duration: 0.4 }}
-              className="relative min-w-[85%] sm:min-w-[60%] md:min-w-[38%] lg:min-w-[30%] h-[500px] md:h-[650px] rounded-[34px] overflow-hidden snap-center group shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
-            >
+                {/* Glow */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(214,185,140,0.15),transparent_40%)]"></div>
 
-              {/* Image */}
-              <img
-                src={item.image}
-                alt={item.title}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700"
-              />
+                <div className="relative z-10">
 
-              {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                  <p className="uppercase tracking-[0.3em] text-[#d6b98c] text-xs mb-4">
+                    Featured City
+                  </p>
 
-              {/* Glow */}
-              <div className="absolute inset-0 bg-[#d6b98c]/0 group-hover:bg-[#d6b98c]/10 transition duration-500"></div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-white">
+                    {item.city}
+                  </h3>
 
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 p-6 md:p-8 z-10">
+                  <p className="mt-4 text-gray-400 leading-relaxed">
+                    {item.text}
+                  </p>
 
-                <p className="uppercase tracking-[0.3em] text-[#d6b98c] text-[10px] md:text-xs mb-3">
-                  {item.city} • Luxury Interior
-                </p>
+                </div>
 
-                <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+              </motion.div>
 
-                  {item.title}
+            ))}
 
-                </h3>
+          </div>
 
-              </div>
+          {/* Pune Areas Container */}
+          <div className="relative bg-gradient-to-br from-[#111111] to-[#1c1c1c] border border-white/10 rounded-[35px] md:rounded-[45px] p-6 md:p-12 overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
 
-            </motion.div>
+            {/* Animated Glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(214,185,140,0.12),transparent_35%)]"></div>
 
-          ))}
+            {/* Section Title */}
+            <div className="relative z-10 mb-10">
+
+              <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
+                Pune Locations We Serve
+              </h3>
+
+              <p className="text-gray-400 max-w-3xl leading-relaxed text-sm md:text-base">
+
+                Interior services available across premium Pune locations.
+
+              </p>
+
+            </div>
+
+            {/* Compact Grid */}
+            <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-5">
+
+              {[
+                "Punawale",
+                "Marunji",
+                "Hinjewadi",
+                "Baner",
+                "Balewadi",
+                "Kiwale",
+                "Ravet",
+                "Dhanori",
+                "Moshi",
+                "Dehu",
+                "Lohegaon",
+                "Hadapsar",
+                "Mundwa",
+                "Tathawade",
+                "Charholi",
+                "Kokane Chowk",
+              ].map((location, index) => (
+
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.35,
+                    delay: index * 0.03,
+                  }}
+                  whileHover={{
+                    x: 5,
+                    scale: 1.03,
+                  }}
+                  className="group flex items-center"
+                >
+
+                  {/* Dot */}
+                  <div className="h-2 w-2 rounded-full bg-[#d6b98c] mr-3 group-hover:scale-150 transition duration-300"></div>
+
+                  {/* Text */}
+                  <p className="text-sm md:text-base text-gray-300 group-hover:text-[#d6b98c] transition duration-300">
+
+                    {location}
+
+                  </p>
+
+                </motion.div>
+
+              ))}
+
+            </div>
+
+          </div>
 
         </div>
 
