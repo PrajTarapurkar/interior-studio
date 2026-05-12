@@ -585,7 +585,7 @@ export default function Home() {
           <motion.a
             whileHover={{ y: -5, scale: 1.08 }}
             whileTap={{ scale: 0.95 }}
-            href="https://instagram.com"
+            href="https://www.instagram.com/kulal_interiors?igsh=OHhwNm9yMHd6aDll"
             target="_blank"
             rel="noopener noreferrer"
             className="h-16 w-16 md:h-20 md:w-20 rounded-full border border-[#d6b98c]/60 flex items-center justify-center text-white hover:text-[#d6b98c] hover:bg-[#d6b98c]/10 transition duration-300"
