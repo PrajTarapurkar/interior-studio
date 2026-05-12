@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -212,185 +213,7 @@ export default function Home() {
 
       </motion.section>
 
-      {/* OUR PRESENCE SECTION */}
-      <motion.section
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: false, amount: 0.2 }}
-        className="relative py-20 md:py-32 bg-[#050505] overflow-hidden"
-      >
-
-        {/* Background Glow */}
-        <div className="absolute top-20 left-10 w-[250px] h-[250px] bg-[#d6b98c]/10 rounded-full blur-[120px]"></div>
-
-        <div className="absolute bottom-10 right-10 w-[300px] h-[300px] bg-white/5 rounded-full blur-[140px]"></div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
-
-          {/* Heading */}
-          <div className="text-center mb-14 md:mb-20">
-
-            <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-xs md:text-sm mb-5">
-              Our Presence
-            </p>
-
-            <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-
-              We Provide Services
-              <span className="block text-[#d6b98c]">
-                Across Multiple Locations
-              </span>
-
-            </h2>
-
-            <p className="mt-6 text-gray-400 text-base md:text-xl max-w-3xl mx-auto leading-relaxed">
-
-              Delivering luxurious and timeless interior experiences
-              across major cities and premium Pune locations.
-
-            </p>
-
-          </div>
-
-          {/* Highlight Cities */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
-
-            {[
-              {
-                city: "Pune",
-                text: "Premium Interior Solutions",
-              },
-              {
-                city: "Mumbai",
-                text: "Luxury Residential Spaces",
-              },
-              {
-                city: "Parbhani",
-                text: "Modern Elegant Interiors",
-              },
-            ].map((item, index) => (
-
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.15,
-                }}
-                whileHover={{
-                  y: -8,
-                  scale: 1.03,
-                }}
-                className="relative overflow-hidden rounded-[30px] border border-[#d6b98c]/20 bg-gradient-to-br from-[#151515] to-[#1f1f1f] p-8 shadow-[0_20px_70px_rgba(0,0,0,0.45)]"
-              >
-
-                {/* Glow */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(214,185,140,0.15),transparent_40%)]"></div>
-
-                <div className="relative z-10">
-
-                  <p className="uppercase tracking-[0.3em] text-[#d6b98c] text-xs mb-4">
-                    Featured City
-                  </p>
-
-                  <h3 className="text-3xl md:text-4xl font-bold text-white">
-                    {item.city}
-                  </h3>
-
-                  <p className="mt-4 text-gray-400 leading-relaxed">
-                    {item.text}
-                  </p>
-
-                </div>
-
-              </motion.div>
-
-            ))}
-
-          </div>
-
-          {/* Pune Areas Container */}
-          <div className="relative bg-gradient-to-br from-[#111111] to-[#1c1c1c] border border-white/10 rounded-[35px] md:rounded-[45px] p-6 md:p-12 overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
-
-            {/* Animated Glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(214,185,140,0.12),transparent_35%)]"></div>
-
-            {/* Section Title */}
-            <div className="relative z-10 mb-10">
-
-              <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
-                Pune Locations We Serve
-              </h3>
-
-              <p className="text-gray-400 max-w-3xl leading-relaxed text-sm md:text-base">
-
-                Interior services available across premium Pune locations.
-
-              </p>
-
-            </div>
-
-            {/* Compact Grid */}
-            <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-5">
-
-              {[
-                "Punawale",
-                "Marunji",
-                "Hinjewadi",
-                "Baner",
-                "Balewadi",
-                "Kiwale",
-                "Ravet",
-                "Dhanori",
-                "Moshi",
-                "Dehu",
-                "Lohegaon",
-                "Hadapsar",
-                "Mundwa",
-                "Tathawade",
-                "Charholi",
-                "Kokane Chowk",
-              ].map((location, index) => (
-
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.35,
-                    delay: index * 0.03,
-                  }}
-                  whileHover={{
-                    x: 5,
-                    scale: 1.03,
-                  }}
-                  className="group flex items-center"
-                >
-
-                  {/* Dot */}
-                  <div className="h-2 w-2 rounded-full bg-[#d6b98c] mr-3 group-hover:scale-150 transition duration-300"></div>
-
-                  {/* Text */}
-                  <p className="text-sm md:text-base text-gray-300 group-hover:text-[#d6b98c] transition duration-300">
-
-                    {location}
-
-                  </p>
-
-                </motion.div>
-
-              ))}
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </motion.section>
-
+      
       {/* SERVICES SECTION */}
 <motion.section
   id="services"
@@ -530,6 +353,275 @@ export default function Home() {
   </div>
 
 </motion.section>
+
+
+{/* OUR PRESENCE SECTION */}
+<motion.section
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: false, amount: 0.2 }}
+  className="relative py-20 md:py-32 bg-[#050505] overflow-hidden"
+>
+
+  {/* Background Glow */}
+  <div className="absolute top-20 left-10 w-[250px] h-[250px] bg-[#d6b98c]/10 rounded-full blur-[120px]"></div>
+
+  <div className="absolute bottom-10 right-10 w-[300px] h-[300px] bg-white/5 rounded-full blur-[140px]"></div>
+
+  <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
+
+    {/* Heading */}
+    <div className="text-center mb-14 md:mb-20">
+
+      <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-xs md:text-sm mb-5">
+        Our Presence
+      </p>
+
+      <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+
+        We Provide Services
+        <span className="block text-[#d6b98c]">
+          Across Multiple Locations
+        </span>
+
+      </h2>
+
+      <p className="mt-6 text-gray-400 text-base md:text-xl max-w-3xl mx-auto leading-relaxed">
+
+        Delivering luxurious and timeless interior experiences
+        across major cities and premium Pune locations.
+
+      </p>
+
+    </div>
+
+    {/* Highlight Cities */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+
+      {[
+        {
+          city: "Pune",
+          text: "Premium Interior Solutions",
+        },
+        {
+          city: "Mumbai",
+          text: "Luxury Residential Spaces",
+        },
+        {
+          city: "Parbhani",
+          text: "Modern Elegant Interiors",
+        },
+      ].map((item, index) => (
+
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.5,
+            delay: index * 0.15,
+          }}
+          whileHover={{
+            y: -8,
+            scale: 1.03,
+          }}
+          className="relative overflow-hidden rounded-[30px] border border-[#d6b98c]/20 bg-gradient-to-br from-[#151515] to-[#1f1f1f] p-8 shadow-[0_20px_70px_rgba(0,0,0,0.45)]"
+        >
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(214,185,140,0.15),transparent_40%)]"></div>
+
+          <div className="relative z-10">
+
+            <p className="uppercase tracking-[0.3em] text-[#d6b98c] text-xs mb-4">
+              Featured City
+            </p>
+
+            <h3 className="text-3xl md:text-4xl font-bold text-white">
+              {item.city}
+            </h3>
+
+            <p className="mt-4 text-gray-400 leading-relaxed">
+              {item.text}
+            </p>
+
+          </div>
+
+        </motion.div>
+
+      ))}
+
+    </div>
+
+    {/* Pune Areas */}
+    <div className="relative bg-gradient-to-br from-[#111111] to-[#1c1c1c] border border-white/10 rounded-[35px] md:rounded-[45px] p-6 md:p-12 overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
+
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(214,185,140,0.12),transparent_35%)]"></div>
+
+      <div className="relative z-10 mb-10">
+
+        <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
+          Pune Locations We Serve
+        </h3>
+
+        <p className="text-gray-400 max-w-3xl leading-relaxed text-sm md:text-base">
+
+          Interior services available across premium Pune locations.
+
+        </p>
+
+      </div>
+
+      <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-5">
+
+        {[
+          "Punawale",
+          "Marunji",
+          "Hinjewadi",
+          "Baner",
+          "Balewadi",
+          "Kiwale",
+          "Ravet",
+          "Dhanori",
+          "Moshi",
+          "Dehu",
+          "Lohegaon",
+          "Hadapsar",
+          "Mundwa",
+          "Tathawade",
+          "Charholi",
+          "Kokane Chowk",
+        ].map((location, index) => (
+
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.35,
+              delay: index * 0.03,
+            }}
+            whileHover={{
+              x: 5,
+              scale: 1.03,
+            }}
+            className="group flex items-center"
+          >
+
+            <div className="h-2 w-2 rounded-full bg-[#d6b98c] mr-3 group-hover:scale-150 transition duration-300"></div>
+
+            <p className="text-sm md:text-base text-gray-300 group-hover:text-[#d6b98c] transition duration-300">
+
+              {location}
+
+            </p>
+
+          </motion.div>
+
+        ))}
+
+      </div>
+
+    </div>
+
+  </div>
+
+</motion.section>
+
+{/* SOCIAL MEDIA FOOTER */}
+<motion.section
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: false, amount: 0.2 }}
+  className="relative py-10 md:py-14 bg-[#0a0a0a] border-t border-white/10 overflow-hidden"
+>
+
+  {/* Glow */}
+  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[250px] h-[250px] bg-[#d6b98c]/10 blur-[120px] rounded-full"></div>
+
+  <div className="relative z-10 max-w-5xl mx-auto px-4">
+
+    {/* Main Box */}
+    <div className="bg-gradient-to-r from-[#111111] to-[#1a1a1a] border border-white/10 rounded-[30px] px-6 py-8 md:px-10 md:py-10 shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
+
+      {/* Top Content */}
+      <div className="flex flex-col items-center justify-center text-center">
+
+        {/* Logo */}
+        <div className="relative mb-5">
+
+          <div className="absolute inset-0 bg-[#d6b98c]/20 blur-2xl rounded-full"></div>
+
+          <img
+            src="/images/logo.png"
+            alt="Kulal Interiors"
+            className="relative h-16 w-16 md:h-20 md:w-20 rounded-full object-cover border border-white/10"
+          />
+
+        </div>
+
+        {/* Brand Name */}
+        <h2 className="text-3xl md:text-5xl font-extrabold tracking-[0.18em] text-white">
+          KULAL
+          <span className="block text-[#d6b98c]">
+            INTERIORS
+          </span>
+        </h2>
+
+        <p className="mt-3 text-gray-400 text-sm md:text-base tracking-[0.2em] uppercase">
+          Luxury Interior Design Studio
+        </p>
+
+      </div>
+
+      {/* Social Icons */}
+      <div className="flex items-center justify-center gap-5 md:gap-8 mt-8">
+
+        {/* Instagram */}
+        <motion.a
+          whileHover={{ y: -5, scale: 1.08 }}
+          whileTap={{ scale: 0.95 }}
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="h-14 w-14 md:h-16 md:w-16 rounded-2xl border border-white/15 bg-white/[0.03] flex items-center justify-center text-white hover:text-[#d6b98c] hover:border-[#d6b98c]/40 transition duration-300"
+        >
+          <FaInstagram className="text-2xl md:text-3xl" />
+        </motion.a>
+
+        {/* LinkedIn */}
+        <motion.a
+          whileHover={{ y: -5, scale: 1.08 }}
+          whileTap={{ scale: 0.95 }}
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="h-14 w-14 md:h-16 md:w-16 rounded-2xl border border-white/15 bg-white/[0.03] flex items-center justify-center text-white hover:text-[#d6b98c] hover:border-[#d6b98c]/40 transition duration-300"
+        >
+          <FaLinkedinIn className="text-2xl md:text-3xl" />
+        </motion.a>
+
+        {/* YouTube */}
+        <motion.a
+          whileHover={{ y: -5, scale: 1.08 }}
+          whileTap={{ scale: 0.95 }}
+          href="https://youtube.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="h-14 w-14 md:h-16 md:w-16 rounded-2xl border border-white/15 bg-white/[0.03] flex items-center justify-center text-white hover:text-[#d6b98c] hover:border-[#d6b98c]/40 transition duration-300"
+        >
+          <FaYoutube className="text-2xl md:text-3xl" />
+        </motion.a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</motion.section>
+
 
     </main>
   );
