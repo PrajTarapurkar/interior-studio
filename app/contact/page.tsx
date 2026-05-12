@@ -15,72 +15,72 @@ export default function ContactPage() {
 
       </div>
 
-     {/* Navbar */}
-<nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-2xl border-b border-white/5 shadow-2xl">
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-2xl border-b border-white/5 shadow-2xl">
 
-  <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-5 md:px-8 py-3 md:py-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-5 md:px-8 py-3 md:py-4">
 
-    {/* LEFT SIDE */}
-    <div className="flex items-center gap-2 md:gap-4 min-w-0">
+          {/* LEFT SIDE */}
+          <div className="flex items-center gap-2 md:gap-4 min-w-0">
 
-      {/* Logo */}
-      <img
-        src="/images/logo.png"
-        alt="Logo"
-        className="h-10 w-10 sm:h-12 sm:w-12 md:h-20 md:w-20 rounded-full object-cover shadow-[0_0_30px_rgba(214,185,140,0.35)] flex-shrink-0"
-      />
+            {/* Logo */}
+            <img
+              src="/images/logo.png"
+              alt="Logo"
+              className="h-10 w-10 sm:h-12 sm:w-12 md:h-20 md:w-20 rounded-full object-cover shadow-[0_0_30px_rgba(214,185,140,0.35)] flex-shrink-0"
+            />
 
-      {/* Brand Text */}
-      <div className="leading-none">
+            {/* Brand Text */}
+            <div className="leading-none">
 
-        <h1 className="text-[15px] sm:text-[18px] md:text-[42px] font-bold text-white tracking-[-0.04em]">
-          InteriorStudio
-        </h1>
+              <h1 className="text-[15px] sm:text-[18px] md:text-[42px] font-bold text-white tracking-[-0.04em]">
+                InteriorStudio
+              </h1>
 
-        <p className="uppercase tracking-[0.28em] text-[5px] sm:text-[6px] md:text-[10px] text-[#d6b98c] mt-1 md:mt-2">
-          Luxury Interior Design
-        </p>
+              <p className="uppercase tracking-[0.28em] text-[5px] sm:text-[6px] md:text-[10px] text-[#d6b98c] mt-1 md:mt-2">
+                Luxury Interior Design
+              </p>
 
-      </div>
+            </div>
 
-    </div>
+          </div>
 
-    {/* RIGHT SIDE NAVIGATION */}
-    <div className="flex items-center gap-2 sm:gap-3 md:gap-10 text-[8px] sm:text-[9px] md:text-sm uppercase tracking-[0.12em] md:tracking-[0.2em] font-medium text-white">
+          {/* RIGHT SIDE NAVIGATION */}
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-10 text-[8px] sm:text-[9px] md:text-sm uppercase tracking-[0.12em] md:tracking-[0.2em] font-medium text-white">
 
-      <a
-        href="/"
-        className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
-      >
-        Home
-      </a>
+            <a
+              href="/"
+              className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
+            >
+              Home
+            </a>
 
-      <a
-        href="/projects"
-        className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
-      >
-        Projects
-      </a>
+            <a
+              href="/projects"
+              className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
+            >
+              Projects
+            </a>
 
-      <a
-        href="/#services"
-        className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
-      >
-        Services
-      </a>
+            <a
+              href="/#services"
+              className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
+            >
+              Services
+            </a>
 
-      <a
-        href="/contact"
-        className="text-[#d6b98c] whitespace-nowrap"
-      >
-        Contact
-      </a>
+            <a
+              href="/contact"
+              className="text-[#d6b98c] whitespace-nowrap"
+            >
+              Contact
+            </a>
 
-    </div>
+          </div>
 
-  </div>
+        </div>
 
-</nav>
+      </nav>
 
       {/* Hero Section */}
       <section className="relative pt-40 sm:pt-44 md:pt-52 pb-16 md:pb-32 bg-black text-center overflow-hidden">
@@ -101,12 +101,13 @@ export default function ContactPage() {
 
           <h1 className="text-3xl sm:text-5xl md:text-8xl font-bold leading-[1.05]">
 
-  Let’s Create
-  <span className="block text-[#d6b98c]">
-    Beautiful Spaces
-  </span>
+            Let’s Create
 
-</h1>
+            <span className="block text-[#d6b98c]">
+              Beautiful Spaces
+            </span>
+
+          </h1>
 
           <p className="mt-6 md:mt-10 text-sm sm:text-base md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
 
@@ -155,9 +156,11 @@ export default function ContactPage() {
             <div className="mt-8 md:mt-12 space-y-4">
 
               {/* PHONE */}
-              <motion.div
+              <motion.a
+                href="tel:+917709943271"
                 whileHover={{ scale: 1.02 }}
-                className="flex items-center gap-4 md:gap-8 bg-white/[0.04] border border-white/10 rounded-[22px] md:rounded-[28px] px-4 py-4 md:px-10 md:py-5 hover:bg-white/[0.07] transition-all duration-300"
+                whileTap={{ scale: 0.98 }}
+                className="flex items-center gap-4 md:gap-8 bg-white/[0.04] border border-white/10 rounded-[22px] md:rounded-[28px] px-4 py-4 md:px-10 md:py-5 hover:bg-white/[0.07] hover:border-[#d6b98c]/30 transition-all duration-300 cursor-pointer"
               >
 
                 <div className="text-[#d6b98c] text-2xl md:text-3xl flex-shrink-0">
@@ -176,12 +179,14 @@ export default function ContactPage() {
 
                 </div>
 
-              </motion.div>
+              </motion.a>
 
               {/* EMAIL */}
-              <motion.div
+              <motion.a
+                href="mailto:kulalinteriors@gmail.com"
                 whileHover={{ scale: 1.02 }}
-                className="flex items-center gap-4 md:gap-8 bg-white/[0.04] border border-white/10 rounded-[22px] md:rounded-[28px] px-4 py-4 md:px-10 md:py-5 hover:bg-white/[0.07] transition-all duration-300"
+                whileTap={{ scale: 0.98 }}
+                className="flex items-center gap-4 md:gap-8 bg-white/[0.04] border border-white/10 rounded-[22px] md:rounded-[28px] px-4 py-4 md:px-10 md:py-5 hover:bg-white/[0.07] hover:border-[#d6b98c]/30 transition-all duration-300 cursor-pointer"
               >
 
                 <div className="text-[#d6b98c] text-2xl md:text-3xl flex-shrink-0">
@@ -200,12 +205,16 @@ export default function ContactPage() {
 
                 </div>
 
-              </motion.div>
+              </motion.a>
 
               {/* LOCATION */}
-              <motion.div
+              <motion.a
+                href="https://maps.google.com/?q=Pune,Maharashtra,India"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
-                className="flex items-center gap-4 md:gap-8 bg-white/[0.04] border border-white/10 rounded-[22px] md:rounded-[28px] px-4 py-4 md:px-10 md:py-5 hover:bg-white/[0.07] transition-all duration-300"
+                whileTap={{ scale: 0.98 }}
+                className="flex items-center gap-4 md:gap-8 bg-white/[0.04] border border-white/10 rounded-[22px] md:rounded-[28px] px-4 py-4 md:px-10 md:py-5 hover:bg-white/[0.07] hover:border-[#d6b98c]/30 transition-all duration-300 cursor-pointer"
               >
 
                 <div className="text-[#d6b98c] text-2xl md:text-4xl flex-shrink-0">
@@ -218,18 +227,13 @@ export default function ContactPage() {
                     Location
                   </p>
 
-                  <a
-                    href="https://maps.google.com/?q=Pune,Maharashtra,India"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm md:text-[28px] font-semibold text-white hover:text-[#d6b98c] transition duration-300"
-                  >
+                  <h3 className="text-sm md:text-[28px] font-semibold text-white">
                     Pune, Maharashtra, India
-                  </a>
+                  </h3>
 
                 </div>
 
-              </motion.div>
+              </motion.a>
 
             </div>
 
