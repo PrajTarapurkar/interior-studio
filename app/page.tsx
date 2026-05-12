@@ -7,49 +7,62 @@ export default function Home() {
     <main className="bg-white text-white overflow-hidden scroll-smooth">
 
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur-xl border-b border-white/10 shadow-2xl">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-2xl border-b border-white/5 shadow-2xl">
 
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 py-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-5 md:px-8 py-3 md:py-4">
 
-          {/* Logo */}
-          <div className="flex items-center gap-3">
+          {/* LEFT SIDE */}
+          <div className="flex items-center gap-2 md:gap-4 min-w-0">
 
+            {/* Logo */}
             <img
               src="/images/logo.png"
               alt="Logo"
-              className="h-12 md:h-20 w-auto drop-shadow-2xl hover:scale-105 transition duration-300"
+              className="h-10 w-10 sm:h-12 sm:w-12 md:h-20 md:w-20 rounded-full object-cover shadow-[0_0_30px_rgba(214,185,140,0.35)] flex-shrink-0"
             />
 
-            <h1 className="text-base md:text-2xl font-bold tracking-wide">
-              Interior Studio
-            </h1>
+            {/* Brand Text */}
+            <div className="leading-none">
+
+              <h1 className="text-[15px] sm:text-[18px] md:text-[42px] font-bold text-white tracking-[-0.04em]">
+                InteriorStudio
+              </h1>
+
+              <p className="uppercase tracking-[0.28em] text-[5px] sm:text-[6px] md:text-[10px] text-[#d6b98c] mt-1 md:mt-2">
+                Luxury Interior Design
+              </p>
+
+            </div>
 
           </div>
 
-          {/* Nav Links */}
-          <div className="flex items-center gap-4 md:gap-10 text-[10px] md:text-sm uppercase tracking-[0.18em] font-medium overflow-x-auto whitespace-nowrap">
+          {/* RIGHT SIDE NAVIGATION */}
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-10 text-[8px] sm:text-[9px] md:text-sm uppercase tracking-[0.12em] md:tracking-[0.2em] font-medium text-white">
 
-            <a href="/" className="hover:text-[#d6b98c] hover:scale-110 transition duration-300">
+            <a
+              href="/"
+              className="text-[#d6b98c] whitespace-nowrap"
+            >
               Home
             </a>
 
             <a
               href="/projects"
-              className="hover:text-[#d6b98c] hover:scale-110 transition duration-300"
+              className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
             >
               Projects
             </a>
 
             <a
               href="/#services"
-              className="hover:text-[#d6b98c] hover:scale-110 transition duration-300"
+              className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
             >
               Services
             </a>
 
             <a
               href="/contact"
-              className="hover:text-[#d6b98c] hover:scale-110 transition duration-300"
+              className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
             >
               Contact
             </a>
@@ -62,7 +75,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section
-        className="relative min-h-screen bg-cover bg-center flex items-center justify-center text-center px-4 md:px-6"
+        className="relative min-h-screen pt-28 md:pt-0 bg-cover bg-center flex items-center justify-center text-center px-4 md:px-6"
         style={{
           backgroundImage: "url('/images/hero.jpg')",
         }}
@@ -79,7 +92,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="relative z-10 max-w-6xl pt-24 md:pt-32"
+          className="relative z-10 max-w-6xl pt-10 md:pt-32"
         >
 
           <p className="uppercase tracking-[0.4em] text-[11px] md:text-[18px] font-semibold text-[#d6b98c] mb-6">
@@ -126,10 +139,10 @@ export default function Home() {
 
       {/* Projects Section */}
       <motion.section
-  initial={{ opacity: 0, y: 80 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
-  viewport={{ once: false, amount: 0.2 }}
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: false, amount: 0.2 }}
         className="py-20 md:py-28 px-4 md:px-8 bg-[#f8f5f1] text-black"
       >
 
@@ -200,121 +213,121 @@ export default function Home() {
       </motion.section>
 
       {/* Luxury Showcase Slider */}
-<motion.section
-  initial={{ opacity: 0, y: 80 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
-  viewport={{ once: false, amount: 0.2 }}
-  className="py-20 md:py-28 bg-[#0b0b0b] overflow-hidden"
->
-
-  <div className="max-w-7xl mx-auto px-4 md:px-8">
-
-    {/* Heading */}
-    <div className="mb-14 md:mb-20">
-
-      <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-xs md:text-sm mb-4">
-        Luxury Interiors
-      </p>
-
-      <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight max-w-4xl">
-
-        Explore Our
-        <span className="block text-[#d6b98c]">
-          Signature Spaces
-        </span>
-
-      </h2>
-
-      <p className="mt-6 text-gray-400 text-base md:text-xl max-w-3xl leading-relaxed">
-
-        Discover premium interiors crafted with timeless elegance,
-        modern sophistication, and luxurious comfort.
-
-      </p>
-
-    </div>
-
-  </div>
-
-  {/* Scrollable Slider */}
-  <div className="flex gap-5 md:gap-8 overflow-x-auto px-4 md:px-8 pb-4 snap-x snap-mandatory scrollbar-hide">
-
-    {[
-      {
-        image: "/images/project1.jpg",
-        title: "Luxury Living Room",
-        city: "Pune",
-      },
-      {
-        image: "/images/project2.jpg",
-        title: "Modern Bedroom",
-        city: "Mumbai",
-      },
-      {
-        image: "/images/project3.jpg",
-        title: "Premium Kitchen",
-        city: "Bangalore",
-      },
-      {
-        image: "/images/project1.jpg",
-        title: "Elegant Workspace",
-        city: "Delhi",
-      },
-      {
-        image: "/images/project2.jpg",
-        title: "Royal Penthouse",
-        city: "Hyderabad",
-      },
-      {
-        image: "/images/project3.jpg",
-        title: "Luxury Dining Area",
-        city: "Chennai",
-      },
-    ].map((item, index) => (
-
-      <motion.div
-        key={index}
-        whileHover={{ y: -10, scale: 1.02 }}
-        transition={{ duration: 0.4 }}
-        className="relative min-w-[85%] sm:min-w-[60%] md:min-w-[38%] lg:min-w-[30%] h-[500px] md:h-[650px] rounded-[34px] overflow-hidden snap-center group shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
+      <motion.section
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: false, amount: 0.2 }}
+        className="py-20 md:py-28 bg-[#0b0b0b] overflow-hidden"
       >
 
-        {/* Image */}
-        <img
-          src={item.image}
-          alt={item.title}
-          className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700"
-        />
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
 
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+          {/* Heading */}
+          <div className="mb-14 md:mb-20">
 
-        {/* Glow */}
-        <div className="absolute inset-0 bg-[#d6b98c]/0 group-hover:bg-[#d6b98c]/10 transition duration-500"></div>
+            <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-xs md:text-sm mb-4">
+              Luxury Interiors
+            </p>
 
-        {/* Content */}
-        <div className="absolute bottom-0 left-0 p-6 md:p-8 z-10">
+            <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight max-w-4xl">
 
-          <p className="uppercase tracking-[0.3em] text-[#d6b98c] text-[10px] md:text-xs mb-3">
-            {item.city} • Luxury Interior
-          </p>
+              Explore Our
+              <span className="block text-[#d6b98c]">
+                Signature Spaces
+              </span>
 
-          <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+            </h2>
 
-            {item.title}
+            <p className="mt-6 text-gray-400 text-base md:text-xl max-w-3xl leading-relaxed">
 
-          </h3>
+              Discover premium interiors crafted with timeless elegance,
+              modern sophistication, and luxurious comfort.
+
+            </p>
+
+          </div>
 
         </div>
 
-      </motion.div>
+        {/* Scrollable Slider */}
+        <div className="flex gap-5 md:gap-8 overflow-x-auto px-4 md:px-8 pb-4 snap-x snap-mandatory scrollbar-hide">
 
-    ))}
+          {[
+            {
+              image: "/images/project1.jpg",
+              title: "Luxury Living Room",
+              city: "Pune",
+            },
+            {
+              image: "/images/project2.jpg",
+              title: "Modern Bedroom",
+              city: "Mumbai",
+            },
+            {
+              image: "/images/project3.jpg",
+              title: "Premium Kitchen",
+              city: "Bangalore",
+            },
+            {
+              image: "/images/project1.jpg",
+              title: "Elegant Workspace",
+              city: "Delhi",
+            },
+            {
+              image: "/images/project2.jpg",
+              title: "Royal Penthouse",
+              city: "Hyderabad",
+            },
+            {
+              image: "/images/project3.jpg",
+              title: "Luxury Dining Area",
+              city: "Chennai",
+            },
+          ].map((item, index) => (
 
-  </div>
+            <motion.div
+              key={index}
+              whileHover={{ y: -10, scale: 1.02 }}
+              transition={{ duration: 0.4 }}
+              className="relative min-w-[85%] sm:min-w-[60%] md:min-w-[38%] lg:min-w-[30%] h-[500px] md:h-[650px] rounded-[34px] overflow-hidden snap-center group shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
+            >
 
-</motion.section>
+              {/* Image */}
+              <img
+                src={item.image}
+                alt={item.title}
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700"
+              />
+
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+              {/* Glow */}
+              <div className="absolute inset-0 bg-[#d6b98c]/0 group-hover:bg-[#d6b98c]/10 transition duration-500"></div>
+
+              {/* Content */}
+              <div className="absolute bottom-0 left-0 p-6 md:p-8 z-10">
+
+                <p className="uppercase tracking-[0.3em] text-[#d6b98c] text-[10px] md:text-xs mb-3">
+                  {item.city} • Luxury Interior
+                </p>
+
+                <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+
+                  {item.title}
+
+                </h3>
+
+              </div>
+
+            </motion.div>
+
+          ))}
+
+        </div>
+
+      </motion.section>
 
       {/* Services Section */}
       <motion.section
