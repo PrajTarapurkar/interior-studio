@@ -7,64 +7,94 @@ export default function ProjectsPage() {
     <main className="bg-[#f8f5f1] min-h-screen text-black overflow-x-hidden">
 
       {/* PREMIUM NAVBAR */}
-<nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-2xl border-b border-white/10">
+<nav
+  className="
+    fixed
+    top-0
+    left-0
+    w-full
+    z-50
+    bg-black/75
+    backdrop-blur-2xl
+    border-b
+    border-white/10
+  "
+>
 
-  <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-5 md:px-8 py-3">
+  <div
+    className="
+      max-w-7xl
+      mx-auto
+      flex
+      items-center
+      justify-between
+      px-3
+      sm:px-5
+      md:px-8
+      py-3
+      md:py-4
+    "
+  >
 
     {/* LEFT SIDE */}
-    <div className="flex items-center gap-2 min-w-0">
+    <div className="flex items-center gap-2 md:gap-4 min-w-0">
 
       {/* LOGO */}
       <div className="relative flex-shrink-0">
 
-        {/* GOLD GLOW */}
-        <div className="absolute inset-0 bg-[#d6b98c]/20 blur-xl rounded-full"></div>
+        <div
+          className="
+            absolute
+            inset-0
+            bg-[#d6b98c]/20
+            blur-xl
+            rounded-full
+          "
+        ></div>
 
         <img
           src="/images/logo.png"
           alt="Logo"
           className="
             relative
-            h-9
-            w-9
-            sm:h-11
-            sm:w-11
+            h-11
+            w-11
+            sm:h-12
+            sm:w-12
             md:h-16
             md:w-16
             rounded-full
             object-cover
             border
             border-[#d6b98c]/20
+            shadow-[0_0_25px_rgba(214,185,140,0.25)]
           "
         />
 
       </div>
 
       {/* BRAND TEXT */}
-      <div className="leading-none min-w-0">
+      <div className="leading-none">
 
         <h1
           className="
-            text-[13px]
-            sm:text-[17px]
+            text-[15px]
+            sm:text-[18px]
             md:text-[34px]
             font-bold
             tracking-[-0.04em]
             text-white
-            truncate
           "
         >
           InteriorStudio
         </h1>
 
-        {/* HIDE THIS ON MOBILE */}
         <p
           className="
-            hidden
-            sm:block
             uppercase
-            tracking-[0.25em]
-            text-[6px]
+            tracking-[0.30em]
+            text-[5px]
+            sm:text-[6px]
             md:text-[10px]
             text-[#d6b98c]
             mt-1
@@ -77,77 +107,96 @@ export default function ProjectsPage() {
 
     </div>
 
-    {/* RIGHT SIDE NAVIGATION */}
-    <div
-      className="
-        flex
-        items-center
-        gap-2
-        sm:gap-3
-        md:gap-6
-        text-[7px]
-        sm:text-[9px]
-        md:text-sm
-        uppercase
-        tracking-[0.08em]
-        md:tracking-[0.18em]
-        font-semibold
-        whitespace-nowrap
-        flex-shrink-0
-      "
-    >
+    {/* RIGHT SIDE */}
+<div
+  className="
+    flex
+    items-center
+    gap-1
+    sm:gap-2
+    md:gap-6
+    text-[8px]
+    sm:text-[9px]
+    md:text-sm
+    uppercase
+    tracking-[0.12em]
+    md:tracking-[0.2em]
+    font-semibold
+    whitespace-nowrap
+    text-white
+  "
+>
 
-      {/* HOME */}
-      <a
-        href="/"
-        className="hover:text-[#d6b98c] transition duration-300"
-      >
-        Home
-      </a>
+  {/* HOME */}
+  <a
+    href="/"
+    className="
+      text-white
+      hover:text-[#d6b98c]
+      transition
+      duration-300
+      px-1
+    "
+  >
+    Home
+  </a>
 
-      {/* PROJECTS ACTIVE */}
-      <a
-        href="/projects"
-        className="
-          text-[#d6b98c]
-          px-2
-          sm:px-3
-          py-1.5
-          rounded-full
-          border
-          border-[#d6b98c]/30
-          bg-[#d6b98c]/10
-        "
-      >
-        Projects
-      </a>
+  {/* PROJECTS ACTIVE */}
+  <a
+    href="/projects"
+    className="
+      text-[#d6b98c]
+      px-2
+      sm:px-3
+      py-1.5
+      rounded-full
+      bg-[#d6b98c]/10
+      border
+      border-[#d6b98c]/20
+      shadow-[0_0_20px_rgba(214,185,140,0.15)]
+    "
+  >
+    Projects
+  </a>
 
-      {/* SERVICES */}
-      <a
-        href="/#services"
-        className="hover:text-[#d6b98c] transition duration-300"
-      >
-        Services
-      </a>
+  {/* SERVICES */}
+  <a
+    href="/#services"
+    className="
+      text-white
+      hover:text-[#d6b98c]
+      transition
+      duration-300
+      px-1
+    "
+  >
+    Services
+  </a>
 
-      {/* CONTACT */}
-      <a
-        href="/contact"
-        className="hover:text-[#d6b98c] transition duration-300"
-      >
-        Contact
-      </a>
+  {/* CONTACT */}
+  <a
+    href="/contact"
+    className="
+      text-white
+      hover:text-[#d6b98c]
+      transition
+      duration-300
+      px-1
+    "
+  >
+    Contact
+  </a>
 
-    </div>
+</div>
 
   </div>
 
 </nav>
 
-      {/* Hero Header */}
-      <section className="relative pt-40 sm:pt-44 md:pt-52 pb-20 md:pb-32 text-center bg-black text-white overflow-hidden">
+      {/* HERO SECTION */}
+      <section className="relative pt-36 sm:pt-44 md:pt-52 pb-20 md:pb-32 text-center bg-black text-white overflow-hidden">
 
-        {/* Premium Glow */}
+        {/* GLOW */}
         <div className="absolute top-1/2 left-1/2 h-[250px] md:h-[500px] w-[250px] md:w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d6b98c]/20 blur-[100px] animate-pulse"></div>
 
         <motion.div
@@ -157,35 +206,31 @@ export default function ProjectsPage() {
           className="relative z-10 px-6"
         >
 
-          <p className="uppercase tracking-[0.35em] text-[10px] md:text-sm text-[#d6b98c] mb-5">
+          <p className="uppercase tracking-[0.35em] text-[9px] md:text-sm text-[#d6b98c] mb-5">
             Portfolio
           </p>
 
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.7)]">
-
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight text-white">
             Our Interior
             <br />
             Projects
-
           </h1>
 
           <p className="mt-6 text-sm md:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed px-2">
-
             Explore our curated collection of luxury residential
             and commercial interiors crafted with timeless elegance.
-
           </p>
 
         </motion.div>
 
       </section>
 
-      {/* Projects Grid */}
+      {/* PROJECTS GRID */}
       <section className="py-16 md:py-24 px-4 md:px-8 bg-[#f8f5f1]">
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
 
-          {/* Project 1 */}
+          {/* PROJECT 1 */}
           <motion.a
             href="/projects/living-room"
             initial={{ opacity: 0, y: 80 }}
@@ -229,7 +274,7 @@ export default function ProjectsPage() {
 
           </motion.a>
 
-          {/* Project 2 */}
+          {/* PROJECT 2 */}
           <motion.a
             href="/projects/bedroom"
             initial={{ opacity: 0, y: 80 }}
@@ -273,7 +318,7 @@ export default function ProjectsPage() {
 
           </motion.a>
 
-          {/* Project 3 */}
+          {/* PROJECT 3 */}
           <motion.a
             href="/projects/kitchen"
             initial={{ opacity: 0, y: 80 }}
