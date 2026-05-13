@@ -75,68 +75,197 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section
-        className="relative min-h-screen pt-28 md:pt-0 bg-cover bg-center flex items-center justify-center text-center px-4 md:px-6"
-        style={{
-          backgroundImage: "url('/images/hero.jpg')",
-        }}
+<section
+  className="relative min-h-screen bg-cover bg-center flex items-center justify-center text-center px-4 md:px-6 overflow-hidden"
+  style={{
+    backgroundImage: "url('/images/hero.jpg')",
+  }}
+>
+
+  {/* DARK OVERLAY */}
+  <div className="absolute inset-0 bg-black/55"></div>
+
+  {/* CINEMATIC GOLD GLOW */}
+  <div className="absolute top-1/2 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d6b98c]/20 blur-[140px]"></div>
+
+  {/* CONTENT */}
+  <motion.div
+    initial={{ opacity: 0, y: 80 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{
+      duration: 1.2,
+      ease: [0.22, 1, 0.36, 1],
+    }}
+    className="relative z-10 max-w-6xl pt-24 md:pt-32"
+  >
+
+    {/* TOP SMALL TEXT */}
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.3 }}
+      className="
+        uppercase
+        tracking-[0.45em]
+        text-[#d6b98c]
+        text-[11px]
+        md:text-[18px]
+        font-semibold
+        mb-8
+        drop-shadow-[0_0_12px_rgba(214,185,140,0.4)]
+      "
+    >
+      Luxury Interior Design
+    </motion.p>
+
+    {/* MAIN HEADING */}
+    <motion.h1
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.5 }}
+      className="
+        text-5xl
+        sm:text-6xl
+        md:text-8xl
+        lg:text-[110px]
+        font-extrabold
+        leading-[0.95]
+        tracking-[-0.05em]
+        text-white
+      "
+    >
+
+      {/* HIGHLIGHTED TEXT */}
+      <span className="relative inline-block">
+
+        <span className="relative z-10">
+          Designing Timeless
+        </span>
+
+        {/* GOLD HIGHLIGHT */}
+        <span className="
+          absolute
+          left-0
+          bottom-3
+          md:bottom-5
+          w-full
+          h-4
+          md:h-6
+          bg-[#d6b98c]/35
+          blur-xl
+          rounded-full
+        "></span>
+
+      </span>
+
+      <br />
+
+      {/* SECOND HIGHLIGHT */}
+      <span className="relative inline-block mt-2">
+
+        <span className="relative z-10">
+          Modern Spaces
+        </span>
+
+        <span className="
+          absolute
+          left-0
+          bottom-3
+          md:bottom-5
+          w-full
+          h-4
+          md:h-6
+          bg-white/20
+          blur-xl
+          rounded-full
+        "></span>
+
+      </span>
+
+    </motion.h1>
+
+    {/* DESCRIPTION */}
+    <motion.p
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.8 }}
+      className="
+        mt-10
+        text-base
+        md:text-xl
+        text-gray-200
+        max-w-3xl
+        mx-auto
+        leading-relaxed
+        px-2
+      "
+    >
+
+      Creating elegant interiors that blend modern sophistication
+      with timeless comfort and functionality.
+
+    </motion.p>
+
+    {/* BUTTONS */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 1 }}
+      className="
+        mt-12
+        flex
+        flex-col
+        sm:flex-row
+        items-center
+        justify-center
+        gap-5
+      "
+    >
+
+      <a
+        href="/projects"
+        className="
+          bg-[#d6b98c]
+          text-black
+          px-9
+          py-4
+          rounded-full
+          font-semibold
+          hover:bg-white
+          hover:scale-105
+          transition-all
+          duration-500
+          shadow-[0_15px_50px_rgba(214,185,140,0.4)]
+        "
       >
+        View Projects
+      </a>
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
+      <a
+        href="/contact"
+        className="
+          border
+          border-white/30
+          text-white
+          px-9
+          py-4
+          rounded-full
+          hover:bg-white
+          hover:text-black
+          hover:scale-105
+          transition-all
+          duration-500
+          backdrop-blur-xl
+        "
+      >
+        Contact Us
+      </a>
 
-        {/* Glow Effect */}
-        <div className="absolute top-1/2 left-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d6b98c]/20 blur-[120px] animate-pulse"></div>
+    </motion.div>
 
-        {/* Content */}
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="relative z-10 max-w-6xl pt-10 md:pt-32"
-        >
+  </motion.div>
 
-          <p className="uppercase tracking-[0.4em] text-[11px] md:text-[18px] font-semibold text-[#d6b98c] mb-6">
-            Luxury Interior Design
-          </p>
-
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.7)]">
-
-            Designing Timeless
-            <br />
-            Modern Spaces
-
-          </h1>
-
-          <p className="mt-8 text-base md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed px-2">
-
-            Creating elegant interiors that blend modern sophistication
-            with timeless comfort and functionality.
-
-          </p>
-
-          {/* Buttons */}
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
-
-            <a
-              href="/projects"
-              className="bg-[#d6b98c] text-black px-8 py-4 rounded-full font-semibold hover:bg-white hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_10px_40px_rgba(214,185,140,0.35)]"
-            >
-              View Projects
-            </a>
-
-            <a
-              href="/contact"
-              className="border border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-black hover:scale-105 active:scale-95 transition-all duration-300"
-            >
-              Contact Us
-            </a>
-
-          </div>
-
-        </motion.div>
-
-      </section>
+</section>
 
       {/* Projects Section */}
       <motion.section
