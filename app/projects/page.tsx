@@ -6,72 +6,143 @@ export default function ProjectsPage() {
   return (
     <main className="bg-[#f8f5f1] min-h-screen text-black overflow-x-hidden">
 
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-2xl border-b border-white/5 shadow-2xl">
+      {/* PREMIUM NAVBAR */}
+<nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-2xl border-b border-white/10">
 
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-5 md:px-8 py-3 md:py-4">
+  <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-5 md:px-8 py-3">
 
-          {/* LEFT SIDE */}
-          <div className="flex items-center gap-2 md:gap-4 min-w-0">
+    {/* LEFT SIDE */}
+    <div className="flex items-center gap-2 min-w-0">
 
-            {/* Logo */}
-            <img
-              src="/images/logo.png"
-              alt="Logo"
-              className="h-10 w-10 sm:h-12 sm:w-12 md:h-20 md:w-20 rounded-full object-cover shadow-[0_0_30px_rgba(214,185,140,0.35)] flex-shrink-0"
-            />
+      {/* LOGO */}
+      <div className="relative flex-shrink-0">
 
-            {/* Brand Text */}
-            <div className="leading-none">
+        {/* GOLD GLOW */}
+        <div className="absolute inset-0 bg-[#d6b98c]/20 blur-xl rounded-full"></div>
 
-              <h1 className="text-[15px] sm:text-[18px] md:text-[42px] font-bold text-white tracking-[-0.04em]">
-                InteriorStudio
-              </h1>
+        <img
+          src="/images/logo.png"
+          alt="Logo"
+          className="
+            relative
+            h-9
+            w-9
+            sm:h-11
+            sm:w-11
+            md:h-16
+            md:w-16
+            rounded-full
+            object-cover
+            border
+            border-[#d6b98c]/20
+          "
+        />
 
-              <p className="uppercase tracking-[0.28em] text-[5px] sm:text-[6px] md:text-[10px] text-[#d6b98c] mt-1 md:mt-2">
-                Luxury Interior Design
-              </p>
+      </div>
 
-            </div>
+      {/* BRAND TEXT */}
+      <div className="leading-none min-w-0">
 
-          </div>
+        <h1
+          className="
+            text-[13px]
+            sm:text-[17px]
+            md:text-[34px]
+            font-bold
+            tracking-[-0.04em]
+            text-white
+            truncate
+          "
+        >
+          InteriorStudio
+        </h1>
 
-          {/* RIGHT SIDE NAVIGATION */}
-          <div className="flex items-center gap-2 sm:gap-3 md:gap-10 text-[8px] sm:text-[9px] md:text-sm uppercase tracking-[0.12em] md:tracking-[0.2em] font-medium text-white">
+        {/* HIDE THIS ON MOBILE */}
+        <p
+          className="
+            hidden
+            sm:block
+            uppercase
+            tracking-[0.25em]
+            text-[6px]
+            md:text-[10px]
+            text-[#d6b98c]
+            mt-1
+          "
+        >
+          Luxury Interior Design
+        </p>
 
-            <a
-              href="/"
-              className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
-            >
-              Home
-            </a>
+      </div>
 
-            <a
-              href="/projects"
-              className="text-[#d6b98c] whitespace-nowrap"
-            >
-              Projects
-            </a>
+    </div>
 
-            <a
-              href="/#services"
-              className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
-            >
-              Services
-            </a>
+    {/* RIGHT SIDE NAVIGATION */}
+    <div
+      className="
+        flex
+        items-center
+        gap-2
+        sm:gap-3
+        md:gap-6
+        text-[7px]
+        sm:text-[9px]
+        md:text-sm
+        uppercase
+        tracking-[0.08em]
+        md:tracking-[0.18em]
+        font-semibold
+        whitespace-nowrap
+        flex-shrink-0
+      "
+    >
 
-            <a
-              href="/contact"
-              className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
-            >
-              Contact
-            </a>
+      {/* HOME */}
+      <a
+        href="/"
+        className="hover:text-[#d6b98c] transition duration-300"
+      >
+        Home
+      </a>
 
-          </div>
+      {/* PROJECTS ACTIVE */}
+      <a
+        href="/projects"
+        className="
+          text-[#d6b98c]
+          px-2
+          sm:px-3
+          py-1.5
+          rounded-full
+          border
+          border-[#d6b98c]/30
+          bg-[#d6b98c]/10
+        "
+      >
+        Projects
+      </a>
 
-        </div>
+      {/* SERVICES */}
+      <a
+        href="/#services"
+        className="hover:text-[#d6b98c] transition duration-300"
+      >
+        Services
+      </a>
 
-      </nav>
+      {/* CONTACT */}
+      <a
+        href="/contact"
+        className="hover:text-[#d6b98c] transition duration-300"
+      >
+        Contact
+      </a>
+
+    </div>
+
+  </div>
+
+</nav>
 
       {/* Hero Header */}
       <section className="relative pt-40 sm:pt-44 md:pt-52 pb-20 md:pb-32 text-center bg-black text-white overflow-hidden">
