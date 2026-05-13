@@ -7,72 +7,206 @@ export default function Home() {
   return (
     <main className="bg-white text-white overflow-hidden scroll-smooth">
 
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-2xl border-b border-white/5 shadow-2xl">
+      {/* PREMIUM NAVBAR */}
+<nav
+  className="
+    fixed
+    top-0
+    left-0
+    w-full
+    z-50
+    bg-black/75
+    backdrop-blur-3xl
+    border-b
+    border-white/10
+    shadow-[0_10px_60px_rgba(0,0,0,0.6)]
+  "
+>
 
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-5 md:px-8 py-3 md:py-4">
+  {/* GOLD TOP LINE */}
+  <div className="absolute top-0 left-0 w-full h-[1px] bg-[#d6b98c]/40"></div>
 
-          {/* LEFT SIDE */}
-          <div className="flex items-center gap-2 md:gap-4 min-w-0">
+  <div
+    className="
+      max-w-7xl
+      mx-auto
+      flex
+      items-center
+      justify-between
+      px-4
+      sm:px-6
+      md:px-8
+      py-4
+      md:py-5
+    "
+  >
 
-            {/* Logo */}
-            <img
-              src="/images/logo.png"
-              alt="Logo"
-              className="h-10 w-10 sm:h-12 sm:w-12 md:h-20 md:w-20 rounded-full object-cover shadow-[0_0_30px_rgba(214,185,140,0.35)] flex-shrink-0"
-            />
+    {/* LEFT SIDE */}
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
+      className="flex items-center gap-3 md:gap-5"
+    >
 
-            {/* Brand Text */}
-            <div className="leading-none">
+      {/* LOGO */}
+      <div className="relative">
 
-              <h1 className="text-[15px] sm:text-[18px] md:text-[42px] font-bold text-white tracking-[-0.04em]">
-                InteriorStudio
-              </h1>
+        {/* GOLD GLOW */}
+        <div className="
+          absolute
+          inset-0
+          bg-[#d6b98c]/20
+          blur-2xl
+          rounded-full
+        "></div>
 
-              <p className="uppercase tracking-[0.28em] text-[5px] sm:text-[6px] md:text-[10px] text-[#d6b98c] mt-1 md:mt-2">
-                Luxury Interior Design
-              </p>
+        <img
+          src="/images/logo.png"
+          alt="Logo"
+          className="
+            relative
+            h-14
+            w-14
+            sm:h-16
+            sm:w-16
+            md:h-20
+            md:w-20
+            rounded-full
+            object-cover
+            border
+            border-[#d6b98c]/30
+            shadow-[0_0_35px_rgba(214,185,140,0.35)]
+          "
+        />
 
-            </div>
+      </div>
 
-          </div>
+      {/* BRAND */}
+      <div className="leading-none">
 
-          {/* RIGHT SIDE NAVIGATION */}
-          <div className="flex items-center gap-2 sm:gap-3 md:gap-10 text-[8px] sm:text-[9px] md:text-sm uppercase tracking-[0.12em] md:tracking-[0.2em] font-medium text-white">
+        <h1
+          className="
+            text-[22px]
+            sm:text-[28px]
+            md:text-[42px]
+            font-bold
+            tracking-[-0.05em]
+            text-white
+            drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]
+          "
+        >
+          InteriorStudio
+        </h1>
 
-            <a
-              href="/"
-              className="text-[#d6b98c] whitespace-nowrap"
-            >
-              Home
-            </a>
+        <p
+          className="
+            uppercase
+            tracking-[0.38em]
+            text-[7px]
+            sm:text-[8px]
+            md:text-[11px]
+            text-[#d6b98c]
+            mt-2
+          "
+        >
+          Luxury Interior Design
+        </p>
 
-            <a
-              href="/projects"
-              className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
-            >
-              Projects
-            </a>
+      </div>
 
-            <a
-              href="/#services"
-              className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
-            >
-              Services
-            </a>
+    </motion.div>
 
-            <a
-              href="/contact"
-              className="hover:text-[#d6b98c] transition duration-300 whitespace-nowrap"
-            >
-              Contact
-            </a>
+    {/* RIGHT SIDE */}
+    <motion.div
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
+      className="
+        flex
+        items-center
+        gap-2
+        sm:gap-4
+        md:gap-8
+      "
+    >
 
-          </div>
+      {[
+        {
+          name: "Home",
+          link: "/",
+          active: true,
+        },
+        {
+          name: "Projects",
+          link: "/projects",
+        },
+        {
+          name: "Services",
+          link: "/#services",
+        },
+        {
+          name: "Contact",
+          link: "/contact",
+        },
+      ].map((item, index) => (
 
-        </div>
+        <motion.a
+          key={index}
+          href={item.link}
+          whileHover={{
+            y: -2,
+          }}
+          className={`
+            relative
+            px-3
+            sm:px-4
+            md:px-5
+            py-2
+            rounded-full
+            text-[10px]
+            sm:text-xs
+            md:text-sm
+            uppercase
+            tracking-[0.18em]
+            font-semibold
+            transition-all
+            duration-300
+            overflow-hidden
+            ${
+              item.active
+                ? "text-[#d6b98c] bg-[#d6b98c]/10 border border-[#d6b98c]/20"
+                : "text-white hover:text-[#d6b98c]"
+            }
+          `}
+        >
 
-      </nav>
+          {/* ACTIVE GLOW */}
+          {item.active && (
+            <span
+              className="
+                absolute
+                inset-0
+                bg-[#d6b98c]/10
+                blur-xl
+              "
+            ></span>
+          )}
+
+          {/* TEXT */}
+          <span className="relative z-10">
+            {item.name}
+          </span>
+
+        </motion.a>
+
+      ))}
+
+    </motion.div>
+
+  </div>
+
+</nav>
 
       {/* Hero Section */}
 <section
