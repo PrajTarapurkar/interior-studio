@@ -804,25 +804,43 @@ export default function Home() {
     <div className="flex gap-6 md:gap-8 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
 
       {[
-        {
-          video: "/videos/video1.mp4",
-          title: "Luxury Living Room Tour",
-          location: "Pune • Residential Interior",
-          desc: "Elegant modern living space designed with warm textures, premium furniture, and timeless luxury aesthetics.",
-        },
-        {
-          video: "/videos/video2.mp4",
-          title: "Modern Bedroom Tour",
-          location: "Mumbai • Luxury Apartment",
-          desc: "Sophisticated bedroom crafted for comfort and minimal luxury with ambient lighting and premium finishes.",
-        },
-        {
-          video: "/videos/video3.mp4",
-          title: "Premium Kitchen Tour",
-          location: "Bangalore • Modular Kitchen",
-          desc: "Functional luxury kitchen blending seamless storage solutions with modern contemporary styling.",
-        },
-      ].map((item, index) => (
+  {
+    video: "/videos/video1.mp4",
+    title: "Luxury Living Room Tour",
+    location: "Pune • Residential Interior",
+    desc: "Elegant modern living space designed with warm textures, premium furniture, and timeless luxury aesthetics.",
+  },
+  {
+    video: "/videos/video2.mp4",
+    title: "Modern Bedroom Tour",
+    location: "Mumbai • Luxury Apartment",
+    desc: "Sophisticated bedroom crafted for comfort and minimal luxury with ambient lighting and premium finishes.",
+  },
+  {
+    video: "/videos/video3.mp4",
+    title: "Premium Kitchen Tour",
+    location: "Bangalore • Modular Kitchen",
+    desc: "Functional luxury kitchen blending seamless storage solutions with modern contemporary styling.",
+  },
+  {
+    video: "/videos/video4.mp4",
+    title: "Royal Penthouse Tour",
+    location: "Hyderabad • Penthouse Interior",
+    desc: "Exclusive penthouse walkthrough showcasing luxurious lighting, textures, and modern elegance.",
+  },
+  {
+    video: "/videos/video5.mp4",
+    title: "Elegant Workspace Tour",
+    location: "Delhi • Commercial Interior",
+    desc: "Premium office interior crafted for productivity, sophistication, and modern functionality.",
+  },
+  {
+    video: "/videos/video6.mp4",
+    title: "Luxury Dining Area Tour",
+    location: "Chennai • Dining Interior",
+    desc: "Refined dining space designed with warm ambient tones, premium décor, and elegant aesthetics.",
+  },
+].map((item, index) => (
 
         <motion.div
           key={index}
