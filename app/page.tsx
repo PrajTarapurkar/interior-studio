@@ -82,37 +82,88 @@ export default function Home() {
   }}
 >
 
-  {/* DARK OVERLAY */}
-  <div className="absolute inset-0 bg-black/55"></div>
+  {/* DARK CINEMATIC OVERLAY */}
+  <div className="absolute inset-0 bg-black/60"></div>
 
-  {/* CINEMATIC GOLD GLOW */}
-  <div className="absolute top-1/2 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d6b98c]/20 blur-[140px]"></div>
+  {/* TOP GRADIENT */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-black/80"></div>
+
+  {/* GOLD GLOW */}
+  <motion.div
+    animate={{
+      scale: [1, 1.08, 1],
+      opacity: [0.4, 0.6, 0.4],
+    }}
+    transition={{
+      duration: 6,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="
+      absolute
+      top-1/2
+      left-1/2
+      h-[550px]
+      w-[550px]
+      -translate-x-1/2
+      -translate-y-1/2
+      rounded-full
+      bg-[#d6b98c]/20
+      blur-[150px]
+    "
+  ></motion.div>
+
+  {/* FLOATING LIGHT */}
+  <motion.div
+    animate={{
+      x: [-20, 20, -20],
+      y: [-10, 15, -10],
+    }}
+    transition={{
+      duration: 8,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="
+      absolute
+      top-[20%]
+      right-[15%]
+      h-[180px]
+      w-[180px]
+      rounded-full
+      bg-[#d6b98c]/10
+      blur-[100px]
+    "
+  ></motion.div>
 
   {/* CONTENT */}
   <motion.div
-    initial={{ opacity: 0, y: 80 }}
+    initial={{ opacity: 0, y: 100 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{
-      duration: 1.2,
+      duration: 1.3,
       ease: [0.22, 1, 0.36, 1],
     }}
-    className="relative z-10 max-w-6xl pt-24 md:pt-32"
+    className="relative z-10 max-w-7xl pt-24 md:pt-32"
   >
 
-    {/* TOP SMALL TEXT */}
+    {/* TOP LABEL */}
     <motion.p
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 25 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.3 }}
+      transition={{
+        delay: 0.3,
+        duration: 1,
+      }}
       className="
         uppercase
-        tracking-[0.45em]
+        tracking-[0.55em]
         text-[#d6b98c]
         text-[11px]
         md:text-[18px]
         font-semibold
         mb-8
-        drop-shadow-[0_0_12px_rgba(214,185,140,0.4)]
+        drop-shadow-[0_0_20px_rgba(214,185,140,0.4)]
       "
     >
       Luxury Interior Design
@@ -122,20 +173,23 @@ export default function Home() {
     <motion.h1
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.5 }}
+      transition={{
+        delay: 0.5,
+        duration: 1.2,
+      }}
       className="
         text-5xl
         sm:text-6xl
         md:text-8xl
-        lg:text-[110px]
+        lg:text-[115px]
         font-extrabold
-        leading-[0.95]
-        tracking-[-0.05em]
+        leading-[0.92]
+        tracking-[-0.06em]
         text-white
       "
     >
 
-      {/* HIGHLIGHTED TEXT */}
+      {/* FIRST LINE */}
       <span className="relative inline-block">
 
         <span className="relative z-10">
@@ -143,42 +197,61 @@ export default function Home() {
         </span>
 
         {/* GOLD HIGHLIGHT */}
-        <span className="
-          absolute
-          left-0
-          bottom-3
-          md:bottom-5
-          w-full
-          h-4
-          md:h-6
-          bg-[#d6b98c]/35
-          blur-xl
-          rounded-full
-        "></span>
+        <motion.span
+          animate={{
+            opacity: [0.4, 0.8, 0.4],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+          }}
+          className="
+            absolute
+            left-0
+            bottom-3
+            md:bottom-5
+            w-full
+            h-5
+            md:h-7
+            bg-[#d6b98c]/40
+            blur-xl
+            rounded-full
+          "
+        ></motion.span>
 
       </span>
 
       <br />
 
-      {/* SECOND HIGHLIGHT */}
+      {/* SECOND LINE */}
       <span className="relative inline-block mt-2">
 
         <span className="relative z-10">
           Modern Spaces
         </span>
 
-        <span className="
-          absolute
-          left-0
-          bottom-3
-          md:bottom-5
-          w-full
-          h-4
-          md:h-6
-          bg-white/20
-          blur-xl
-          rounded-full
-        "></span>
+        {/* WHITE GLOW */}
+        <motion.span
+          animate={{
+            opacity: [0.2, 0.5, 0.2],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+          }}
+          className="
+            absolute
+            left-0
+            bottom-3
+            md:bottom-5
+            w-full
+            h-5
+            md:h-7
+            bg-white/25
+            blur-xl
+            rounded-full
+          "
+        ></motion.span>
 
       </span>
 
@@ -188,21 +261,25 @@ export default function Home() {
     <motion.p
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 0.8 }}
+      transition={{
+        delay: 0.9,
+        duration: 1,
+      }}
       className="
         mt-10
         text-base
-        md:text-xl
+        md:text-2xl
         text-gray-200
         max-w-3xl
         mx-auto
         leading-relaxed
         px-2
+        font-light
       "
     >
 
       Creating elegant interiors that blend modern sophistication
-      with timeless comfort and functionality.
+      with timeless comfort, premium craftsmanship, and luxury living.
 
     </motion.p>
 
@@ -210,63 +287,179 @@ export default function Home() {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 1 }}
+      transition={{
+        delay: 1.1,
+        duration: 1,
+      }}
       className="
-        mt-12
+        mt-14
         flex
         flex-col
         sm:flex-row
         items-center
         justify-center
-        gap-5
+        gap-6
       "
     >
 
-      <a
+      {/* VIEW PROJECTS BUTTON */}
+      <motion.a
         href="/projects"
+        whileHover={{
+          scale: 1.06,
+          y: -3,
+        }}
+        whileTap={{
+          scale: 0.96,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 15,
+        }}
         className="
+          relative
+          overflow-hidden
+          group
           bg-[#d6b98c]
           text-black
-          px-9
+          px-10
           py-4
           rounded-full
           font-semibold
-          hover:bg-white
-          hover:scale-105
-          transition-all
-          duration-500
-          shadow-[0_15px_50px_rgba(214,185,140,0.4)]
+          tracking-wide
+          shadow-[0_15px_50px_rgba(214,185,140,0.35)]
         "
       >
-        View Projects
-      </a>
 
-      <a
+        {/* SHINE EFFECT */}
+        <span
+          className="
+            absolute
+            top-0
+            -left-[120%]
+            h-full
+            w-[60%]
+            rotate-12
+            bg-white/40
+            blur-xl
+            transition-all
+            duration-1000
+            group-hover:left-[140%]
+          "
+        ></span>
+
+        {/* TEXT */}
+        <span className="relative z-10 flex items-center gap-3">
+
+          View Projects
+
+          <motion.span
+            animate={{
+              x: [0, 5, 0],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 1.5,
+            }}
+          >
+            →
+          </motion.span>
+
+        </span>
+
+      </motion.a>
+
+      {/* CONTACT BUTTON */}
+      <motion.a
         href="/contact"
+        whileHover={{
+          scale: 1.06,
+          y: -3,
+        }}
+        whileTap={{
+          scale: 0.96,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 15,
+        }}
         className="
+          relative
+          overflow-hidden
+          group
           border
-          border-white/30
+          border-white/25
+          bg-white/5
+          backdrop-blur-xl
           text-white
-          px-9
+          px-10
           py-4
           rounded-full
-          hover:bg-white
-          hover:text-black
-          hover:scale-105
-          transition-all
-          duration-500
-          backdrop-blur-xl
+          tracking-wide
         "
       >
-        Contact Us
-      </a>
+
+        {/* GLOW EFFECT */}
+        <span
+          className="
+            absolute
+            inset-0
+            opacity-0
+            group-hover:opacity-100
+            transition
+            duration-500
+            bg-gradient-to-r
+            from-[#d6b98c]/20
+            via-white/10
+            to-[#d6b98c]/20
+          "
+        ></span>
+
+        {/* BORDER GLOW */}
+        <span
+          className="
+            absolute
+            inset-0
+            rounded-full
+            border
+            border-[#d6b98c]/0
+            group-hover:border-[#d6b98c]/40
+            transition
+            duration-500
+          "
+        ></span>
+
+        {/* TEXT */}
+        <span className="relative z-10 flex items-center gap-3">
+
+          Contact Us
+
+          <motion.span
+            animate={{
+              rotate: [0, 10, 0],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 2,
+            }}
+          >
+            ✦
+          </motion.span>
+
+        </span>
+
+      </motion.a>
 
     </motion.div>
 
   </motion.div>
 
-</section>
+  {/* BOTTOM FADE */}
+  <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black to-transparent"></div>
 
+</section>
       {/* Projects Section */}
       <motion.section
         initial={{ opacity: 0, y: 80 }}
