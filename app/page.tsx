@@ -16,15 +16,11 @@ export default function Home() {
     w-full
     z-50
     bg-black/75
-    backdrop-blur-3xl
+    backdrop-blur-2xl
     border-b
     border-white/10
-    shadow-[0_10px_60px_rgba(0,0,0,0.6)]
   "
 >
-
-  {/* GOLD TOP LINE */}
-  <div className="absolute top-0 left-0 w-full h-[1px] bg-[#d6b98c]/40"></div>
 
   <div
     className="
@@ -33,31 +29,25 @@ export default function Home() {
       flex
       items-center
       justify-between
-      px-4
-      sm:px-6
+      px-3
+      sm:px-5
       md:px-8
-      py-4
-      md:py-5
+      py-3
+      md:py-4
     "
   >
 
     {/* LEFT SIDE */}
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8 }}
-      className="flex items-center gap-3 md:gap-5"
-    >
+    <div className="flex items-center gap-2 md:gap-4 min-w-0">
 
       {/* LOGO */}
-      <div className="relative">
+      <div className="relative flex-shrink-0">
 
-        {/* GOLD GLOW */}
         <div className="
           absolute
           inset-0
           bg-[#d6b98c]/20
-          blur-2xl
+          blur-xl
           rounded-full
         "></div>
 
@@ -66,34 +56,33 @@ export default function Home() {
           alt="Logo"
           className="
             relative
-            h-14
-            w-14
-            sm:h-16
-            sm:w-16
-            md:h-20
-            md:w-20
+            h-11
+            w-11
+            sm:h-12
+            sm:w-12
+            md:h-16
+            md:w-16
             rounded-full
             object-cover
             border
-            border-[#d6b98c]/30
-            shadow-[0_0_35px_rgba(214,185,140,0.35)]
+            border-[#d6b98c]/20
+            shadow-[0_0_25px_rgba(214,185,140,0.25)]
           "
         />
 
       </div>
 
-      {/* BRAND */}
+      {/* BRAND TEXT */}
       <div className="leading-none">
 
         <h1
           className="
-            text-[22px]
-            sm:text-[28px]
-            md:text-[42px]
+            text-[15px]
+            sm:text-[18px]
+            md:text-[34px]
             font-bold
-            tracking-[-0.05em]
+            tracking-[-0.04em]
             text-white
-            drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]
           "
         >
           InteriorStudio
@@ -102,12 +91,12 @@ export default function Home() {
         <p
           className="
             uppercase
-            tracking-[0.38em]
-            text-[7px]
-            sm:text-[8px]
-            md:text-[11px]
+            tracking-[0.30em]
+            text-[5px]
+            sm:text-[6px]
+            md:text-[10px]
             text-[#d6b98c]
-            mt-2
+            mt-1
           "
         >
           Luxury Interior Design
@@ -115,94 +104,80 @@ export default function Home() {
 
       </div>
 
-    </motion.div>
+    </div>
 
     {/* RIGHT SIDE */}
-    <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8 }}
+    <div
       className="
         flex
         items-center
-        gap-2
-        sm:gap-4
-        md:gap-8
+        gap-1
+        sm:gap-2
+        md:gap-6
+        text-[8px]
+        sm:text-[9px]
+        md:text-sm
+        uppercase
+        tracking-[0.12em]
+        md:tracking-[0.2em]
+        font-semibold
+        whitespace-nowrap
       "
     >
 
-      {[
-        {
-          name: "Home",
-          link: "/",
-          active: true,
-        },
-        {
-          name: "Projects",
-          link: "/projects",
-        },
-        {
-          name: "Services",
-          link: "/#services",
-        },
-        {
-          name: "Contact",
-          link: "/contact",
-        },
-      ].map((item, index) => (
+      <a
+        href="/"
+        className="
+          text-[#d6b98c]
+          px-2
+          sm:px-3
+          py-1.5
+          rounded-full
+          bg-[#d6b98c]/10
+          border
+          border-[#d6b98c]/20
+        "
+      >
+        Home
+      </a>
 
-        <motion.a
-          key={index}
-          href={item.link}
-          whileHover={{
-            y: -2,
-          }}
-          className={`
-            relative
-            px-3
-            sm:px-4
-            md:px-5
-            py-2
-            rounded-full
-            text-[10px]
-            sm:text-xs
-            md:text-sm
-            uppercase
-            tracking-[0.18em]
-            font-semibold
-            transition-all
-            duration-300
-            overflow-hidden
-            ${
-              item.active
-                ? "text-[#d6b98c] bg-[#d6b98c]/10 border border-[#d6b98c]/20"
-                : "text-white hover:text-[#d6b98c]"
-            }
-          `}
-        >
+      <a
+        href="/projects"
+        className="
+          hover:text-[#d6b98c]
+          transition
+          duration-300
+          px-1
+        "
+      >
+        Projects
+      </a>
 
-          {/* ACTIVE GLOW */}
-          {item.active && (
-            <span
-              className="
-                absolute
-                inset-0
-                bg-[#d6b98c]/10
-                blur-xl
-              "
-            ></span>
-          )}
+      <a
+        href="/#services"
+        className="
+          hover:text-[#d6b98c]
+          transition
+          duration-300
+          px-1
+        "
+      >
+        Services
+      </a>
 
-          {/* TEXT */}
-          <span className="relative z-10">
-            {item.name}
-          </span>
+      <a
+        href="/contact"
+        className="
+          hover:text-[#d6b98c]
+          transition
+          duration-300
+          px-1
+        "
+      >
+        Contact
+      </a>
 
-        </motion.a>
-
-      ))}
-
-    </motion.div>
+    </div>
 
   </div>
 
