@@ -110,13 +110,13 @@ export default function ProjectsPage() {
 
               <p
                 className="
-                  uppercase
-                  tracking-[0.24em]
-                  text-[6px]
-                  md:text-[9px]
-                  text-[#d6b98c]
-                  mt-1
-                "
+  mt-1.5
+  uppercase
+  tracking-[0.30em]
+  text-[8px]
+  md:text-[9px]
+  text-[#d6b98c]
+"
               >
                 Luxury Interior Design
               </p>
