@@ -1,8 +1,34 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+
+import {
+  HiOutlineMenuAlt3,
+  HiOutlineX,
+} from "react-icons/hi";
+
+import {
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 export default function ContactPage() {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+useEffect(() => {
+  if (menuOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [menuOpen]);
   return (
     <main className="bg-[#0a0a0a] min-h-screen text-white overflow-x-hidden relative">
 
@@ -37,154 +63,138 @@ export default function ContactPage() {
       flex
       items-center
       justify-between
-      px-3
+      px-4
       sm:px-5
       md:px-8
       py-3
-      md:py-4
     "
   >
 
-    {/* LEFT SIDE */}
-    <div className="flex items-center gap-2 md:gap-4 min-w-0">
+    {/* LEFT */}
+<div className="flex items-center gap-3">
 
-      {/* LOGO */}
-      <div className="relative flex-shrink-0">
+  {/* LOGO */}
+  <div className="relative flex-shrink-0">
 
-        {/* GOLD GLOW */}
-        <div className="
-          absolute
-          inset-0
-          bg-[#d6b98c]/20
-          blur-xl
-          rounded-full
-        "></div>
-
-        <img
-          src="/images/logo.png"
-          alt="Logo"
-          className="
-            relative
-            h-11
-            w-11
-            sm:h-12
-            sm:w-12
-            md:h-16
-            md:w-16
-            rounded-full
-            object-cover
-            border
-            border-[#d6b98c]/20
-            shadow-[0_0_25px_rgba(214,185,140,0.25)]
-          "
-        />
-
-      </div>
-
-      {/* BRAND */}
-      <div className="leading-none">
-
-        <h1
-          className="
-            text-[15px]
-            sm:text-[18px]
-            md:text-[34px]
-            font-bold
-            tracking-[-0.04em]
-            text-white
-          "
-        >
-          InteriorStudio
-        </h1>
-
-        <p
-          className="
-            uppercase
-            tracking-[0.30em]
-            text-[5px]
-            sm:text-[6px]
-            md:text-[10px]
-            text-[#d6b98c]
-            mt-1
-          "
-        >
-          Luxury Interior Design
-        </p>
-
-      </div>
-
-    </div>
-
-    {/* RIGHT SIDE */}
+    {/* GOLD GLOW */}
     <div
       className="
-        flex
-        items-center
-        gap-1
-        sm:gap-2
-        md:gap-6
-        text-[8px]
-        sm:text-[9px]
-        md:text-sm
+        absolute
+        inset-0
+        bg-[#d6b98c]/20
+        blur-2xl
+        rounded-full
+        scale-125
+      "
+    ></div>
+
+    {/* OUTER GLOW */}
+    <div
+      className="
+        absolute
+        inset-0
+        rounded-full
+        shadow-[0_0_40px_rgba(214,185,140,0.35)]
+      "
+    ></div>
+
+    <img
+      src="/images/logo.png"
+      alt="Logo"
+      className="
+        relative
+        h-11
+        w-11
+        sm:h-12
+        sm:w-12
+        rounded-full
+        object-cover
+        border
+        border-[#d6b98c]/25
+      "
+    />
+
+  </div>
+
+  {/* BRAND TEXT */}
+  <div className="leading-none">
+
+    <h1
+      className="
+        text-[16px]
+        sm:text-[18px]
+        md:text-[22px]
+        font-bold
+        tracking-[-0.04em]
+        text-white
+      "
+    >
+      Kulal Interiors
+    </h1>
+
+    <p
+      className="
         uppercase
-        tracking-[0.12em]
-        md:tracking-[0.2em]
+        tracking-[0.22em]
+        text-[7px]
+        md:text-[8px]
+        text-[#d6b98c]
+        mt-1.5
+      "
+    >
+      Luxury Interior Design
+    </p>
+
+  </div>
+
+</div>
+
+    {/* DESKTOP NAV */}
+    <div
+      className="
+        hidden
+        md:flex
+        items-center
+        gap-8
+        text-sm
+        uppercase
+        tracking-[0.18em]
         font-semibold
-        whitespace-nowrap
+        text-white
       "
     >
 
-      {/* HOME */}
       <a
         href="/"
-        className="
-          hover:text-[#d6b98c]
-          transition
-          duration-300
-          px-1
-        "
+        className="hover:text-[#d6b98c] transition duration-300"
       >
         Home
       </a>
 
-      {/* PROJECTS */}
       <a
         href="/projects"
-        className="
-          hover:text-[#d6b98c]
-          transition
-          duration-300
-          px-1
-        "
+        className="hover:text-[#d6b98c] transition duration-300"
       >
         Projects
       </a>
 
-      {/* SERVICES */}
       <a
         href="/#services"
-        className="
-          hover:text-[#d6b98c]
-          transition
-          duration-300
-          px-1
-        "
+        className="hover:text-[#d6b98c] transition duration-300"
       >
         Services
       </a>
 
-      {/* CONTACT ACTIVE */}
       <a
         href="/contact"
         className="
           text-[#d6b98c]
-          px-2
-          sm:px-3
-          py-1.5
+          px-4
+          py-2
           rounded-full
           bg-[#d6b98c]/10
           border
-          border-[#d6b98c]/20
+          border-[#d6b98c]/25
         "
       >
         Contact
@@ -192,9 +202,310 @@ export default function ContactPage() {
 
     </div>
 
+    {/* MOBILE MENU BUTTON */}
+    <button
+      onClick={() => setMenuOpen(true)}
+      className="
+        md:hidden
+        text-white
+        text-[30px]
+      "
+    >
+      <HiOutlineMenuAlt3 />
+    </button>
+
   </div>
 
 </nav>
+
+{/* MOBILE MENU */}
+{menuOpen && (
+
+  <motion.div
+    initial={{ opacity: 0, x: "100%" }}
+    animate={{ opacity: 1, x: 0 }}
+    exit={{ opacity: 0, x: "100%" }}
+    transition={{ duration: 0.35 }}
+    className="
+      fixed
+      inset-0
+      z-[100]
+      bg-[#050505]
+      px-5
+      py-5
+      flex
+      flex-col
+      overflow-y-auto
+    "
+  >
+
+    {/* TOP */}
+    <div className="flex items-start justify-between">
+
+      <div className="flex items-center gap-3">
+
+        <img
+          src="/images/logo.png"
+          alt="Logo"
+          className="
+            h-14
+            w-14
+            rounded-full
+            object-cover
+            border
+            border-[#d6b98c]/30
+          "
+        />
+
+        <div>
+
+          <h2 className="text-white text-[20px] font-bold">
+            Kulal Interiors
+          </h2>
+
+          <p
+            className="
+              text-[#d6b98c]
+              uppercase
+              tracking-[0.24em]
+              text-[7px]
+              mt-1
+            "
+          >
+            Luxury Interior Design
+          </p>
+
+        </div>
+
+      </div>
+
+      <button
+        onClick={() => setMenuOpen(false)}
+        className="text-white text-[42px]"
+      >
+        <HiOutlineX />
+      </button>
+
+    </div>
+
+    {/* LINKS */}
+    <div className="mt-10 flex flex-col">
+
+      <a
+        href="/"
+        className="
+          py-4
+          border-b
+          border-white/8
+          text-[18px]
+          text-white
+        "
+      >
+        Home
+      </a>
+
+      <a
+        href="/projects"
+        className="
+          py-4
+          border-b
+          border-white/8
+          text-[18px]
+          text-white
+        "
+      >
+        Projects
+      </a>
+
+      <a
+        href="/#services"
+        className="
+          py-4
+          border-b
+          border-white/8
+          text-[18px]
+          text-white
+        "
+      >
+        Services
+      </a>
+
+      <a
+        href="/contact"
+        className="
+          py-4
+          border-b
+          border-white/8
+          text-[18px]
+          text-[#d6b98c]
+        "
+      >
+        Contact
+      </a>
+
+    </div>
+
+    {/* PHONE */}
+    <div
+      className="
+        mt-8
+        border
+        border-white/10
+        rounded-[24px]
+        px-5
+        py-4
+        flex
+        items-center
+        justify-between
+        bg-[#0b0b0b]
+      "
+    >
+
+      <div>
+
+        <p
+          className="
+            text-gray-500
+            uppercase
+            tracking-[0.22em]
+            text-[9px]
+            mb-2
+          "
+        >
+          Call Us
+        </p>
+
+        <h3 className="text-white text-[18px] font-light">
+          +91 7709943271
+        </h3>
+
+      </div>
+
+      <a
+        href="https://wa.me/917709943271"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="
+          h-16
+          w-16
+          rounded-[20px]
+          border
+          border-[#d6b98c]/30
+          flex
+          items-center
+          justify-center
+          text-[#d6b98c]
+          text-3xl
+          bg-[#d6b98c]/5
+        "
+      >
+        <FaWhatsapp />
+      </a>
+
+    </div>
+
+    {/* BUTTON */}
+    <a
+      href="/contact"
+      className="
+        mt-5
+        w-full
+        flex
+        items-center
+        justify-center
+        bg-[#d6b98c]
+        text-black
+        py-3.5
+        rounded-2xl
+        text-[15px]
+        font-semibold
+      "
+    >
+      Get Free Consultation
+    </a>
+
+    {/* FOLLOW */}
+    <div className="mt-8 text-center">
+
+      <p
+        className="
+          text-gray-500
+          uppercase
+          tracking-[0.30em]
+          text-[10px]
+          mb-5
+        "
+      >
+        Follow Us
+      </p>
+
+      <div className="flex items-center justify-center gap-5">
+
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          className="
+            h-14
+            w-14
+            rounded-full
+            border
+            border-[#d6b98c]/30
+            flex
+            items-center
+            justify-center
+            text-white
+            text-xl
+          "
+        >
+          <FaInstagram />
+        </a>
+
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          className="
+            h-14
+            w-14
+            rounded-full
+            border
+            border-[#d6b98c]/30
+            flex
+            items-center
+            justify-center
+            text-white
+            text-xl
+          "
+        >
+          <FaLinkedinIn />
+        </a>
+
+        <a
+          href="https://youtube.com"
+          target="_blank"
+          className="
+            h-14
+            w-14
+            rounded-full
+            border
+            border-[#d6b98c]/30
+            flex
+            items-center
+            justify-center
+            text-white
+            text-xl
+          "
+        >
+          <FaYoutube />
+        </a>
+
+      </div>
+
+    </div>
+
+  </motion.div>
+
+)}
+
       {/* Hero Section */}
       <section className="relative pt-40 sm:pt-44 md:pt-52 pb-16 md:pb-32 bg-black text-center overflow-hidden">
 
