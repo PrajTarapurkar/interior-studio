@@ -446,7 +446,7 @@ export default function ProjectsPage() {
             <div className="flex items-center justify-center gap-5">
 
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/kulal_interiors?igsh=OHhwNm9yMHd6aDll"
                 target="_blank"
                 className="
                   h-16
