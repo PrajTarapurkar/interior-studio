@@ -2,8 +2,14 @@
 
 import { motion } from "framer-motion";
 import { FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { useState } from "react";
+import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Home() {
+
+   const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <main className="bg-white text-white overflow-hidden scroll-smooth">
 
@@ -29,7 +35,7 @@ export default function Home() {
       flex
       items-center
       justify-between
-      px-3
+      px-4
       sm:px-5
       md:px-8
       py-3
@@ -38,18 +44,12 @@ export default function Home() {
   >
 
     {/* LEFT SIDE */}
-    <div className="flex items-center gap-2 md:gap-4 min-w-0">
+    <div className="flex items-center gap-3 min-w-0">
 
       {/* LOGO */}
       <div className="relative flex-shrink-0">
 
-        <div className="
-          absolute
-          inset-0
-          bg-[#d6b98c]/20
-          blur-xl
-          rounded-full
-        "></div>
+        <div className="absolute inset-0 bg-[#d6b98c]/20 blur-xl rounded-full"></div>
 
         <img
           src="/images/logo.png"
@@ -73,7 +73,7 @@ export default function Home() {
       </div>
 
       {/* BRAND TEXT */}
-      <div className="leading-none">
+      <div className="leading-none min-w-0">
 
         <h1
           className="
@@ -83,6 +83,7 @@ export default function Home() {
             font-bold
             tracking-[-0.04em]
             text-white
+            truncate
           "
         >
           InteriorStudio
@@ -90,10 +91,11 @@ export default function Home() {
 
         <p
           className="
+            hidden
+            sm:block
             uppercase
-            tracking-[0.30em]
-            text-[5px]
-            sm:text-[6px]
+            tracking-[0.28em]
+            text-[6px]
             md:text-[10px]
             text-[#d6b98c]
             mt-1
@@ -106,22 +108,19 @@ export default function Home() {
 
     </div>
 
-    {/* RIGHT SIDE */}
+    {/* DESKTOP NAVIGATION */}
     <div
       className="
-        flex
+        hidden
+        md:flex
         items-center
-        gap-1
-        sm:gap-2
-        md:gap-6
-        text-[8px]
-        sm:text-[9px]
-        md:text-sm
+        gap-8
+        lg:gap-10
+        text-sm
         uppercase
-        tracking-[0.12em]
-        md:tracking-[0.2em]
+        tracking-[0.18em]
         font-semibold
-        whitespace-nowrap
+        text-white
       "
     >
 
@@ -129,13 +128,151 @@ export default function Home() {
         href="/"
         className="
           text-[#d6b98c]
-          px-2
-          sm:px-3
-          py-1.5
+          px-4
+          py-2
           rounded-full
           bg-[#d6b98c]/10
           border
-          border-[#d6b98c]/20
+          border-[#d6b98c]/25
+        "
+      >
+        Home
+      </a>
+
+      <a
+        href="/projects"
+        className="hover:text-[#d6b98c] transition duration-300"
+      >
+        Projects
+      </a>
+
+      <a
+        href="/#services"
+        className="hover:text-[#d6b98c] transition duration-300"
+      >
+        Services
+      </a>
+
+      <a
+        href="/contact"
+        className="hover:text-[#d6b98c] transition duration-300"
+      >
+        Contact
+      </a>
+
+    </div>
+
+    {/* MOBILE MENU BUTTON */}
+    <button
+      onClick={() => setMenuOpen(true)}
+      className="md:hidden text-white text-3xl"
+    >
+      <HiOutlineMenuAlt3 />
+    </button>
+
+  </div>
+
+</nav>
+
+{/* MOBILE MENU */}
+{menuOpen && (
+
+  <motion.div
+    initial={{ opacity: 0, x: "100%" }}
+    animate={{ opacity: 1, x: 0 }}
+    exit={{ opacity: 0, x: "100%" }}
+    transition={{ duration: 0.35 }}
+    className="
+      fixed
+      inset-0
+      z-[100]
+      bg-[#050505]
+      px-6
+      py-6
+      flex
+      flex-col
+    "
+  >
+
+    {/* TOP */}
+<div className="flex items-start justify-between">
+
+  {/* LEFT SIDE */}
+  <div className="flex items-center gap-4">
+
+    {/* LOGO */}
+    <img
+      src="/images/logo.png"
+      alt="Logo"
+      className="
+        h-16
+        w-16
+        rounded-full
+        object-cover
+        border
+        border-[#d6b98c]/30
+        shadow-[0_0_20px_rgba(214,185,140,0.2)]
+      "
+    />
+
+    {/* TEXT */}
+    <div>
+
+      <h2
+        className="
+          text-white
+          text-[18px]
+          sm:text-[22px]
+          font-bold
+          leading-none
+        "
+      >
+        InteriorStudio
+      </h2>
+
+      <p
+        className="
+          text-[#d6b98c]
+          uppercase
+          tracking-[0.28em]
+          text-[8px]
+          mt-2
+        "
+      >
+        Luxury Interior
+      </p>
+
+    </div>
+
+  </div>
+
+  {/* CLOSE BUTTON */}
+  <button
+    onClick={() => setMenuOpen(false)}
+    className="
+      text-white
+      text-4xl
+      leading-none
+    "
+  >
+    <HiOutlineX />
+  </button>
+
+</div>
+
+    {/* NAV LINKS */}
+    <div className="mt-12 flex flex-col">
+
+      <a
+        href="/"
+        className="
+          py-5
+          border-b
+          border-white/8
+          text-[22px]
+          font-light
+          text-[#d6b98c]
+          tracking-wide
         "
       >
         Home
@@ -144,10 +281,13 @@ export default function Home() {
       <a
         href="/projects"
         className="
-          hover:text-[#d6b98c]
-          transition
-          duration-300
-          px-1
+          py-5
+          border-b
+          border-white/8
+          text-[22px]
+          font-light
+          text-white
+          tracking-wide
         "
       >
         Projects
@@ -156,10 +296,13 @@ export default function Home() {
       <a
         href="/#services"
         className="
-          hover:text-[#d6b98c]
-          transition
-          duration-300
-          px-1
+          py-5
+          border-b
+          border-white/8
+          text-[22px]
+          font-light
+          text-white
+          tracking-wide
         "
       >
         Services
@@ -168,10 +311,13 @@ export default function Home() {
       <a
         href="/contact"
         className="
-          hover:text-[#d6b98c]
-          transition
-          duration-300
-          px-1
+          py-5
+          border-b
+          border-white/8
+          text-[22px]
+          font-light
+          text-white
+          tracking-wide
         "
       >
         Contact
@@ -179,9 +325,205 @@ export default function Home() {
 
     </div>
 
+    {/* BOTTOM */}
+    <div className="mt-auto pt-8">
+
+      {/* PHONE + WHATSAPP */}
+      <div
+        className="
+          mb-6
+          flex
+          items-center
+          justify-between
+          gap-4
+          rounded-2xl
+          border
+          border-white/10
+          bg-white/[0.02]
+          px-5
+          py-4
+        "
+      >
+
+        {/* PHONE */}
+        <div>
+
+          <p
+            className="
+              text-gray-500
+              uppercase
+              tracking-[0.22em]
+              text-[10px]
+              mb-2
+            "
+          >
+            Call Us
+          </p>
+
+          <h3 className="text-white text-[22px] font-light">
+            +91 7709943271
+          </h3>
+
+        </div>
+
+        {/* WHATSAPP BUTTON */}
+        <a
+          href="https://wa.me/917709943271"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            h-16
+            w-16
+            flex-shrink-0
+            rounded-2xl
+            border
+            border-[#d6b98c]/40
+            flex
+            items-center
+            justify-center
+            bg-[#d6b98c]/10
+            text-[#d6b98c]
+            text-3xl
+            hover:bg-[#d6b98c]
+            hover:text-black
+            transition-all
+            duration-300
+            shadow-[0_0_25px_rgba(214,185,140,0.15)]
+          "
+        >
+
+          <FaWhatsapp />
+
+        </a>
+
+      </div>
+
+      {/* BUTTON */}
+      <a
+        href="/contact"
+        className="
+          w-full
+          flex
+          items-center
+          justify-center
+          bg-[#d6b98c]
+          text-black
+          py-4
+          rounded-2xl
+          text-[17px]
+          font-semibold
+          shadow-[0_10px_30px_rgba(214,185,140,0.25)]
+        "
+      >
+        Get Free Consultation
+      </a>
+
+    </div>
+
+{/* FOLLOW US */}
+<div className="mt-8 text-center">
+
+  {/* TEXT */}
+  <p
+    className="
+      text-gray-400
+      uppercase
+      tracking-[0.28em]
+      text-[11px]
+      mb-5
+    "
+  >
+    Follow Us
+  </p>
+
+  {/* SOCIAL BUTTONS */}
+  <div className="flex items-center justify-center gap-5">
+
+    {/* INSTAGRAM */}
+    <a
+      href="https://instagram.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+        h-16
+        w-16
+        rounded-full
+        border
+        border-[#d6b98c]/40
+        flex
+        items-center
+        justify-center
+        text-white
+        text-2xl
+        bg-white/[0.02]
+        hover:bg-[#d6b98c]
+        hover:text-black
+        transition-all
+        duration-300
+      "
+    >
+      <FaInstagram />
+    </a>
+
+    {/* LINKEDIN */}
+    <a
+      href="https://linkedin.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+        h-16
+        w-16
+        rounded-full
+        border
+        border-[#d6b98c]/40
+        flex
+        items-center
+        justify-center
+        text-white
+        text-2xl
+        bg-white/[0.02]
+        hover:bg-[#d6b98c]
+        hover:text-black
+        transition-all
+        duration-300
+      "
+    >
+      <FaLinkedinIn />
+    </a>
+
+    {/* YOUTUBE */}
+    <a
+      href="https://youtube.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+        h-16
+        w-16
+        rounded-full
+        border
+        border-[#d6b98c]/40
+        flex
+        items-center
+        justify-center
+        text-white
+        text-2xl
+        bg-white/[0.02]
+        hover:bg-[#d6b98c]
+        hover:text-black
+        transition-all
+        duration-300
+      "
+    >
+      <FaYoutube />
+    </a>
+
   </div>
 
-</nav>
+</div>
+
+  </motion.div>
+
+)}
 
       {/* Hero Section */}
 <section
