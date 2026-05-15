@@ -37,32 +37,32 @@ export default function ProjectsPage() {
 
       {/* PREMIUM NAVBAR */}
       <nav
-        className="
-          fixed
-          top-0
-          left-0
-          w-full
-          z-50
-          bg-black/75
-          backdrop-blur-2xl
-          border-b
-          border-white/10
-        "
-      >
+  className="
+    fixed
+    top-0
+    left-0
+    w-full
+    z-50
+    bg-black/85
+    backdrop-blur-2xl
+    border-b
+    border-white/10
+  "
+>
 
         <div
-          className="
-            max-w-7xl
-            mx-auto
-            flex
-            items-center
-            justify-between
-            px-4
-            sm:px-5
-            md:px-8
-            py-3
-          "
-        >
+  className="
+    max-w-7xl
+    mx-auto
+    flex
+    items-center
+    justify-between
+    px-5
+    md:px-8
+    py-5
+    md:py-4
+  "
+>
 
           {/* LEFT SIDE */}
           <div className="flex items-center gap-3 min-w-0">
@@ -77,8 +77,8 @@ export default function ProjectsPage() {
                 alt="Logo"
                 className="
                   relative
-                  h-11
-                  w-11
+                  h-14
+                  w-14
                   sm:h-12
                   sm:w-12
                   md:h-14
@@ -98,14 +98,12 @@ export default function ProjectsPage() {
 
               <h1
                 className="
-                  text-[15px]
-                  sm:text-[17px]
-                  md:text-[28px]
-                  font-bold
-                  tracking-[-0.04em]
-                  text-white
-                  truncate
-                "
+  text-[22px]
+  md:text-[28px]
+  font-bold
+  text-white
+  tracking-[-0.04em]
+"
               >
                 Kulal Interiors
               </h1>
@@ -186,7 +184,7 @@ export default function ProjectsPage() {
             className="
               md:hidden
               text-white
-              text-[30px]
+              text-[38px]
               p-1
             "
           >
@@ -446,7 +444,7 @@ export default function ProjectsPage() {
             <div className="flex items-center justify-center gap-5">
 
               <a
-                href="https://www.instagram.com/kulal_interiors?igsh=OHhwNm9yMHd6aDll"
+                href="https://instagram.com"
                 target="_blank"
                 className="
                   h-16

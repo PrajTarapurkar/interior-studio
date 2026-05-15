@@ -35,26 +35,27 @@ useEffect(() => {
     left-0
     w-full
     z-50
-    bg-black/75
+    bg-black/85
     backdrop-blur-2xl
     border-b
     border-white/10
   "
 >
 
+
   <div
-    className="
-      max-w-7xl
-      mx-auto
-      flex
-      items-center
-      justify-between
-      px-4
-      sm:px-5
-      md:px-8
-      py-3
-    "
-  >
+  className="
+    max-w-7xl
+    mx-auto
+    flex
+    items-center
+    justify-between
+    px-5
+    md:px-8
+    py-5
+    md:py-4
+  "
+>
 
     {/* LEFT SIDE */}
     <div className="flex items-center gap-3 min-w-0">
@@ -65,23 +66,23 @@ useEffect(() => {
         <div className="absolute inset-0 bg-[#d6b98c]/20 blur-xl rounded-full"></div>
 
         <img
-          src="/images/logo.png"
-          alt="Logo"
-          className="
-            relative
-            h-11
-            w-11
-            sm:h-12
-            sm:w-12
-            md:h-14
-            md:w-14
-            rounded-full
-            object-cover
-            border
-            border-[#d6b98c]/20
-            shadow-[0_0_25px_rgba(214,185,140,0.25)]
-          "
-        />
+                src="/images/logo.png"
+                alt="Logo"
+                className="
+                  relative
+                  h-14
+                  w-14
+                  sm:h-12
+                  sm:w-12
+                  md:h-14
+                  md:w-14
+                  rounded-full
+                  object-cover
+                  border
+                  border-[#d6b98c]/20
+                  shadow-[0_0_25px_rgba(214,185,140,0.25)]
+                "
+              />
 
       </div>
 
@@ -90,14 +91,12 @@ useEffect(() => {
 
         <h1
           className="
-            text-[15px]
-            sm:text-[17px]
-            md:text-[28px]
-            font-bold
-            tracking-[-0.04em]
-            text-white
-            truncate
-          "
+  text-[22px]
+  md:text-[28px]
+  font-bold
+  text-white
+  tracking-[-0.04em]
+"
         >
           Kulal Interiors
         </h1>
@@ -176,11 +175,10 @@ useEffect(() => {
     <button
       onClick={() => setMenuOpen(true)}
       className="
-        md:hidden
-        text-white
-        text-[30px]
-        p-1
-      "
+  md:hidden
+  text-white
+  text-[38px]
+"
     >
       <HiOutlineMenuAlt3 />
     </button>
