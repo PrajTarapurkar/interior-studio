@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+
 import { useState, useEffect } from "react";
 
 import {
@@ -199,6 +200,13 @@ useEffect(() => {
         Contact
       </a>
 
+      <a
+              href="/about"
+              className="hover:text-[#d6b98c] transition duration-300"
+            >
+              About Us
+            </a>
+
     </div>
 
     {/* MOBILE MENU BUTTON */}
@@ -317,7 +325,7 @@ useEffect(() => {
       </a>
 
       <a
-        href="/#services"
+        href="/services"
         className="
           py-4
           border-b
@@ -341,6 +349,20 @@ useEffect(() => {
       >
         Contact
       </a>
+
+      <a
+              href="/about"
+              className="
+                py-4
+                border-b
+                border-white/10
+                text-[18px]
+                
+                text-[white]
+              "
+            >
+              About Us
+            </a>
 
     </div>
 
