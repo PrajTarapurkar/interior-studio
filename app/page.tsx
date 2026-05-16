@@ -25,7 +25,7 @@ useEffect(() => {
 }, [menuOpen]);
 
   return (
-    <main className="bg-white text-white overflow-hidden scroll-smooth">
+    <main className="bg-black text-white overflow-hidden scroll-smooth">
 
       {/* PREMIUM NAVBAR */}
 <nav
@@ -502,6 +502,9 @@ useEffect(() => {
 
 )}
 
+
+
+
       {/* Hero Section */}
 <section
   className="relative min-h-screen bg-cover bg-center flex items-center justify-center text-center px-4 md:px-6 overflow-hidden"
@@ -888,6 +891,322 @@ useEffect(() => {
   <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black to-transparent"></div>
 
 </section>
+
+
+{/* PREMIUM RESPONSIVE ABOUT SECTION */}
+<section className="relative bg-black py-20 sm:py-24 lg:py-32 overflow-hidden">
+
+  {/* BACKGROUND GLOW */}
+  <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[300px] sm:w-[450px] h-[300px] sm:h-[450px] bg-[#d6b98c]/10 blur-[120px] rounded-full"></div>
+
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {/* TOP HEADING */}
+    <div className="text-center max-w-4xl mx-auto">
+
+      <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-[10px] sm:text-xs mb-4">
+        About Kulal Interiors
+      </p>
+
+      <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-white">
+
+        Creating Elegant Spaces
+        <span className="block text-[#d6b98c] mt-2">
+          With Purpose & Precision
+        </span>
+
+      </h2>
+
+      <p className="mt-6 text-gray-400 text-sm sm:text-base lg:text-lg leading-relaxed">
+
+        From luxury residences to modern commercial spaces,
+        Kulal Interiors blends creativity, technical expertise,
+        and functionality to create timeless interior experiences.
+
+      </p>
+
+    </div>
+
+    {/* MAIN GRID */}
+    <div className="mt-16 lg:mt-24 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+      {/* IMAGE SIDE */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="relative order-1"
+      >
+
+        {/* IMAGE */}
+        <div className="relative overflow-hidden rounded-[28px] sm:rounded-[40px]">
+
+          <img
+            src="/images/about.jpg"
+            alt="Kulal Interiors"
+            className="
+              w-full
+              h-[420px]
+              sm:h-[550px]
+              lg:h-[720px]
+              object-cover
+            "
+          />
+
+          {/* OVERLAY */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent"></div>
+
+        </div>
+
+        {/* CLIENT CARD */}
+        <div className="
+          absolute
+          bottom-4
+          left-4
+          sm:bottom-8
+          sm:left-8
+          bg-black/75
+          backdrop-blur-xl
+          border
+          border-[#d6b98c]/20
+          rounded-[22px]
+          sm:rounded-[30px]
+          px-5
+          sm:px-8
+          py-4
+          sm:py-6
+        ">
+
+          <h3 className="text-3xl sm:text-5xl font-bold text-[#d6b98c]">
+            100+
+          </h3>
+
+          <p className="mt-1 uppercase tracking-[0.25em] text-[9px] sm:text-[11px] text-gray-300">
+            Happy Clients
+          </p>
+
+        </div>
+
+        {/* SMALL BADGE */}
+        <div className="
+          absolute
+          top-4
+          right-4
+          sm:top-6
+          sm:right-6
+          bg-black/70
+          backdrop-blur-xl
+          border
+          border-white/10
+          rounded-full
+          px-4
+          sm:px-5
+          py-2
+          sm:py-3
+        ">
+
+          <p className="uppercase tracking-[0.25em] text-[9px] sm:text-[10px] text-[#d6b98c]">
+            Since 2020
+          </p>
+
+        </div>
+
+      </motion.div>
+
+      {/* CONTENT SIDE */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="order-2"
+      >
+
+        {/* MINI TITLE */}
+        <p className="uppercase tracking-[0.3em] text-[#d6b98c] text-[10px] sm:text-xs mb-5">
+          The Origin Story
+        </p>
+
+        {/* MAIN HEADING */}
+        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.15]">
+
+          A Brand Built on
+          <span className="block text-[#d6b98c] mt-2">
+            Trust, Design & Innovation
+          </span>
+
+        </h3>
+
+        {/* PARAGRAPHS */}
+        <div className="mt-7 space-y-5 text-gray-400 leading-relaxed text-sm sm:text-base lg:text-lg">
+
+          <p>
+
+            Kulal Interiors was founded with a vision to bridge
+            the gap between luxury aesthetics and practical execution.
+
+          </p>
+
+          <p>
+
+            Founded by
+            <span className="text-white font-semibold">
+              {" "}Mr. Sanket Kulal
+            </span>,
+            the brand combines technical expertise in Civil Engineering,
+            professional project management, and modern design thinking.
+
+          </p>
+
+          <p>
+
+            After understanding the challenges faced by homeowners —
+            including budget overruns, lack of transparency,
+            and inconsistent execution — Kulal Interiors was created
+            to deliver elegant interiors with professionalism and trust.
+
+          </p>
+
+        </div>
+
+        {/* FEATURE GRID */}
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+
+          {[
+            "Transparent Pricing",
+            "Luxury Modern Designs",
+            "Professional Execution",
+            "Affordable Premium Interiors",
+          ].map((item, index) => (
+
+            <motion.div
+              key={index}
+              whileHover={{
+                y: -3,
+              }}
+              className="
+                relative
+                overflow-hidden
+                rounded-[22px]
+                border
+                border-white/10
+                bg-[#111111]
+                p-5
+                hover:border-[#d6b98c]/30
+                transition
+                duration-300
+              "
+            >
+
+              <div className="flex items-start gap-3">
+
+                {/* DOT */}
+                <div className="h-2.5 w-2.5 rounded-full bg-[#d6b98c] mt-2"></div>
+
+                <p className="text-white text-sm sm:text-base leading-relaxed">
+                  {item}
+                </p>
+
+              </div>
+
+            </motion.div>
+
+          ))}
+
+        </div>
+
+      </motion.div>
+
+    </div>
+
+    {/* BOTTOM STORY CARD */}
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="mt-20 lg:mt-28"
+    >
+
+      <div className="
+        relative
+        overflow-hidden
+        rounded-[30px]
+        sm:rounded-[40px]
+        border
+        border-white/10
+        bg-gradient-to-br
+        from-[#111111]
+        via-[#0d0d0d]
+        to-[#080808]
+        p-6
+        sm:p-10
+        lg:p-14
+      ">
+
+        {/* GLOW */}
+        <div className="absolute top-0 right-0 w-[220px] h-[220px] bg-[#d6b98c]/10 blur-[120px] rounded-full"></div>
+
+        <div className="relative z-10 grid lg:grid-cols-2 gap-10 lg:gap-16">
+
+          {/* LEFT */}
+          <div>
+
+            <p className="uppercase tracking-[0.3em] text-[#d6b98c] text-[10px] sm:text-xs mb-5">
+              Our Journey
+            </p>
+
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.15]">
+
+              Delivering A New
+              <span className="block text-[#d6b98c] mt-2">
+                Dimension Of Elegance
+              </span>
+
+            </h3>
+
+          </div>
+
+          {/* RIGHT */}
+          <div className="space-y-5 text-gray-400 leading-relaxed text-sm sm:text-base lg:text-lg">
+
+            <p>
+
+              Today, Kulal Interiors proudly serves clients across
+              Pune, Mumbai, Nanded, and Parbhani —
+              creating spaces that reflect personality,
+              lifestyle, and aspirations.
+
+            </p>
+
+            <p>
+
+              A major milestone in this journey was the launch
+              of the new design studio in Punawale, Pune —
+              an immersive experience center where creativity,
+              textures, and ideas come together beautifully.
+
+            </p>
+
+            <p>
+
+              With a commitment to quality, transparency,
+              and innovation, Kulal Interiors continues to
+              redefine modern luxury interiors.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </motion.div>
+
+  </div>
+
+</section>
+
+
       {/* Projects Section */}
       <motion.section
         initial={{ opacity: 0, y: 80 }}
@@ -1041,7 +1360,10 @@ useEffect(() => {
         key={index}
         whileHover={{ y: -10, scale: 1.02 }}
         transition={{ duration: 0.4 }}
-        className="relative min-w-[85%] sm:min-w-[60%] md:min-w-[38%] lg:min-w-[30%] h-[500px] md:h-[650px] rounded-[34px] overflow-hidden snap-center group shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
+        className="relative min-w-[90%]
+sm:min-w-[70%]
+md:min-w-[48%]
+lg:min-w-[32%] h-[500px] md:h-[650px] rounded-[34px] overflow-hidden snap-center group shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
       >
 
         {/* Image */}
