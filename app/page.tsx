@@ -156,11 +156,11 @@ useEffect(() => {
       </a>
 
       <a
-        href="/#services"
-        className="hover:text-[#d6b98c] transition duration-300"
-      >
-        Services
-      </a>
+  href="/services"
+  className="hover:text-[#d6b98c] transition duration-300"
+>
+  Services
+</a>
 
       <a
         href="/contact"
@@ -305,7 +305,7 @@ useEffect(() => {
       </a>
 
       <a
-        href="/#services"
+        href="/services"
         className="
           py-4
           border-b
@@ -317,6 +317,7 @@ useEffect(() => {
       >
         Services
       </a>
+      
 
       <a
         href="/contact"
@@ -893,53 +894,154 @@ useEffect(() => {
 </section>
 
 
-{/* PREMIUM RESPONSIVE ABOUT SECTION */}
-<section className="relative bg-black py-20 sm:py-24 lg:py-32 overflow-hidden">
+{/* ULTRA PREMIUM RESPONSIVE ABOUT SECTION */}
+<section className="relative bg-black overflow-hidden py-20 sm:py-24 lg:py-32">
 
   {/* BACKGROUND GLOW */}
-  <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[300px] sm:w-[450px] h-[300px] sm:h-[450px] bg-[#d6b98c]/10 blur-[120px] rounded-full"></div>
+  <div className="absolute inset-0 overflow-hidden">
+
+    <div className="
+      absolute
+      top-[-120px]
+      left-1/2
+      -translate-x-1/2
+      w-[320px]
+      sm:w-[550px]
+      lg:w-[700px]
+      h-[320px]
+      sm:h-[550px]
+      lg:h-[700px]
+      bg-[#d6b98c]/10
+      blur-[120px]
+      sm:blur-[180px]
+      lg:blur-[240px]
+      rounded-full
+    "></div>
+
+    <div className="
+      absolute
+      bottom-[-120px]
+      right-[-120px]
+      w-[250px]
+      sm:w-[400px]
+      h-[250px]
+      sm:h-[400px]
+      bg-[#d6b98c]/5
+      blur-[120px]
+      rounded-full
+    "></div>
+
+  </div>
 
   <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    {/* TOP HEADING */}
-    <div className="text-center max-w-4xl mx-auto">
+    {/* HERO */}
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      className="text-center max-w-5xl mx-auto"
+    >
 
-      <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-[10px] sm:text-xs mb-4">
-        About Kulal Interiors
-      </p>
+      {/* LABEL */}
+      <div className="
+        inline-flex
+        items-center
+        gap-3
+        border
+        border-[#d6b98c]/20
+        bg-[#111111]
+        rounded-full
+        px-5
+        py-2
+      ">
 
-      <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-white">
+        <div className="h-2 w-2 rounded-full bg-[#d6b98c]"></div>
 
-        Creating Elegant Spaces
+        <p className="
+          uppercase
+          tracking-[0.3em]
+          text-[#d6b98c]
+          text-[10px]
+          sm:text-xs
+        ">
+
+          The Origin Story
+
+        </p>
+
+      </div>
+
+      {/* TITLE */}
+      <h1 className="
+        mt-8
+        text-4xl
+        sm:text-5xl
+        md:text-6xl
+        lg:text-7xl
+        xl:text-[88px]
+        leading-[0.95]
+        tracking-tight
+        font-semibold
+        text-white
+      ">
+
+        From Vision
         <span className="block text-[#d6b98c] mt-2">
-          With Purpose & Precision
+          To Reality
         </span>
 
-      </h2>
+      </h1>
 
-      <p className="mt-6 text-gray-400 text-sm sm:text-base lg:text-lg leading-relaxed">
+      {/* DESC */}
+      <p className="
+        mt-8
+        max-w-3xl
+        mx-auto
+        text-gray-400
+        text-sm
+        sm:text-base
+        lg:text-xl
+        leading-relaxed
+      ">
 
-        From luxury residences to modern commercial spaces,
-        Kulal Interiors blends creativity, technical expertise,
-        and functionality to create timeless interior experiences.
+        Kulal Interiors was founded with a simple yet powerful vision —
+        to bridge the gap between beautiful design,
+        practical execution, and affordable elegance.
 
       </p>
 
-    </div>
+    </motion.div>
 
-    {/* MAIN GRID */}
-    <div className="mt-16 lg:mt-24 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+    {/* MAIN CONTENT */}
+    <div className="
+      mt-20
+      lg:mt-28
+      grid
+      lg:grid-cols-[1.05fr_0.95fr]
+      gap-14
+      lg:gap-20
+      items-start
+    ">
 
       {/* IMAGE SIDE */}
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7 }}
-        className="relative order-1"
+        className="relative lg:sticky lg:top-28"
       >
 
         {/* IMAGE */}
-        <div className="relative overflow-hidden rounded-[28px] sm:rounded-[40px]">
+        <div className="
+          relative
+          overflow-hidden
+          rounded-[28px]
+          sm:rounded-[38px]
+          lg:rounded-[46px]
+          border
+          border-white/10
+        ">
 
           <img
             src="/images/about.jpg"
@@ -947,66 +1049,90 @@ useEffect(() => {
             className="
               w-full
               h-[420px]
-              sm:h-[550px]
-              lg:h-[720px]
+              sm:h-[580px]
+              lg:h-[760px]
               object-cover
             "
           />
 
           {/* OVERLAY */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
 
         </div>
 
-        {/* CLIENT CARD */}
+        {/* FLOATING CARD */}
         <div className="
           absolute
           bottom-4
           left-4
           sm:bottom-8
           sm:left-8
-          bg-black/75
-          backdrop-blur-xl
+          bg-black/70
+          backdrop-blur-2xl
           border
           border-[#d6b98c]/20
-          rounded-[22px]
-          sm:rounded-[30px]
-          px-5
+          rounded-[24px]
+          sm:rounded-[28px]
+          px-6
           sm:px-8
-          py-4
+          py-5
           sm:py-6
+          shadow-[0_20px_60px_rgba(0,0,0,0.45)]
         ">
 
-          <h3 className="text-3xl sm:text-5xl font-bold text-[#d6b98c]">
+          <h3 className="
+            text-4xl
+            sm:text-5xl
+            lg:text-6xl
+            font-semibold
+            text-[#d6b98c]
+          ">
+
             100+
+
           </h3>
 
-          <p className="mt-1 uppercase tracking-[0.25em] text-[9px] sm:text-[11px] text-gray-300">
+          <p className="
+            mt-2
+            uppercase
+            tracking-[0.28em]
+            text-[9px]
+            sm:text-[11px]
+            text-gray-300
+          ">
+
             Happy Clients
+
           </p>
 
         </div>
 
-        {/* SMALL BADGE */}
+        {/* BADGE */}
         <div className="
           absolute
           top-4
           right-4
-          sm:top-6
-          sm:right-6
-          bg-black/70
+          sm:top-8
+          sm:right-8
+          bg-black/60
           backdrop-blur-xl
           border
           border-white/10
           rounded-full
-          px-4
-          sm:px-5
-          py-2
-          sm:py-3
+          px-5
+          py-3
         ">
 
-          <p className="uppercase tracking-[0.25em] text-[9px] sm:text-[10px] text-[#d6b98c]">
+          <p className="
+            uppercase
+            tracking-[0.28em]
+            text-[9px]
+            sm:text-[10px]
+            text-[#d6b98c]
+          ">
+
             Since 2020
+
           </p>
 
         </div>
@@ -1015,102 +1141,260 @@ useEffect(() => {
 
       {/* CONTENT SIDE */}
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7 }}
-        className="order-2"
       >
 
-        {/* MINI TITLE */}
-        <p className="uppercase tracking-[0.3em] text-[#d6b98c] text-[10px] sm:text-xs mb-5">
-          The Origin Story
-        </p>
+        {/* TITLE */}
+        <h2 className="
+          text-3xl
+          sm:text-4xl
+          lg:text-5xl
+          font-semibold
+          leading-[1.1]
+          text-white
+        ">
 
-        {/* MAIN HEADING */}
-        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.15]">
-
-          A Brand Built on
+          A Brand Built On
           <span className="block text-[#d6b98c] mt-2">
             Trust, Design & Innovation
           </span>
 
-        </h3>
+        </h2>
 
-        {/* PARAGRAPHS */}
-        <div className="mt-7 space-y-5 text-gray-400 leading-relaxed text-sm sm:text-base lg:text-lg">
+        {/* STORY */}
+        <div className="
+          mt-8
+          space-y-6
+          text-gray-400
+          text-sm
+          sm:text-base
+          lg:text-lg
+          leading-relaxed
+        ">
 
           <p>
 
-            Kulal Interiors was founded with a vision to bridge
-            the gap between luxury aesthetics and practical execution.
-
-          </p>
-
-          <p>
-
-            Founded by
-            <span className="text-white font-semibold">
+            The journey began with its founder,
+            <span className="text-white font-medium">
               {" "}Mr. Sanket Kulal
             </span>,
-            the brand combines technical expertise in Civil Engineering,
-            professional project management, and modern design thinking.
+            whose strong technical foundation in Civil Engineering
+            and a Master’s degree provided him with a deep understanding
+            of construction, planning, and execution.
 
           </p>
 
           <p>
 
-            After understanding the challenges faced by homeowners —
-            including budget overruns, lack of transparency,
-            and inconsistent execution — Kulal Interiors was created
-            to deliver elegant interiors with professionalism and trust.
+            Before entering the world of interiors full-time,
+            he gained valuable corporate experience working
+            for a US-based multinational company,
+            where he developed a professional,
+            process-driven, and client-focused approach
+            toward business operations.
+
+          </p>
+
+          <p>
+
+            While working in the corporate sector,
+            Mr. Sanket Kulal closely observed the rapidly evolving
+            interior design market. Through extensive research
+            and real-world interactions,
+            he identified a critical gap in the industry.
+
+          </p>
+
+          <p>
+
+            Many homeowners struggled with budget escalations,
+            lack of transparency, poor communication,
+            and interiors that failed to reflect
+            their personality and lifestyle.
 
           </p>
 
         </div>
 
-        {/* FEATURE GRID */}
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+        {/* CHALLENGES */}
+        <div className="mt-12">
 
-          {[
-            "Transparent Pricing",
-            "Luxury Modern Designs",
-            "Professional Execution",
-            "Affordable Premium Interiors",
-          ].map((item, index) => (
+          <div className="flex items-center gap-3 mb-6">
 
-            <motion.div
-              key={index}
-              whileHover={{
-                y: -3,
-              }}
-              className="
-                relative
-                overflow-hidden
-                rounded-[22px]
-                border
-                border-white/10
-                bg-[#111111]
-                p-5
-                hover:border-[#d6b98c]/30
-                transition
-                duration-300
-              "
-            >
+            <div className="h-[1px] w-10 bg-[#d6b98c]"></div>
 
-              <div className="flex items-start gap-3">
+            <p className="
+              uppercase
+              tracking-[0.3em]
+              text-[#d6b98c]
+              text-[10px]
+              sm:text-xs
+            ">
 
-                {/* DOT */}
-                <div className="h-2.5 w-2.5 rounded-full bg-[#d6b98c] mt-2"></div>
+              Challenges Homeowners Faced
 
-                <p className="text-white text-sm sm:text-base leading-relaxed">
-                  {item}
-                </p>
+            </p>
 
-              </div>
+          </div>
 
-            </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-          ))}
+            {[
+              "Lack of transparency in pricing",
+              "Unexpected budget escalations during execution",
+              "Designs that failed to match lifestyle and personality",
+              "Limited access to premium interiors at practical budgets",
+              "Poor communication during execution",
+              "Lack of professionalism in project management",
+            ].map((item, index) => (
+
+              <motion.div
+                key={index}
+                whileHover={{ y: -4 }}
+                className="
+                  relative
+                  overflow-hidden
+                  rounded-[22px]
+                  border
+                  border-white/10
+                  bg-[#111111]
+                  p-5
+                  hover:border-[#d6b98c]/30
+                  transition-all
+                  duration-300
+                "
+              >
+
+                <div className="
+                  absolute
+                  inset-0
+                  opacity-0
+                  hover:opacity-100
+                  transition
+                  duration-500
+                  bg-[radial-gradient(circle_at_top_right,rgba(214,185,140,0.10),transparent_45%)]
+                "></div>
+
+                <div className="relative z-10 flex items-start gap-3">
+
+                  <div className="
+                    h-3
+                    w-3
+                    rounded-full
+                    bg-[#d6b98c]
+                    mt-2
+                  "></div>
+
+                  <p className="
+                    text-white
+                    text-sm
+                    sm:text-base
+                    leading-relaxed
+                  ">
+
+                    {item}
+
+                  </p>
+
+                </div>
+
+              </motion.div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+        {/* VISION */}
+        <div className="mt-14">
+
+          <div className="flex items-center gap-3 mb-6">
+
+            <div className="h-[1px] w-10 bg-[#d6b98c]"></div>
+
+            <p className="
+              uppercase
+              tracking-[0.3em]
+              text-[#d6b98c]
+              text-[10px]
+              sm:text-xs
+            ">
+
+              The Vision Behind The Brand
+
+            </p>
+
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+            {[
+              "Modern and trend-driven designs",
+              "Technical expertise",
+              "Transparent budgeting",
+              "Professional project management",
+              "Personalized customer experience",
+              "Cost-effective interior solutions",
+            ].map((item, index) => (
+
+              <motion.div
+                key={index}
+                whileHover={{ y: -4 }}
+                className="
+                  relative
+                  overflow-hidden
+                  rounded-[22px]
+                  border
+                  border-[#d6b98c]/15
+                  bg-[#151515]
+                  p-5
+                  hover:border-[#d6b98c]/30
+                  transition-all
+                  duration-300
+                "
+              >
+
+                <div className="
+                  absolute
+                  inset-0
+                  opacity-0
+                  hover:opacity-100
+                  transition
+                  duration-500
+                  bg-[radial-gradient(circle_at_top_right,rgba(214,185,140,0.10),transparent_45%)]
+                "></div>
+
+                <div className="relative z-10 flex items-start gap-3">
+
+                  <div className="
+                    h-3
+                    w-3
+                    rounded-full
+                    bg-[#d6b98c]
+                    mt-2
+                  "></div>
+
+                  <p className="
+                    text-white
+                    text-sm
+                    sm:text-base
+                    leading-relaxed
+                  ">
+
+                    {item}
+
+                  </p>
+
+                </div>
+
+              </motion.div>
+
+            ))}
+
+          </div>
 
         </div>
 
@@ -1122,7 +1406,7 @@ useEffect(() => {
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.7 }}
       className="mt-20 lg:mt-28"
     >
 
@@ -1130,7 +1414,7 @@ useEffect(() => {
         relative
         overflow-hidden
         rounded-[30px]
-        sm:rounded-[40px]
+        sm:rounded-[42px]
         border
         border-white/10
         bg-gradient-to-br
@@ -1139,22 +1423,49 @@ useEffect(() => {
         to-[#080808]
         p-6
         sm:p-10
-        lg:p-14
+        lg:p-16
       ">
 
         {/* GLOW */}
-        <div className="absolute top-0 right-0 w-[220px] h-[220px] bg-[#d6b98c]/10 blur-[120px] rounded-full"></div>
+        <div className="
+          absolute
+          top-0
+          right-0
+          w-[250px]
+          sm:w-[320px]
+          h-[250px]
+          sm:h-[320px]
+          bg-[#d6b98c]/10
+          blur-[140px]
+          rounded-full
+        "></div>
 
-        <div className="relative z-10 grid lg:grid-cols-2 gap-10 lg:gap-16">
+        <div className="relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-20">
 
           {/* LEFT */}
           <div>
 
-            <p className="uppercase tracking-[0.3em] text-[#d6b98c] text-[10px] sm:text-xs mb-5">
-              Our Journey
+            <p className="
+              uppercase
+              tracking-[0.35em]
+              text-[#d6b98c]
+              text-[10px]
+              sm:text-xs
+              mb-5
+            ">
+
+              Growth & Evolution
+
             </p>
 
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.15]">
+            <h3 className="
+              text-3xl
+              sm:text-4xl
+              lg:text-5xl
+              font-semibold
+              leading-[1.1]
+              text-white
+            ">
 
               Delivering A New
               <span className="block text-[#d6b98c] mt-2">
@@ -1166,31 +1477,82 @@ useEffect(() => {
           </div>
 
           {/* RIGHT */}
-          <div className="space-y-5 text-gray-400 leading-relaxed text-sm sm:text-base lg:text-lg">
+          <div className="
+            space-y-6
+            text-gray-400
+            text-sm
+            sm:text-base
+            lg:text-lg
+            leading-relaxed
+          ">
 
             <p>
 
-              Today, Kulal Interiors proudly serves clients across
-              Pune, Mumbai, Nanded, and Parbhani —
-              creating spaces that reflect personality,
-              lifestyle, and aspirations.
+              Although there were established players in the market,
+              customers often felt disconnected due to high costs
+              and inconsistent project experiences.
 
             </p>
 
             <p>
 
-              A major milestone in this journey was the launch
-              of the new design studio in Punawale, Pune —
-              an immersive experience center where creativity,
-              textures, and ideas come together beautifully.
+              Recognizing this opportunity,
+              Mr. Sanket Kulal envisioned a firm
+              that would combine luxury aesthetics,
+              technical expertise,
+              transparent execution,
+              and affordability.
 
             </p>
 
             <p>
 
-              With a commitment to quality, transparency,
-              and innovation, Kulal Interiors continues to
-              redefine modern luxury interiors.
+              With this vision, Kulal Interiors was established —
+              not just as an interior design company,
+              but as a brand committed to creating spaces
+              that truly reflect the client’s lifestyle,
+              aspirations, and emotions.
+
+            </p>
+
+            <p>
+
+              Over the years, the firm has grown from
+              a local service provider into a trusted
+              interior brand with a strong presence across
+              Pune, Mumbai, Nanded, and Parbhani.
+
+            </p>
+
+            <p>
+
+              Today, Kulal Interiors proudly serves
+              100+ happy clients and continues to build
+              spaces that blend elegance,
+              functionality, and innovation.
+
+            </p>
+
+            <p>
+
+              A major milestone in this journey
+              was the launch of the new design studio
+              in Punawale, Pune —
+              a thoughtfully curated experience center
+              where textures, tones,
+              creativity, and ideas come together beautifully.
+
+            </p>
+
+            <p>
+
+              Today, Kulal Interiors stands as a symbol
+              of trust, professionalism,
+              and modern design thinking —
+              continuously working toward delivering
+              <span className="text-[#d6b98c]">
+                {" "}“A New Dimension of Elegance.”
+              </span>
 
             </p>
 
