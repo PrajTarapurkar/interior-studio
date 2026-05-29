@@ -704,9 +704,7 @@ export default function ServicesPage() {
 
                 <div className="relative z-10">
 
-                  <p className="text-[#d6b98c] text-[11px] sm:text-xs tracking-[0.3em] uppercase">
-                    {service.number}
-                  </p>
+                 
 
                   <h3 className="mt-4 text-2xl sm:text-3xl font-bold leading-tight">
                     {service.title}
