@@ -36,42 +36,42 @@ export default function ServicesPage() {
 
   const services = [
     {
-      number: "1",
+      
       title: "Designing",
       desc: "We translate your ideas into visual realities. From mood boards and 2D floor plans to high-end 3D walkthroughs, our design process ensures every inch of your space is optimized for aesthetics and utility.",
     },
     {
-      number: "2",
+      
       title: "Execution",
       desc: "Our skilled craftsmen and site supervisors bring the blueprints to life with precision and professionalism.",
     },
     {
-      number: "3",
+      
       title: "Technical Consultancy",
       desc: "Expert guidance on technical specifications, planning, feasibility, and budgeting for smooth execution.",
     },
     {
-      number: "4",
+      
       title: "Material Supply",
       desc: "Premium-grade materials sourced carefully to ensure long-lasting quality and elegant finishes.",
     },
     {
-      number: "5",
+      
       title: "Vastu Consultation",
       desc: "Create harmony and positivity through thoughtful Vastu-based layout guidance and planning.",
     },
     {
-      number: "6",
+      
       title: "Civil Works",
       desc: "Complete civil execution including plumbing, masonry, tiling, and structural modifications.",
     },
     {
-      number: "7",
+      
       title: "Structural Designing",
       desc: "Robust structural solutions engineered for stability, functionality, and architectural integrity.",
     },
     {
-      number: "8",
+      
       title: "Turnkey Solutions",
       desc: "A stress-free complete package from design and procurement to final handover.",
     },
@@ -401,18 +401,7 @@ export default function ServicesPage() {
               Home
             </a>
 
-            <a
-              href="/about"
-              className="
-                py-4
-                border-b
-                border-white/10
-                text-[18px]
-                font-light
-              "
-            >
-              About
-            </a>
+            
 
             <a
               href="/projects"
@@ -453,6 +442,19 @@ export default function ServicesPage() {
               "
             >
               Contact
+            </a>
+
+            <a
+              href="/about"
+              className="
+                py-4
+                border-b
+                border-white/10
+                text-[18px]
+                font-light
+              "
+            >
+              About Us
             </a>
 
           </div>
