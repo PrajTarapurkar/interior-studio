@@ -179,7 +179,7 @@ useEffect(() => {
       </a>
 
       <a
-        href="/#services"
+        href="/services"
         className="hover:text-[#d6b98c] transition duration-300"
       >
         Services

@@ -234,12 +234,7 @@ export default function ServicesPage() {
               Home
             </a>
 
-            <a
-              href="/about"
-              className="hover:text-[#d6b98c] transition duration-300"
-            >
-              About
-            </a>
+            
 
             <a
               href="/projects"
@@ -269,6 +264,13 @@ export default function ServicesPage() {
               className="hover:text-[#d6b98c] transition duration-300"
             >
               Contact
+            </a>
+
+            <a
+              href="/about"
+              className="hover:text-[#d6b98c] transition duration-300"
+            >
+              About Us
             </a>
 
           </div>

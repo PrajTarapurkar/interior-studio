@@ -171,20 +171,7 @@ export default function AboutPage() {
             </a>
 
             {/* ACTIVE */}
-            <a
-              href="/about"
-              className="
-                text-[#d6b98c]
-                px-4
-                py-2
-                rounded-full
-                bg-[#d6b98c]/10
-                border
-                border-[#d6b98c]/25
-              "
-            >
-              About
-            </a>
+            
 
             <a
               href="/projects"
@@ -638,7 +625,7 @@ export default function AboutPage() {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
-      className="text-center max-w-5xl mx-auto"
+      className="text-center max-w-4xl mx-auto"
     >
 
       {/* LABEL */}
@@ -676,15 +663,15 @@ export default function AboutPage() {
         text-4xl
         sm:text-5xl
         md:text-6xl
-        lg:text-7xl
-        xl:text-[88px]
+        lg:text-[72px]
+        xl:text-[78px]
         leading-[0.95]
         tracking-tight
         font-semibold
         text-white
       ">
 
-        From Vision
+        From Vision 
         <span className="block text-[#d6b98c] mt-2">
           To Reality
         </span>

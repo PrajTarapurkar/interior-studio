@@ -163,7 +163,7 @@ export default function ProjectsPage() {
             </a>
 
             <a
-              href="/#services"
+              href="/services"
               className="hover:text-[#d6b98c] transition duration-300"
             >
               Services
@@ -532,36 +532,93 @@ export default function ProjectsPage() {
 
 
       {/* HERO SECTION */}
-      <section className="relative pt-36 sm:pt-44 md:pt-52 pb-20 md:pb-32 text-center bg-black text-white overflow-hidden">
+<section className="relative pt-24 md:pt-28 pb-10 md:pb-12 text-center bg-black text-white overflow-hidden">
 
-        {/* GLOW */}
-        <div className="absolute top-1/2 left-1/2 h-[250px] md:h-[500px] w-[250px] md:w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d6b98c]/20 blur-[100px] animate-pulse"></div>
+  {/* GOLD GLOW */}
+  <div
+    className="
+      absolute
+      top-1/2
+      left-1/2
+      h-[150px]
+      md:h-[280px]
+      w-[150px]
+      md:w-[280px]
+      -translate-x-1/2
+      -translate-y-1/2
+      rounded-full
+      bg-[#d6b98c]/15
+      blur-[90px]
+      animate-pulse
+    "
+  ></div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 70 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="relative z-10 px-6"
-        >
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="relative z-10 px-6"
+  >
 
-          <p className="uppercase tracking-[0.35em] text-[9px] md:text-sm text-[#d6b98c] mb-5">
-            Portfolio
-          </p>
+    {/* PORTFOLIO */}
+    <p
+      className="
+        uppercase
+        tracking-[0.45em]
+        text-[10px]
+        md:text-[12px]
+        font-semibold
+        text-[#d6b98c]
+        mb-5
+      "
+    >
+      PORTFOLIO
+    </p>
 
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight text-white">
-            Our Interior
-            <br />
-            Projects
-          </h1>
+    {/* TITLE */}
+    <h1
+      className="
+        flex
+        flex-wrap
+        items-center
+        justify-center
+        gap-3
+        text-4xl
+        sm:text-5xl
+        md:text-6xl
+        lg:text-[72px]
+        font-extrabold
+        leading-none
+      "
+    >
+      <span className="text-white">
+        Our Interior
+      </span>
 
-          <p className="mt-6 text-sm md:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed px-2">
-            Explore our curated collection of luxury residential
-            and commercial interiors crafted with timeless elegance.
-          </p>
+      <span className="text-[#d6b98c]">
+        Projects
+      </span>
+    </h1>
 
-        </motion.div>
+    {/* DESCRIPTION */}
+    <p
+      className="
+        mt-5
+        text-sm
+        md:text-[15px]
+        text-gray-300
+        max-w-xl
+        mx-auto
+        leading-relaxed
+      "
+    >
+      Explore our curated collection of luxury residential and
+      commercial interiors crafted with timeless elegance.
+    </p>
 
-      </section>
+  </motion.div>
+
+</section>
 
       {/* PROJECTS GRID */}
       <section className="py-16 md:py-24 px-4 md:px-8 bg-[#f8f5f1]">
