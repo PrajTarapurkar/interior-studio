@@ -645,7 +645,7 @@ export default function AboutPage() {
 
         <p className="
           uppercase
-          tracking-[0.3em]
+          tracking-[0.2em]
           text-[#d6b98c]
           text-[10px]
           sm:text-xs
@@ -683,7 +683,7 @@ export default function AboutPage() {
         mt-8
         max-w-3xl
         mx-auto
-        text-gray-400
+        text-gray-100
         text-sm
         sm:text-base
         lg:text-xl
@@ -1256,3 +1256,5 @@ export default function AboutPage() {
     </main>
   );
 }
+
+

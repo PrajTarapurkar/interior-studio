@@ -915,80 +915,187 @@ useEffect(() => {
 </section>
 
 
-      {/* Projects Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: false, amount: 0.2 }}
-        className="py-20 md:py-28 px-4 md:px-8 bg-[#f8f5f1] text-black"
+      {/* FEATURED PROJECTS */}
+<motion.section
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: false, amount: 0.2 }}
+  className="py-20 md:py-28 bg-black text-white"
+>
+  <div className="max-w-7xl mx-auto px-5 md:px-8">
+
+    {/* HEADING */}
+    <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14">
+
+      <div>
+
+        <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-xs md:text-sm mb-4 font-medium">
+          Portfolio
+        </p>
+
+        <h2 className="leading-[0.95] tracking-tight">
+  <span className="block text-white font-semibold text-[58px] md:text-[72px]">
+    Featured
+  </span>
+
+  <span className="block text-[#d6b98c] font-semibold text-[58px] md:text-[72px] mt-1">
+    Projects
+  </span>
+</h2>
+
+      </div>
+
+      <a
+  href="/projects"
+  className="
+    mt-6 md:mt-0
+    text-[#d6b98c]
+    uppercase
+    tracking-[0.20em]
+    text-sm md:text-base
+    font-semibold
+    border-b
+    border-[#d6b98c]/50
+    pb-3
+    hover:text-white
+    transition
+  "
+>
+  Explore Full Portfolio
+</a>
+
+    </div>
+
+    {/* GRID */}
+    <div className="grid lg:grid-cols-[2fr_1fr] gap-8">
+
+      {/* MAIN PROJECT */}
+      <motion.div
+        whileHover={{ y: -8 }}
+        className="group"
       >
+        <div className="overflow-hidden rounded-[30px]">
 
-        <div className="max-w-7xl mx-auto">
-
-          <div className="text-center mb-16 md:mb-20">
-
-            <p className="uppercase tracking-[0.3em] text-sm text-gray-500 mb-4">
-              Portfolio
-            </p>
-
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Featured Projects
-            </h2>
-
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            {[1, 2, 3].map((item) => (
-
-              <motion.div
-                key={item}
-                whileHover={{ y: -12, scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ duration: 0.3 }}
-                className="bg-white rounded-3xl overflow-hidden shadow-xl group"
-              >
-
-                <div className="overflow-hidden">
-
-                  <img
-                    src={`/images/project${item}.jpg`}
-                    alt="Project"
-                    className="h-[320px] md:h-[420px] w-full object-cover group-hover:scale-110 transition duration-700"
-                  />
-
-                </div>
-
-                <div className="p-8">
-
-                  <h3 className="text-2xl md:text-3xl font-semibold">
-
-                    {item === 1
-                      ? "Modern Living Room"
-                      : item === 2
-                      ? "Contemporary Bedroom"
-                      : "Luxury Kitchen"}
-
-                  </h3>
-
-                  <p className="mt-3 text-gray-600 leading-relaxed">
-
-                    Elegant luxury interiors crafted with timeless aesthetics.
-
-                  </p>
-
-                </div>
-
-              </motion.div>
-
-            ))}
-
-          </div>
+          <img
+            src="/images/project1.jpg"
+            alt="Luxury Living Room"
+            className="
+              w-full
+              h-[350px]
+              md:h-[650px]
+              object-cover
+              group-hover:scale-105
+              transition
+              duration-700
+            "
+          />
 
         </div>
 
-      </motion.section>
+        <div className="mt-6">
+
+          <p className="uppercase tracking-[0.25em] text-[#d6b98c] text-xs mb-3">
+            Pune • Luxury Interior
+          </p>
+
+          <h3 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+            Luxury Living Room
+          </h3>
+
+          <p className="mt-3 text-gray-400 text-lg leading-relaxed">
+            Elegant living spaces crafted with timeless luxury and modern sophistication.
+          </p>
+
+        </div>
+
+      </motion.div>
+
+      {/* RIGHT SIDE */}
+      <div className="space-y-8">
+
+        {/* PROJECT 2 */}
+        <motion.div
+          whileHover={{ y: -8 }}
+          className="group"
+        >
+
+          <div className="overflow-hidden rounded-[24px]">
+
+            <img
+              src="/images/project2.jpg"
+              alt="Bedroom"
+              className="
+                w-full
+                h-[250px]
+                md:h-[300px]
+                object-cover
+                group-hover:scale-105
+                transition
+                duration-700
+              "
+            />
+
+          </div>
+
+          <div className="mt-5">
+
+            <p className="uppercase tracking-[0.25em] text-[#d6b98c] text-xs mb-2">
+              Mumbai • Luxury Interior
+            </p>
+
+            <h4 className="text-2xl md:text-3xl font-bold tracking-tight">
+              Contemporary Bedroom
+            </h4>
+
+          </div>
+
+        </motion.div>
+
+        {/* PROJECT 3 */}
+        <motion.div
+          whileHover={{ y: -8 }}
+          className="group"
+        >
+
+          <div className="overflow-hidden rounded-[24px]">
+
+            <img
+              src="/images/project3.jpg"
+              alt="Kitchen"
+              className="
+                w-full
+                h-[250px]
+                md:h-[300px]
+                object-cover
+                group-hover:scale-105
+                transition
+                duration-700
+              "
+            />
+
+          </div>
+
+          <div className="mt-5">
+
+            <p className="uppercase tracking-[0.25em] text-[#d6b98c] text-xs mb-2">
+              Bangalore • Modern Luxury
+            </p>
+
+            <h4 className="text-2xl md:text-3xl font-bold tracking-tight">
+              Premium Kitchen
+            </h4>
+
+          </div>
+
+        </motion.div>
+
+      </div>
+
+    </div>
+
+  </div>
+</motion.section>
 
 {/* Luxury Showcase Slider */}
 <motion.section

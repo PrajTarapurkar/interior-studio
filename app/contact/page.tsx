@@ -4,6 +4,11 @@ import { motion } from "framer-motion";
 
 import { useState, useEffect } from "react";
 
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
+
+
+
 import {
   HiOutlineMenuAlt3,
   HiOutlineX,
@@ -725,47 +730,51 @@ useEffect(() => {
 
             <form className="space-y-4">
 
-              <input
-                type="text"
-                placeholder="Name"
-                className="w-full bg-black/40 border border-white/10 rounded-2xl px-4 py-4 md:px-6 md:py-5 text-sm md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
-              />
+  <input
+    type="text"
+    name="name"
+    placeholder="Name"
+    className="w-full bg-black/40 border border-white/10 rounded-2xl px-4 py-4 md:px-6 md:py-5 text-sm md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
+  />
 
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full bg-black/40 border border-white/10 rounded-2xl px-4 py-4 md:px-6 md:py-5 text-sm md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
-              />
+  <input
+    type="email"
+    name="email"
+    placeholder="Email"
+    className="w-full bg-black/40 border border-white/10 rounded-2xl px-4 py-4 md:px-6 md:py-5 text-sm md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
+  />
 
-              <input
-                type="text"
-                placeholder="Contact Number"
-                className="w-full bg-black/40 border border-white/10 rounded-2xl px-4 py-4 md:px-6 md:py-5 text-sm md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
-              />
+  <input
+    type="text"
+    name="phone"
+    placeholder="Contact Number"
+    className="w-full bg-black/40 border border-white/10 rounded-2xl px-4 py-4 md:px-6 md:py-5 text-sm md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
+  />
 
-              <input
-                type="text"
-                placeholder="Project Type"
-                className="w-full bg-black/40 border border-white/10 rounded-2xl px-4 py-4 md:px-6 md:py-5 text-sm md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
-              />
+  <input
+    type="text"
+    name="project_type"
+    placeholder="Project Type"
+    className="w-full bg-black/40 border border-white/10 rounded-2xl px-4 py-4 md:px-6 md:py-5 text-sm md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition"
+  />
 
-              <textarea
-                rows={5}
-                placeholder="Tell us about your project..."
-                className="w-full bg-black/40 border border-white/10 rounded-2xl px-4 py-4 md:px-6 md:py-5 text-sm md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition resize-none"
-              ></textarea>
+  <textarea
+    rows={5}
+    name="message"
+    placeholder="Tell us about your project..."
+    className="w-full bg-black/40 border border-white/10 rounded-2xl px-4 py-4 md:px-6 md:py-5 text-sm md:text-lg text-white placeholder:text-gray-500 outline-none focus:border-[#d6b98c] focus:bg-black/60 transition resize-none"
+  ></textarea>
 
-              <motion.button
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.96 }}
-                type="submit"
-                className="w-full sm:w-auto bg-[#d6b98c] text-black px-8 py-4 md:px-10 md:py-5 rounded-full text-sm md:text-lg font-semibold hover:bg-white transition duration-300 shadow-[0_10px_30px_rgba(214,185,140,0.35)]"
-              >
-                Submit Form
-              </motion.button>
+  <motion.button
+    whileHover={{ scale: 1.04 }}
+    whileTap={{ scale: 0.96 }}
+    type="submit"
+    className="w-full sm:w-auto bg-[#d6b98c] text-black px-8 py-4 md:px-10 md:py-5 rounded-full text-sm md:text-lg font-semibold hover:bg-white transition duration-300 shadow-[0_10px_30px_rgba(214,185,140,0.35)]"
+  >
+    Submit Form
+  </motion.button>
 
-            </form>
-
+</form>
           </motion.div>
 
         </div>
