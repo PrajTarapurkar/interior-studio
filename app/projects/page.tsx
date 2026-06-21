@@ -532,7 +532,7 @@ export default function ProjectsPage() {
 
 
       {/* HERO SECTION */}
-<section className="relative pt-24 md:pt-28 pb-10 md:pb-12 text-center bg-black text-white overflow-hidden">
+<section className="relative pt-35 md:pt-28 pb-10 md:pb-12 text-center bg-black text-white overflow-hidden">
 
   {/* GOLD GLOW */}
   <div
