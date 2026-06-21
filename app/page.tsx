@@ -915,142 +915,104 @@ useEffect(() => {
 </section>
 
 
-      {/* FEATURED PROJECTS */}
+     {/* FEATURED PROJECTS */}
 <motion.section
   initial={{ opacity: 0, y: 80 }}
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8 }}
   viewport={{ once: false, amount: 0.2 }}
-  className="py-20 md:py-28 bg-black text-white"
+  className="py-20 md:py-28 px-4 md:px-8 bg-black text-white"
 >
-  <div className="max-w-7xl mx-auto px-5 md:px-8">
+  <div className="max-w-7xl mx-auto">
 
     {/* HEADING */}
-    <div className="mb-14">
+    <div className="text-center mb-16 md:mb-20">
 
-      <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-xs md:text-sm mb-4 font-medium">
+      <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-sm mb-4">
         Portfolio
       </p>
 
-      <h2 className="leading-[0.95] tracking-tight">
-        <span className="block text-white font-semibold text-[58px] md:text-[72px]">
+      <h2 className="leading-[0.95]">
+        <span className="block text-white font-semibold text-5xl md:text-7xl">
           Featured
         </span>
 
-        <span className="block text-[#d6b98c] font-medium text-[58px] md:text-[72px] mt-1">
+        <span className="block text-[#d6b98c] font-medium text-5xl md:text-7xl">
           Projects
         </span>
       </h2>
 
+      <p className="mt-6 text-gray-400 max-w-2xl mx-auto text-base md:text-lg">
+        Explore our finest residential and commercial interiors
+        crafted with elegance, luxury, and timeless design.
+      </p>
+
     </div>
 
-    {/* GRID */}
-    <div className="grid lg:grid-cols-[2fr_1fr] gap-8">
+    {/* PROJECTS GRID */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      {/* MAIN PROJECT */}
-      <motion.div
-        whileHover={{ y: -8 }}
-        className="group"
-      >
-        <div className="overflow-hidden rounded-[30px]">
-          <img
-            src="/images/project1.jpg"
-            alt="Luxury Living Room"
-            className="
-              w-full
-              h-[350px]
-              md:h-[650px]
-              object-cover
-              group-hover:scale-105
-              transition
-              duration-700
-            "
-          />
-        </div>
+      {[1, 2, 3].map((item) => (
 
-        <div className="mt-6">
-          <p className="uppercase tracking-[0.25em] text-[#d6b98c] text-xs mb-3">
-            Pune • Luxury Interior
-          </p>
-
-          <h3 className="text-3xl md:text-5xl font-extrabold tracking-tight">
-            Luxury Living Room
-          </h3>
-
-          <p className="mt-3 text-gray-400 text-lg leading-relaxed">
-            Elegant living spaces crafted with timeless luxury and modern sophistication.
-          </p>
-        </div>
-      </motion.div>
-
-      {/* RIGHT SIDE */}
-      <div className="space-y-8">
-
-        {/* PROJECT 2 */}
         <motion.div
-          whileHover={{ y: -8 }}
-          className="group"
+          key={item}
+          whileHover={{ y: -10 }}
+          transition={{ duration: 0.3 }}
+          className="
+            bg-[#111111]
+            rounded-[28px]
+            overflow-hidden
+            border border-white/10
+            group
+          "
         >
-          <div className="overflow-hidden rounded-[24px]">
+
+          <div className="overflow-hidden">
+
             <img
-              src="/images/project2.jpg"
-              alt="Bedroom"
+              src={`/images/project${item}.jpg`}
+              alt="Project"
               className="
+                h-[320px]
+                md:h-[420px]
                 w-full
-                h-[250px]
-                md:h-[300px]
                 object-cover
                 group-hover:scale-105
                 transition
                 duration-700
               "
             />
+
           </div>
 
-          <div className="mt-5">
-            <p className="uppercase tracking-[0.25em] text-[#d6b98c] text-xs mb-2">
-              Mumbai • Luxury Interior
+          <div className="p-8">
+
+            <p className="uppercase tracking-[0.25em] text-[#d6b98c] text-xs mb-3">
+              Luxury Interior
             </p>
 
-            <h4 className="text-2xl md:text-3xl font-bold tracking-tight">
-              Contemporary Bedroom
-            </h4>
-          </div>
-        </motion.div>
+            <h3 className="text-2xl md:text-3xl font-bold text-white">
 
-        {/* PROJECT 3 */}
-        <motion.div
-          whileHover={{ y: -8 }}
-          className="group"
-        >
-          <div className="overflow-hidden rounded-[24px]">
-            <img
-              src="/images/project3.jpg"
-              alt="Kitchen"
-              className="
-                w-full
-                h-[250px]
-                md:h-[300px]
-                object-cover
-                group-hover:scale-105
-                transition
-                duration-700
-              "
-            />
-          </div>
+              {item === 1
+                ? "Modern Living Room"
+                : item === 2
+                ? "Contemporary Bedroom"
+                : "Luxury Kitchen"}
 
-          <div className="mt-5">
-            <p className="uppercase tracking-[0.25em] text-[#d6b98c] text-xs mb-2">
-              Bangalore • Modern Luxury
+            </h3>
+
+            <p className="mt-4 text-gray-400 leading-relaxed">
+
+              Elegant luxury interiors crafted with timeless aesthetics,
+              premium materials and modern sophistication.
+
             </p>
 
-            <h4 className="text-2xl md:text-3xl font-bold tracking-tight">
-              Premium Kitchen
-            </h4>
           </div>
+
         </motion.div>
 
-      </div>
+      ))}
 
     </div>
 
@@ -1058,7 +1020,7 @@ useEffect(() => {
     <div className="flex justify-center mt-16">
 
       <a
-        href="/projects"
+        href="projects"
         className="
           inline-flex
           items-center
@@ -1066,7 +1028,7 @@ useEffect(() => {
           gap-3
           bg-[#d6b98c]
           text-black
-          px-10
+          px-8
           py-4
           rounded-full
           font-semibold
