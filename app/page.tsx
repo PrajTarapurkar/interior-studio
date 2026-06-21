@@ -926,44 +926,21 @@ useEffect(() => {
   <div className="max-w-7xl mx-auto px-5 md:px-8">
 
     {/* HEADING */}
-    <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14">
+    <div className="mb-14">
 
-      <div>
+      <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-xs md:text-sm mb-4 font-medium">
+        Portfolio
+      </p>
 
-        <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-xs md:text-sm mb-4 font-medium">
-          Portfolio
-        </p>
+      <h2 className="leading-[0.95] tracking-tight">
+        <span className="block text-white font-semibold text-[58px] md:text-[72px]">
+          Featured
+        </span>
 
-        <h2 className="leading-[0.95] tracking-tight">
-  <span className="block text-white font-semibold text-[58px] md:text-[72px]">
-    Featured
-  </span>
-
-  <span className="block text-[#d6b98c] font-semibold text-[58px] md:text-[72px] mt-1">
-    Projects
-  </span>
-</h2>
-
-      </div>
-
-      <a
-  href="/projects"
-  className="
-    mt-6 md:mt-0
-    text-[#d6b98c]
-    uppercase
-    tracking-[0.20em]
-    text-sm md:text-base
-    font-semibold
-    border-b
-    border-[#d6b98c]/50
-    pb-3
-    hover:text-white
-    transition
-  "
->
-  Explore Full Portfolio
-</a>
+        <span className="block text-[#d6b98c] font-medium text-[58px] md:text-[72px] mt-1">
+          Projects
+        </span>
+      </h2>
 
     </div>
 
@@ -976,7 +953,6 @@ useEffect(() => {
         className="group"
       >
         <div className="overflow-hidden rounded-[30px]">
-
           <img
             src="/images/project1.jpg"
             alt="Luxury Living Room"
@@ -990,11 +966,9 @@ useEffect(() => {
               duration-700
             "
           />
-
         </div>
 
         <div className="mt-6">
-
           <p className="uppercase tracking-[0.25em] text-[#d6b98c] text-xs mb-3">
             Pune • Luxury Interior
           </p>
@@ -1006,9 +980,7 @@ useEffect(() => {
           <p className="mt-3 text-gray-400 text-lg leading-relaxed">
             Elegant living spaces crafted with timeless luxury and modern sophistication.
           </p>
-
         </div>
-
       </motion.div>
 
       {/* RIGHT SIDE */}
@@ -1019,9 +991,7 @@ useEffect(() => {
           whileHover={{ y: -8 }}
           className="group"
         >
-
           <div className="overflow-hidden rounded-[24px]">
-
             <img
               src="/images/project2.jpg"
               alt="Bedroom"
@@ -1035,11 +1005,9 @@ useEffect(() => {
                 duration-700
               "
             />
-
           </div>
 
           <div className="mt-5">
-
             <p className="uppercase tracking-[0.25em] text-[#d6b98c] text-xs mb-2">
               Mumbai • Luxury Interior
             </p>
@@ -1047,9 +1015,7 @@ useEffect(() => {
             <h4 className="text-2xl md:text-3xl font-bold tracking-tight">
               Contemporary Bedroom
             </h4>
-
           </div>
-
         </motion.div>
 
         {/* PROJECT 3 */}
@@ -1057,9 +1023,7 @@ useEffect(() => {
           whileHover={{ y: -8 }}
           className="group"
         >
-
           <div className="overflow-hidden rounded-[24px]">
-
             <img
               src="/images/project3.jpg"
               alt="Kitchen"
@@ -1073,11 +1037,9 @@ useEffect(() => {
                 duration-700
               "
             />
-
           </div>
 
           <div className="mt-5">
-
             <p className="uppercase tracking-[0.25em] text-[#d6b98c] text-xs mb-2">
               Bangalore • Modern Luxury
             </p>
@@ -1085,12 +1047,40 @@ useEffect(() => {
             <h4 className="text-2xl md:text-3xl font-bold tracking-tight">
               Premium Kitchen
             </h4>
-
           </div>
-
         </motion.div>
 
       </div>
+
+    </div>
+
+    {/* BUTTON */}
+    <div className="flex justify-center mt-16">
+
+      <a
+        href="/projects"
+        className="
+          inline-flex
+          items-center
+          justify-center
+          gap-3
+          bg-[#d6b98c]
+          text-black
+          px-10
+          py-4
+          rounded-full
+          font-semibold
+          text-lg
+          hover:scale-105
+          hover:bg-[#e4c89b]
+          transition-all
+          duration-300
+          shadow-[0_8px_25px_rgba(214,185,140,0.35)]
+        "
+      >
+        Explore Full Portfolio
+        <span>→</span>
+      </a>
 
     </div>
 
