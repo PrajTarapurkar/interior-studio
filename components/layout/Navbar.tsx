@@ -35,9 +35,10 @@ export default function Navbar() {
       {/* PREMIUM NAVBAR */}
 <nav
   id="navbar"
-style={{
-    opacity: 0,
-    transform: "translateY(-40px)",
+  style={{
+    opacity: pathname === "/" ? 0 : 1,
+    transform:
+      pathname === "/" ? "translateY(-40px)" : "translateY(0px)",
   }}
   className="
     fixed
