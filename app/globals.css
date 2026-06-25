@@ -1,31 +1,44 @@
 @import "tailwindcss";
 
+/* ==========================================
+   GLOBAL THEME
+========================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-body: var(--font-inter);
+  --font-heading: var(--font-heading);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ==========================================
+   GLOBAL STYLES
+========================================== */
 
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
+
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-/* Hide Horizontal Scrollbar */
+/* Root */
+#__next {
+  background: #000000;
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
@@ -33,4 +46,43 @@ body {
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* ==========================================
+   SELECTION
+========================================== */
+
+::selection {
+  background: rgba(214, 185, 140, 0.35);
+  color: white;
+}
+
+/* ==========================================
+   IMAGES
+========================================== */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ==========================================
+   LINKS
+========================================== */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-heading), serif;
 }
