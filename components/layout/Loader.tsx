@@ -103,13 +103,13 @@ lg:text-7xl
         {/* Gold Line */}
         <div className="mt-8 relative flex justify-center">
 
-  <div
+ <div
   id="loader-line"
-  className="h-[2px] w-[65vw] max-w-[280px] bg-[#d6b98c] relative overflow-hidden"
+  className="h-[2px] w-[220px] sm:w-[280px] bg-[#d6b98c] relative overflow-hidden"
   style={{
-  transformOrigin: "center",
-  transform: "scaleX(0)",
-}}
+    transform: "scaleX(0)",
+    transformOrigin: "center",
+  }}
 >
 
     <div

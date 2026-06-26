@@ -70,33 +70,34 @@ export function startLoaderAnimation() {
     )
 
     // Gold Line
-    .fromTo(
-      "#loader-line",
-      {
-        width: 0,
-      },
-      {
-        width: 280,
-        duration: 0.45,
-        ease: "power2.out",
-      }
-    )
+.fromTo(
+  "#loader-line",
+  {
+    scaleX: 0,
+  },
+  {
+    scaleX: 1,
+    duration: 0.45,
+    ease: "power2.out",
+    transformOrigin: "center",
+  }
+)
 
     // Gold Sweep
-    .fromTo(
-      "#loader-sweep",
-      {
-        xPercent: -100,
-        opacity: 0,
-      },
-      {
-        xPercent: 100,
-        opacity: 1,
-        duration: 0.5,
-        ease: "power2.inOut",
-      },
-      "-=0.5"
-    )
+.fromTo(
+  "#loader-sweep",
+  {
+    x: "-100%",
+    opacity: 0,
+  },
+  {
+    x: "100%",
+    opacity: 1,
+    duration: 0.5,
+    ease: "power2.inOut",
+  },
+  "-=0.5"
+)
 
     // Tagline
     .fromTo(
