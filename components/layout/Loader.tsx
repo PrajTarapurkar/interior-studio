@@ -14,7 +14,7 @@ export default function Loader() {
   // Temporary auto hide
   const timer = setTimeout(() => {
     setLoading(false);
-  }, 3500);
+  }, 2200);
 
   return () => clearTimeout(timer);
 }, []);
@@ -33,7 +33,20 @@ export default function Loader() {
   className="absolute w-[500px] h-[500px] rounded-full bg-[#d6b98c]/10 blur-[180px]"
 />
 
-      <div className="relative flex flex-col items-center">
+      <div
+  className="
+    relative
+    flex
+    flex-col
+    items-center
+    justify-center
+    w-full
+    max-w-[420px]
+    mx-auto
+    px-6
+    text-center
+  "
+>
 
        {/* Logo */}
 <div id="loader-logo-wrapper">
@@ -42,7 +55,7 @@ export default function Loader() {
     src="/images/logo-transparent.png"
     alt="Kulal Interiors"
     style={{ opacity: 0, transform: "scale(0.85)" }}
-    className="w-52 md:w-64 object-contain"
+    className="w-36 sm:w-44 md:w-52 lg:w-64 object-contain"
   />
 </div>
 
@@ -50,7 +63,21 @@ export default function Loader() {
         <h1
   id="loader-title"
   style={{ opacity: 0 }}
-  className="mt-7 text-white text-5xl md:text-7xl font-bold tracking-tight"
+  className="
+    mt-7
+    w-full
+    px-6
+    text-center
+    text-white
+    text-3xl
+sm:text-4xl
+md:text-6xl
+lg:text-7xl
+    font-bold
+    tracking-tight
+    leading-tight
+    break-words
+  "
 >
           KULAL INTERIORS
         </h1>
@@ -59,7 +86,16 @@ export default function Loader() {
         <p
   id="loader-subtitle"
   style={{ opacity: 0 }}
-  className="mt-2 uppercase tracking-[0.45em] text-[#d6b98c] text-xs md:text-sm"
+  className="
+  mt-3
+  text-center
+  uppercase
+  tracking-[0.35em]
+  text-[#d6b98c]
+  text-[10px]
+  sm:text-xs
+  md:text-sm
+"
 >
   Luxury Interior Design
 </p>
@@ -68,13 +104,13 @@ export default function Loader() {
         <div className="mt-8 relative flex justify-center">
 
   <div
-    id="loader-line"
-    className="h-[2px] bg-[#d6b98c] relative overflow-hidden"
-    style={{
-      width: 0,
-      transformOrigin: "center",
-    }}
-  >
+  id="loader-line"
+  className="h-[2px] w-[65vw] max-w-[280px] bg-[#d6b98c] relative overflow-hidden"
+  style={{
+  transformOrigin: "center",
+  transform: "scaleX(0)",
+}}
+>
 
     <div
       id="loader-sweep"
@@ -93,7 +129,15 @@ export default function Loader() {
         <p
   id="loader-tagline"
   style={{ opacity: 0 }}
-  className="mt-5 text-white/70 text-lg tracking-wide"
+  className="
+  mt-6
+  text-center
+  text-white/70
+  text-sm
+  sm:text-base
+  md:text-lg
+  tracking-wide
+"
 >
           Crafting Timeless Spaces
         </p>

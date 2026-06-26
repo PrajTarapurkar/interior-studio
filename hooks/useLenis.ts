@@ -5,11 +5,12 @@ import Lenis from "lenis";
 
 export default function useLenis() {
   useEffect(() => {
-   const lenis = new Lenis({
-  duration: 0.7,
-  smoothWheel: true,
-  wheelMultiplier: 1.15,
-});
+    const lenis = new Lenis({
+      duration: 1.2,
+      smoothWheel: true,
+      touchMultiplier: 1.5,
+    });
+
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
