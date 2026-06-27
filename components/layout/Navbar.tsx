@@ -102,16 +102,17 @@ export default function Navbar() {
       <div className="leading-none min-w-0">
 
         <h1
-          className="
-  text-[22px]
-  md:text-[28px]
-  font-bold
-  text-white
-  tracking-[-0.04em]
-"
-        >
-          Kulal Interiors
-        </h1>
+  className="
+    text-[20px]
+    md:text-[24px]
+    font-semibold
+    text-white
+    tracking-[0.03em]
+    leading-none
+  "
+>
+  KULAL INTERIORS
+</h1>
 
         <p
           className="

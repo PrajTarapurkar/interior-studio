@@ -2,6 +2,7 @@
 
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { startLoaderAnimation } from "@/components/animations/loader";
 
 export default function Loader() {
@@ -24,9 +25,11 @@ export default function Loader() {
   if (!loading) return null;
 
   return (
-    <div
+   <div
   id="loader"
-  className="fixed inset-0 z-[9999] bg-black flex items-center justify-center overflow-hidden will-change-transform"
+  role="status"
+  aria-live="polite"
+  className="fixed inset-0 z-[9999] bg-black flex items-center justify-center overflow-hidden will-change-transform select-none"
 >
       {/* Gold Glow */}
       <div
@@ -62,12 +65,15 @@ md:blur-[180px]
 
        {/* Logo */}
 <div id="loader-logo-wrapper">
-  <img
+  <Image
     id="loader-logo"
     src="/images/logo-transparent.png"
     alt="Kulal Interiors"
+    width={240}
+    height={240}
+    priority
     style={{ opacity: 0, transform: "scale(0.85)" }}
-    className="w-[clamp(120px,22vw,240px)] object-contain"
+    className="w-[clamp(120px,22vw,240px)] h-auto object-contain"
   />
 </div>
 
@@ -99,9 +105,10 @@ text-[clamp(3rem,10vw,6rem)]
   style={{ opacity: 0 }}
   className="
 mt-3
+px-4
 text-center
 uppercase
-tracking-[0.45em]
+tracking-[0.35em]
 text-[#d6b98c]
 text-[clamp(10px,2vw,18px)]
 "
@@ -139,11 +146,12 @@ text-[clamp(10px,2vw,18px)]
   id="loader-tagline"
   style={{ opacity: 0 }}
   className="
-  mt-6
-  text-center
-  text-white/70
-  text-[clamp(14px,2vw,24px)]
-  tracking-wide
+mt-6
+px-4
+text-center
+text-white/70
+text-[clamp(14px,2vw,24px)]
+tracking-wide
 "
 >
           Crafting Timeless Spaces

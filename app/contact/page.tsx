@@ -131,30 +131,26 @@ const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
             <div className="mt-8 md:mt-12 space-y-4">
 
               {/* PHONE */}
-              <motion.a
-                href="tel:+917709943271"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-               className="flex items-center gap-4 bg-white/[0.04] border border-white/10 rounded-[22px] px-5 py-4 md:px-7 md:py-4 hover:bg-white/[0.07] hover:border-[#d6b98c]/30 transition-all duration-300 cursor-pointer"
-              >
+<motion.a
+  href="tel:+917709943271"
+  whileHover={{ scale: 1.02 }}
+  whileTap={{ scale: 0.98 }}
+  className="flex items-center gap-4 bg-white/[0.04] border border-white/10 rounded-[22px] px-5 py-4 md:px-7 md:py-4 hover:bg-white/[0.07] hover:border-[#d6b98c]/30 transition-all duration-300 cursor-pointer"
+>
+  <div className="text-[#d6b98c] text-xl md:text-2xl flex-shrink-0">
+    ☎
+  </div>
 
-                <div className="text-[#d6b98c] text-xl md:text-2xl flex-shrink-0">
-                  ☎
-                </div>
+  <div>
+    <p className="uppercase tracking-[0.25em] text-[8px] md:text-[10px] text-[#d6b98c] mb-1">
+      Phone
+    </p>
 
-                <div>
-
-                  <p className="uppercase tracking-[0.25em] text-[8px] md:text-[10px] text-[#d6b98c] mb-1">
-                    Phone
-                  </p>
-
-                  <h3 className="text-base md:text-[20px] font-semibold text-white tracking-tight">
-                    7709 943 271
-                  </h3>
-
-                </div>
-
-              </motion.a>
+    <p className="font-[family:var(--font-body)] text-lg md:text-[20px] font-semibold text-white">
+      +91 7709 943 271
+    </p>
+  </div>
+</motion.a>
 
               {/* EMAIL */}
               <motion.a
