@@ -6,6 +6,20 @@ import { startHeroAnimation } from "./hero";
 export function startLoaderAnimation() {
   const tl = gsap.timeline();
 
+  gsap.set(
+  [
+    "#loader",
+    "#loader-logo",
+    "#loader-title",
+    "#loader-subtitle",
+    "#loader-line",
+    "#loader-tagline",
+  ],
+  {
+    force3D: true,
+  }
+);
+
   // Glow
   tl.fromTo(
     "#loader-glow",
@@ -26,7 +40,7 @@ export function startLoaderAnimation() {
       "#loader-logo",
       {
         opacity: 0,
-        scale: 0.85,
+        scale: 0.92,
       },
       {
         opacity: 1,
@@ -42,7 +56,7 @@ export function startLoaderAnimation() {
       "#loader-title",
       {
         opacity: 0,
-        y: 40,
+        y: 25,
       },
       {
         opacity: 1,
@@ -58,7 +72,7 @@ export function startLoaderAnimation() {
       "#loader-subtitle",
       {
         opacity: 0,
-        y: 20,
+        y: 15,
       },
       {
         opacity: 1,
@@ -104,7 +118,7 @@ export function startLoaderAnimation() {
       "#loader-tagline",
       {
         opacity: 0,
-        y: 15,
+        y: 10,
       },
       {
         opacity: 1,
@@ -119,7 +133,7 @@ export function startLoaderAnimation() {
 .to(
   "#loader",
   {
-    y: -80,
+    y: () => -window.innerHeight * 0.08,
     opacity: 0,
     duration: 0.6,
     ease: "power3.inOut",

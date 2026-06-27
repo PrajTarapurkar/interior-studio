@@ -13,8 +13,10 @@ export default function Loader() {
 
   // Temporary auto hide
   const timer = setTimeout(() => {
+  requestAnimationFrame(() => {
     setLoading(false);
-  }, 2200);
+  });
+}, 2200);
 
   return () => clearTimeout(timer);
 }, []);
@@ -30,7 +32,15 @@ export default function Loader() {
       <div
   id="loader-glow"
   style={{ opacity: 0 }}
-  className="absolute w-[500px] h-[500px] rounded-full bg-[#d6b98c]/10 blur-[180px]"
+ className="
+absolute
+w-[clamp(260px,45vw,550px)]
+h-[clamp(260px,45vw,550px)]
+rounded-full
+bg-[#d6b98c]/10
+blur-[140px]
+md:blur-[180px]
+"
 />
 
       <div
@@ -41,9 +51,11 @@ export default function Loader() {
     items-center
     justify-center
     w-full
-    max-w-[420px]
+    max-w-[900px]
     mx-auto
     px-6
+    sm:px-8
+    md:px-10
     text-center
   "
 >
@@ -55,7 +67,7 @@ export default function Loader() {
     src="/images/logo-transparent.png"
     alt="Kulal Interiors"
     style={{ opacity: 0, transform: "scale(0.85)" }}
-    className="w-36 sm:w-44 md:w-52 lg:w-64 object-contain"
+    className="w-[clamp(120px,22vw,240px)] object-contain"
   />
 </div>
 
@@ -64,22 +76,21 @@ export default function Loader() {
   id="loader-title"
   style={{ opacity: 0 }}
   className="
-    mt-7
-    w-full
-    px-6
-    text-center
-    text-white
-    text-3xl
-sm:text-4xl
-md:text-6xl
-lg:text-7xl
-    font-bold
-    tracking-tight
-    leading-tight
-    break-words
-  "
+mt-6
+w-full
+mx-auto
+text-center
+text-white
+font-bold
+leading-[0.9]
+tracking-tight
+text-[clamp(3rem,10vw,6rem)]
+"
 >
-          KULAL INTERIORS
+          
+  <span className="block">KULAL</span>
+  <span className="block whitespace-nowrap">INTERIORS</span>
+
         </h1>
 
         {/* Subtitle */}
@@ -87,14 +98,12 @@ lg:text-7xl
   id="loader-subtitle"
   style={{ opacity: 0 }}
   className="
-  mt-3
-  text-center
-  uppercase
-  tracking-[0.35em]
-  text-[#d6b98c]
-  text-[10px]
-  sm:text-xs
-  md:text-sm
+mt-3
+text-center
+uppercase
+tracking-[0.45em]
+text-[#d6b98c]
+text-[clamp(10px,2vw,18px)]
 "
 >
   Luxury Interior Design
@@ -105,7 +114,7 @@ lg:text-7xl
 
  <div
   id="loader-line"
-  className="h-[2px] w-[220px] sm:w-[280px] bg-[#d6b98c] relative overflow-hidden"
+  className="h-[2px] w-[clamp(180px,60vw,320px)] bg-[#d6b98c] relative overflow-hidden"
   style={{
     transform: "scaleX(0)",
     transformOrigin: "center",
@@ -133,9 +142,7 @@ lg:text-7xl
   mt-6
   text-center
   text-white/70
-  text-sm
-  sm:text-base
-  md:text-lg
+  text-[clamp(14px,2vw,24px)]
   tracking-wide
 "
 >
