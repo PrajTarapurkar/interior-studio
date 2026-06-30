@@ -1,43 +1,96 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 
 
+const projects = [
+  {
+    title: "Full Luxury Interior",
+    category: "Residential",
+    type: "Residential",
+    image: "/images/project1.jpg",
+    href: "/projects/living-room",
+    description:
+      "Elegant modern villa interior crafted with warm lighting, premium textures and timeless aesthetics.",
+  },
+  {
+    title: "Contemporary Bedroom",
+    category: "Residential",
+    type: "Residential",
+    image: "/images/project2.jpg",
+    href: "/projects/bedroom",
+    description:
+      "Sophisticated neutral palette bedroom designed for comfort and luxury living.",
+  },
+  {
+    title: "Modern Luxury Kitchen",
+    category: "Residential",
+    type: "Residential",
+    image: "/images/project3.jpg",
+    href: "/projects/kitchen",
+    description:
+      "Minimal modern kitchen blending premium functionality with timeless elegance.",
+  },
+
+   // ================= Commercial =================
+
+  {
+    title: "Corporate Office",
+    category: "Commercial",
+    type: "Commercial",
+    image: "/images/office.jpg",
+    href: "/projects/office",
+    description:
+      "Modern office interiors designed to enhance productivity with premium aesthetics and functional workspaces.",
+  },
+
+  {
+    title: "Luxury Restaurant",
+    category: "Commercial",
+    type: "Commercial",
+    image: "/images/restaurant.jpg",
+    href: "/projects/restaurant",
+    description:
+      "Elegant restaurant interiors combining sophisticated ambience with memorable dining experiences.",
+  },
+
+  {
+    title: "Premium Retail Showroom",
+    category: "Commercial",
+    type: "Commercial",
+    image: "/images/showroom.jpg",
+    href: "/projects/showroom",
+    description:
+      "Luxury retail showroom crafted to elevate customer experience through modern design and premium finishes.",
+  },
+];
+
 export default function ProjectsPage() {
+
+  
+
+const [activeFilter, setActiveFilter] = useState("All");
+
+const filteredProjects =
+  activeFilter === "All"
+    ? projects
+    : projects.filter((project) => project.type === activeFilter);
 
 
 
   return (
-    <main className="bg-[#0a0a0a] min-h-screen text-white overflow-x-hidden">
-
-      
+<main className="bg-[#000000] min-h-screen text-white overflow-x-hidden">      
 <Navbar />
 
 
       {/* HERO SECTION */}
-<section className="relative pt-35 md:pt-28 pb-10 md:pb-12 text-center bg-black text-white overflow-hidden">
+<section className="relative pt-30 md:pt-28 pb-8 md:pb-5 text-center bg-black text-white overflow-hidden">
 
-  {/* GOLD GLOW */}
-  <div
-    className="
-      absolute
-      top-1/2
-      left-1/2
-      h-[150px]
-      md:h-[280px]
-      w-[150px]
-      md:w-[280px]
-      -translate-x-1/2
-      -translate-y-1/2
-      rounded-full
-      bg-[#d6b98c]/15
-      blur-[90px]
-      animate-pulse
-    "
-  ></div>
+ 
 
   <motion.div
     initial={{ opacity: 0, y: 40 }}
@@ -52,10 +105,10 @@ export default function ProjectsPage() {
         uppercase
         tracking-[0.45em]
         text-[10px]
-        md:text-[12px]
+        md:text-[18px]
         font-semibold
         text-[#d6b98c]
-        mb-5
+        mb-1
       "
     >
       PORTFOLIO
@@ -78,7 +131,7 @@ export default function ProjectsPage() {
       "
     >
       <span className="text-white">
-        Our Interior
+        Signature 
       </span>
 
       <span className="text-[#d6b98c]">
@@ -106,142 +159,108 @@ export default function ProjectsPage() {
 
 </section>
 
+
+<div className="flex justify-center mb-14 px-6">
+  <div className="flex flex-wrap items-center justify-center gap-4">
+
+    {["All", "Residential", "Commercial"].map((item) => (
+      <button
+        key={item}
+        onClick={() => setActiveFilter(item)}
+        className={`
+          px-6
+          py-3
+          rounded-full
+          border
+          transition-all
+          duration-300
+          text-sm
+          tracking-wide
+          ${
+            activeFilter === item
+              ? "bg-[#d6b98c] text-black border-[#d6b98c]"
+              : "border-[#d6b98c]/30 text-white hover:border-[#d6b98c]"
+          }
+        `}
+      >
+        {item}
+      </button>
+    ))}
+
+  </div>
+</div>
+
       {/* PROJECTS GRID */}
-      <section className="py-16 md:py-24 px-4 md:px-8 bg-[#f8f5f1]">
+      <section className="py-16 md:py-24 px-4 md:px-8 bg-[#000000]">
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
 
-          {/* PROJECT 1 */}
-          <motion.a
-            href="/projects/living-room"
-            initial={{ opacity: 0, y: 80 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.7 }}
-            whileHover={{ y: -12, scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-          >
+          {filteredProjects.map((project) => (
+  <motion.a
+    key={project.title}
+    href={project.href}
+    initial={{ opacity: 0, y: 80 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: false, amount: 0.2 }}
+    transition={{ duration: 0.7 }}
+    whileHover={{ y: -12, scale: 1.03 }}
+    whileTap={{ scale: 0.97 }}
+  >
+    <div
+      className="
+        group
+        overflow-hidden
+        rounded-[30px]
+        border
+        border-[#d6b98c]/20
+        bg-[#0f0f0f]
+        transition-all
+        duration-500
+        hover:border-[#d6b98c]/60
+        hover:-translate-y-3
+        hover:shadow-[0_0_40px_rgba(214,185,140,0.18)]
+      "
+    >
+      <div className="overflow-hidden">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="
+            h-[300px]
+            md:h-[360px]
+            w-full
+            object-cover
+            transition-transform
+            duration-700
+            group-hover:scale-105
+          "
+        />
+      </div>
 
-            <div className="bg-white rounded-3xl overflow-hidden shadow-[0_15px_60px_rgba(0,0,0,0.12)] group">
+      <div className="p-7">
 
-              <div className="overflow-hidden">
+        <h2 className="mt-3 text-2xl font-semibold text-white">
+          {project.title}
+        </h2>
 
-                <img
-                  src="/images/project1.jpg"
-                  alt="Project"
-                  className="h-[260px] sm:h-[320px] md:h-[420px] w-full object-cover group-hover:scale-110 transition duration-700"
-                />
+        <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-xs font-medium">
+          {project.category}
+        </p>
 
-              </div>
+        <p className="mt-4 text-gray-400 leading-relaxed text-sm md:text-base">
+          {project.description}
+        </p>
 
-              <div className="p-5 md:p-8">
+        <div className="mt-8">
+          <span className="text-[#d6b98c] uppercase tracking-[0.3em] text-xs font-semibold">
+            View Project →
+          </span>
+        </div>
 
-                <h2 className="text-2xl md:text-3xl font-bold">
-                  Full Luxury Interior
-                </h2>
-
-                <p className="mt-2 uppercase tracking-widest text-xs md:text-sm text-[#b08d57]">
-                  Pune • Residential
-                </p>
-
-                <p className="mt-4 text-gray-600 leading-relaxed text-sm md:text-base">
-                  Elegant modern villa interior crafted with warm lighting,
-                  premium textures, and timeless aesthetics.
-                </p>
-
-              </div>
-
-            </div>
-
-          </motion.a>
-
-          {/* PROJECT 2 */}
-          <motion.a
-            href="/projects/bedroom"
-            initial={{ opacity: 0, y: 80 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.7 }}
-            whileHover={{ y: -12, scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-          >
-
-            <div className="bg-white rounded-3xl overflow-hidden shadow-[0_15px_60px_rgba(0,0,0,0.12)] group">
-
-              <div className="overflow-hidden">
-
-                <img
-                  src="/images/project2.jpg"
-                  alt="Project"
-                  className="h-[260px] sm:h-[320px] md:h-[420px] w-full object-cover group-hover:scale-110 transition duration-700"
-                />
-
-              </div>
-
-              <div className="p-5 md:p-8">
-
-                <h2 className="text-2xl md:text-3xl font-bold">
-                  Contemporary Bedroom
-                </h2>
-
-                <p className="mt-2 uppercase tracking-widest text-xs md:text-sm text-[#b08d57]">
-                  Mumbai • Luxury Home
-                </p>
-
-                <p className="mt-4 text-gray-600 leading-relaxed text-sm md:text-base">
-                  Sophisticated neutral palette bedroom designed for comfort,
-                  calmness, and luxury living.
-                </p>
-
-              </div>
-
-            </div>
-
-          </motion.a>
-
-          {/* PROJECT 3 */}
-          <motion.a
-            href="/projects/kitchen"
-            initial={{ opacity: 0, y: 80 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.7 }}
-            whileHover={{ y: -12, scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-          >
-
-            <div className="bg-white rounded-3xl overflow-hidden shadow-[0_15px_60px_rgba(0,0,0,0.12)] group">
-
-              <div className="overflow-hidden">
-
-                <img
-                  src="/images/project3.jpg"
-                  alt="Project"
-                  className="h-[260px] sm:h-[320px] md:h-[420px] w-full object-cover group-hover:scale-110 transition duration-700"
-                />
-
-              </div>
-
-              <div className="p-5 md:p-8">
-
-                <h2 className="text-2xl md:text-3xl font-bold">
-                  Modern Luxury Kitchen
-                </h2>
-
-                <p className="mt-2 uppercase tracking-widest text-xs md:text-sm text-[#b08d57]">
-                  Bangalore • Interior Styling
-                </p>
-
-                <p className="mt-4 text-gray-600 leading-relaxed text-sm md:text-base">
-                  Minimal modern kitchen blending premium functionality
-                  with timeless elegance.
-                </p>
-
-              </div>
-
-            </div>
-
-          </motion.a>
+      </div>
+    </div>
+  </motion.a>
+))}
 
         </div>
 

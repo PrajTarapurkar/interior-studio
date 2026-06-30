@@ -412,9 +412,9 @@ export default function Navbar() {
           Call Us
         </p>
 
-        <h3 className="text-white text-[18px] font-light">
-          +91 7709943271
-        </h3>
+      <p className="font-[family:var(--font-body)] text-xl font-semibold text-white">
+  +91 7709 943 271
+</p>
 
       </div>
 
