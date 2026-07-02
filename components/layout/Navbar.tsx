@@ -50,21 +50,26 @@ export default function Navbar() {
     backdrop-blur-2xl
     border-b
     border-white/10
+    transform-gpu
+will-change-transform
   "
 >
 
 
   <div
   className="
-    max-w-7xl
-    mx-auto
-    flex
-    items-center
-    justify-between
-    px-5
-    md:px-8
-    py-5
-    md:py-4
+   max-w-[1440px]
+mx-auto
+flex
+items-center
+justify-between
+px-5
+sm:px-6
+md:px-8
+lg:px-10
+xl:px-12
+2xl:px-16
+py-4
   "
 >
 
@@ -82,12 +87,8 @@ export default function Navbar() {
   alt="Logo"
   className="
                   relative
-                  h-14
-                  w-14
-                  sm:h-12
-                  sm:w-12
-                  md:h-14
-                  md:w-14
+                 h-[clamp(48px,4vw,56px)]
+w-[clamp(48px,4vw,56px)]
                   rounded-full
                   object-cover
                   border
@@ -103,8 +104,7 @@ export default function Navbar() {
 
         <h1
   className="
-    text-[20px]
-    md:text-[24px]
+    text-[clamp(18px,2vw,24px)]
     font-semibold
     text-white
     tracking-[0.03em]
@@ -119,8 +119,7 @@ export default function Navbar() {
   mt-1.5
   uppercase
   tracking-[0.30em]
-  text-[8px]
-  md:text-[9px]
+ text-[clamp(7px,0.8vw,9px)]
   text-[#d6b98c]
 "
         >
@@ -137,7 +136,7 @@ export default function Navbar() {
         hidden
         md:flex
         items-center
-        gap-8
+       gap-[clamp(1rem,2vw,2rem)]
         text-sm
         uppercase
         tracking-[0.18em]
@@ -209,8 +208,7 @@ export default function Navbar() {
       className="
   md:hidden
   text-white
-  text-[38px]
-"
+text-[clamp(34px,6vw,40px)]"
     >
       <HiOutlineMenuAlt3 />
     </button>
@@ -232,8 +230,9 @@ export default function Navbar() {
       inset-0
       z-[100]
       bg-[#050505]
-      px-5
-      py-5
+     px-5
+     sm:px-6
+     py-5
       flex
       flex-col
       overflow-y-auto
@@ -251,8 +250,8 @@ export default function Navbar() {
           src="/images/logo.png"
           alt="Logo"
           className="
-            h-14
-            w-14
+            h-[52px]
+            w-[52px]
             rounded-full
             object-cover
             border
@@ -272,7 +271,7 @@ export default function Navbar() {
               leading-none
             "
           >
-            Kulal Interiors
+            KULAL INTERIORS
           </h2>
 
           <p
@@ -296,7 +295,7 @@ export default function Navbar() {
         onClick={() => setMenuOpen(false)}
         className="
           text-white
-          text-[42px]
+          text-[clamp(36px,6vw,42px)]
           leading-none
         "
       >
@@ -314,7 +313,7 @@ export default function Navbar() {
           py-4
           border-b
           border-white/8
-          text-[18px]
+          text-[clamp(17px,2vw,18px)]
           font-light
           text-[#d6b98c]
         "
@@ -328,7 +327,7 @@ export default function Navbar() {
           py-4
           border-b
           border-white/8
-          text-[18px]
+          text-[clamp(17px,2vw,18px)]
           font-light
           text-white
         "
@@ -342,7 +341,7 @@ export default function Navbar() {
           py-4
           border-b
           border-white/8
-          text-[18px]
+          text-[clamp(17px,2vw,18px)]
           font-light
           text-white
         "
@@ -357,7 +356,7 @@ export default function Navbar() {
           py-4
           border-b
           border-white/8
-          text-[18px]
+          text-[clamp(17px,2vw,18px)]
           font-light
           text-white
         "
@@ -371,7 +370,7 @@ export default function Navbar() {
     py-4
     border-b
     border-white/10
-    text-[18px]
+    text-[clamp(17px,2vw,18px)]
     font-light
     text-white
   "
@@ -387,7 +386,7 @@ export default function Navbar() {
         mt-8
         border
         border-white/10
-        rounded-[24px]
+       rounded-[clamp(20px,2vw,24px)]
         px-5
         py-4
         flex
@@ -424,8 +423,8 @@ export default function Navbar() {
         target="_blank"
         rel="noopener noreferrer"
         className="
-          h-20
-          w-20
+          h-[clamp(64px,8vw,80px)]
+          w-[clamp(64px,8vw,80px)]
           rounded-[22px]
           border
           border-[#d6b98c]/30
@@ -433,7 +432,7 @@ export default function Navbar() {
           items-center
           justify-center
           text-[#d6b98c]
-          text-4xl
+          text-[clamp(30px,3vw,36px)]
           bg-[#d6b98c]/5
           shadow-[0_0_30px_rgba(214,185,140,0.12)]
         "
@@ -454,7 +453,8 @@ export default function Navbar() {
         justify-center
         bg-[#d6b98c]
         text-black
-        py-3.5
+        py-[clamp(.9rem,2vw,1rem)]
+        min-h-[48px]
         rounded-2xl
         text-[15px]
         font-semibold
@@ -487,8 +487,8 @@ export default function Navbar() {
       target="_blank"
       rel="noopener noreferrer"
       className="
-        h-16
-        w-16
+        h-[clamp(56px,7vw,64px)]
+w-[clamp(56px,7vw,64px)]
         rounded-full
         border
         border-[#d6b98c]/30
@@ -496,7 +496,7 @@ export default function Navbar() {
         items-center
         justify-center
         text-white
-        text-2xl
+        text-[clamp(22px,3vw,26px)]
       "
     >
       <FaInstagram />
@@ -507,8 +507,8 @@ export default function Navbar() {
       target="_blank"
       rel="noopener noreferrer"
       className="
-        h-16
-        w-16
+        h-[clamp(56px,7vw,64px)]
+w-[clamp(56px,7vw,64px)]
         rounded-full
         border
         border-[#d6b98c]/30
@@ -516,7 +516,7 @@ export default function Navbar() {
         items-center
         justify-center
         text-white
-        text-2xl
+        text-[clamp(22px,3vw,26px)]
       "
     >
       <FaLinkedinIn />
@@ -527,8 +527,8 @@ export default function Navbar() {
       target="_blank"
       rel="noopener noreferrer"
       className="
-        h-16
-        w-16
+        h-[clamp(56px,7vw,64px)]
+w-[clamp(56px,7vw,64px)]
         rounded-full
         border
         border-[#d6b98c]/30
@@ -536,7 +536,7 @@ export default function Navbar() {
         items-center
         justify-center
         text-white
-        text-2xl
+        text-[clamp(22px,3vw,26px)]
       "
     >
       <FaYoutube />

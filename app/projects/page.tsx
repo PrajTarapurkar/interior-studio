@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import Link from "next/link";
 
 
 
@@ -191,21 +192,24 @@ const filteredProjects =
 </div>
 
       {/* PROJECTS GRID */}
-      <section className="py-16 md:py-24 px-4 md:px-8 bg-[#000000]">
+      <section className="py-1 md:py-24 px-4 md:px-8 bg-[#000000]">
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
 
           {filteredProjects.map((project) => (
-  <motion.a
-    key={project.title}
+            <Link
+            key={project.title}
     href={project.href}
-    initial={{ opacity: 0, y: 80 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false, amount: 0.2 }}
-    transition={{ duration: 0.7 }}
-    whileHover={{ y: -12, scale: 1.03 }}
-    whileTap={{ scale: 0.97 }}
+    className="block"
   >
+  <motion.a
+  href={project.href}
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.15 }}
+  transition={{ duration: 0.6 }}
+  whileHover={{ scale: 1.02 }}
+>
     <div
       className="
         group
@@ -217,7 +221,6 @@ const filteredProjects =
         transition-all
         duration-500
         hover:border-[#d6b98c]/60
-        hover:-translate-y-3
         hover:shadow-[0_0_40px_rgba(214,185,140,0.18)]
       "
     >
@@ -260,6 +263,7 @@ const filteredProjects =
       </div>
     </div>
   </motion.a>
+  </Link>
 ))}
 
         </div>

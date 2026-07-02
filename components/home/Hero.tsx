@@ -7,8 +7,23 @@ export default function Hero() {
       {/* Hero Section */}
 <section
 id="hero"
-  className="relative min-h-screen bg-cover bg-center flex items-center justify-center text-center px-4 md:px-6 overflow-hidden"
-  style={{
+className="
+relative
+min-h-screen
+bg-cover
+bg-center
+flex
+items-center
+justify-center
+overflow-hidden
+text-center
+px-5
+sm:px-6
+md:px-8
+lg:px-10
+xl:px-12
+2xl:px-16
+"  style={{
     backgroundImage: "url('/images/hero.jpg')",
   }}
 >
@@ -34,14 +49,16 @@ id="hero"
       absolute
       top-1/2
       left-1/2
-      h-[550px]
-      w-[550px]
+      h-[clamp(260px,45vw,560px)]
+      w-[clamp(260px,45vw,560px)]
       -translate-x-1/2
       -translate-y-1/2
       rounded-full
       bg-[#d6b98c]/20
       blur-[150px]
-    "
+      transform-gpu
+      will-change-transform
+"
   ></motion.div>
 
   {/* FLOATING LIGHT */}
@@ -59,19 +76,27 @@ id="hero"
       absolute
       top-[20%]
       right-[15%]
-      h-[180px]
-      w-[180px]
+      h-[clamp(80px,18vw,180px)]
+      w-[clamp(80px,18vw,180px)]
       rounded-full
       bg-[#d6b98c]/10
       blur-[100px]
-    "
+      transform-gpu
+      will-change-transform
+"
   ></motion.div>
 
   {/* CONTENT */}
   <div
   id="hero-content"
-  className="relative z-10 max-w-7xl pt-24 md:pt-32"
->
+className="
+relative
+z-10
+max-w-[1440px]
+mx-auto
+pt-[clamp(6rem,10vw,9rem)]
+px-2
+">
 
     {/* TOP LABEL */}
     <p
@@ -80,8 +105,7 @@ id="hero"
         uppercase
         tracking-[0.55em]
         text-[#d6b98c]
-        text-[11px]
-        md:text-[18px]
+       text-[clamp(10px,1.5vw,18px)]
         font-semibold
         mb-8
         drop-shadow-[0_0_20px_rgba(214,185,140,0.4)]
@@ -94,13 +118,10 @@ id="hero"
     <h1
   id="hero-title"
       className="
-        text-5xl
-        sm:text-6xl
-        md:text-8xl
-        lg:text-[115px]
+        text-[clamp(2.7rem,8vw,7.2rem)]
         font-extrabold
         leading-[0.92]
-        tracking-[-0.06em]
+        tracking-[-0.04em]
         text-white
       "
     >
@@ -177,13 +198,13 @@ id="hero"
     <p
   id="hero-description"
       className="
-        mt-10
-        text-base
-        md:text-2xl
+        mt-[clamp(1.5rem,4vw,2.5rem)]
+        text-[clamp(1rem,2vw,1.5rem)]
+        
         text-gray-200
-        max-w-3xl
+       max-w-[760px]
         mx-auto
-        leading-relaxed
+        leading-[1.8]
         px-2
         font-light
       "
@@ -198,7 +219,7 @@ id="hero"
     <div
   id="hero-buttons"
       className="
-        mt-14
+        mt-[clamp(2rem,5vw,3.5rem)]
         flex
         flex-col
         sm:flex-row
@@ -229,12 +250,15 @@ id="hero"
           group
           bg-[#d6b98c]
           text-black
-          px-10
-          py-4
+          px-[clamp(1.8rem,3vw,2.5rem)]
+py-[clamp(0.9rem,2vw,1rem)]
+min-h-[48px]
           rounded-full
           font-semibold
           tracking-wide
           shadow-[0_15px_50px_rgba(214,185,140,0.35)]
+          transform-gpu
+will-change-transform
         "
       >
 
@@ -300,11 +324,14 @@ id="hero"
           bg-white/5
           backdrop-blur-xl
           text-white
-          px-10
-          py-4
+          px-[clamp(1.8rem,3vw,2.5rem)]
+          py-[clamp(0.9rem,2vw,1rem)]
+          min-h-[48px]
           rounded-full
           tracking-wide
-        "
+          transform-gpu
+          will-change-transform
+"
       >
 
         {/* GLOW EFFECT */}
@@ -363,8 +390,7 @@ id="hero"
   </div>
 
   {/* BOTTOM FADE */}
-  <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black to-transparent"></div>
-
+<div className="absolute bottom-0 left-0 w-full h-[clamp(80px,10vw,160px)] bg-gradient-to-t from-black to-transparent"></div>
 </section>
 
     </>

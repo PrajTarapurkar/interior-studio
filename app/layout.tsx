@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/providers/SmoothScroll";
 
 
 
@@ -35,7 +36,13 @@ export default function RootLayout({
       className={`${montserrat.variable} ${cormorant.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-black text-white overflow-x-hidden">
-  {children}
+
+  <SmoothScroll>
+
+    {children}
+
+  </SmoothScroll>
+
 </body>
     </html>
     

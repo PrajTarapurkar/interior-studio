@@ -11,28 +11,36 @@ export default function FeaturedProjects() {
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8 }}
   viewport={{ once: false, amount: 0.2 }}
-  className="py-20 md:py-28 px-4 md:px-8 bg-black text-white"
->
-  <div className="max-w-7xl mx-auto">
-
+className="
+bg-black
+text-white
+py-[clamp(4rem,7vw,7rem)]
+px-5
+sm:px-6
+md:px-8
+lg:px-10
+xl:px-12
+2xl:px-16
+">
+<div className="max-w-[1440px] mx-auto">
     {/* HEADING */}
-    <div className="text-center mb-16 md:mb-20">
+    <div className="text-center mb-[clamp(3rem,6vw,5rem)]">
 
-      <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-sm mb-4">
+      <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-[clamp(10px,1.3vw,15px)] mb-4">
         Portfolio
       </p>
 
       <h2 className="leading-[0.95]">
-        <span className="block text-white font-semibold text-5xl md:text-7xl">
+        <span className="block text-white font-semibold text-[clamp(2.8rem,6vw,5rem)]">
           Featured
         </span>
 
-        <span className="block text-[#d6b98c] font-medium text-5xl md:text-7xl">
+        <span className="block text-[#d6b98c] font-medium text-[clamp(2.8rem,6vw,5rem)]">
           Projects
         </span>
       </h2>
 
-      <p className="mt-6 text-gray-400 max-w-2xl mx-auto text-base md:text-lg">
+      <p className="mt-6 text-gray-400 max-w-2xl mx-auto text-[clamp(1rem,1.8vw,1.2rem)]">
         Explore our finest residential and commercial interiors
         crafted with elegance, luxury, and timeless design.
       </p>
@@ -40,21 +48,30 @@ export default function FeaturedProjects() {
     </div>
 
     {/* PROJECTS GRID */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="grid
+grid-cols-1
+sm:grid-cols-2
+xl:grid-cols-3
+gap-[clamp(1.5rem,2vw,2rem)]">
 
       {[1, 2, 3].map((item) => (
 
         <motion.div
           key={item}
-          whileHover={{ y: -10 }}
-          transition={{ duration: 0.3 }}
+whileHover={{
+  y: -8,
+  scale: 1.015,
+}}          transition={{ duration: 0.3 }}
           className="
-            bg-[#111111]
-            rounded-[28px]
-            overflow-hidden
-            border border-white/10
-            group
-          "
+bg-[#111111]
+rounded-[clamp(22px,2vw,28px)]
+overflow-hidden
+border
+border-white/10
+group
+transform-gpu
+will-change-transform
+"
         >
 
           <div className="overflow-hidden">
@@ -63,8 +80,7 @@ export default function FeaturedProjects() {
               src={`/images/project${item}.jpg`}
               alt="Project"
               className="
-                h-[320px]
-                md:h-[420px]
+               h-[clamp(260px,35vw,420px)]
                 w-full
                 object-cover
                 group-hover:scale-105
@@ -75,13 +91,13 @@ export default function FeaturedProjects() {
 
           </div>
 
-          <div className="p-8">
+          <div className="p-[clamp(1.4rem,3vw,2rem)]">
 
-            <p className="uppercase tracking-[0.25em] text-[#d6b98c] text-xs mb-3">
+            <p className="uppercase tracking-[0.25em] text-[#d6b98c] text-[clamp(11px,1vw,13px)] mb-3">
               Luxury Interior
             </p>
 
-            <h3 className="text-2xl md:text-3xl font-bold text-white">
+            <h3 className="text-[clamp(1.5rem,2.5vw,2rem)] font-bold text-white">
 
               {item === 1
                 ? "Modern Living Room"
@@ -91,7 +107,8 @@ export default function FeaturedProjects() {
 
             </h3>
 
-            <p className="mt-4 text-gray-400 leading-relaxed">
+            <p className="mt-4 text-gray-300
+text-[clamp(.95rem,1.4vw,1.05rem)] leading-relaxed">
 
               Elegant luxury interiors crafted with timeless aesthetics,
               premium materials and modern sophistication.
@@ -107,7 +124,7 @@ export default function FeaturedProjects() {
     </div>
 
     {/* BUTTON */}
-    <div className="flex justify-center mt-16">
+    <div className="flex justify-center mt-[clamp(3rem,6vw,5rem)]">
 
       <a
         href="projects"
@@ -118,11 +135,12 @@ export default function FeaturedProjects() {
           gap-3
           bg-[#d6b98c]
           text-black
-          px-8
-          py-4
+          px-[clamp(2rem,3vw,2.6rem)]
+py-[clamp(.9rem,2vw,1rem)]
+min-h-[48px]
           rounded-full
           font-semibold
-          text-lg
+          text-[clamp(1rem,1.5vw,1.1rem)]
           hover:scale-105
           hover:bg-[#e4c89b]
           transition-all
