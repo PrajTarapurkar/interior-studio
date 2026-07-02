@@ -67,10 +67,10 @@ const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
 
         <motion.div
           initial={{ opacity: 0, y: 80 }}
+        
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="relative z-10 max-w-5xl mx-auto px-5"
-        >
+className="relative z-10 max-w-5xl mx-auto px-5 transform-gpu will-change-transform"        >
 
           <p className="uppercase tracking-[0.35em] text-[10px] md:text-sm text-[#d6b98c] mb-5">
             Contact Us
@@ -108,8 +108,22 @@ const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
   whileInView={{ opacity: 1, x: 0 }}
   viewport={{ once: true }}
   transition={{ duration: 0.8 }}
-            className="bg-gradient-to-br from-[#111111] to-[#1c1c1c] rounded-[28px] md:rounded-[42px] border border-white/10 px-5 py-6 md:px-10 md:py-10 shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
-          >
+className="
+bg-gradient-to-br
+from-[#111111]
+to-[#1c1c1c]
+rounded-[28px]
+md:rounded-[42px]
+border
+border-white/10
+px-5
+py-6
+md:px-10
+md:py-10
+shadow-[0_20px_80px_rgba(0,0,0,0.45)]
+transform-gpu
+will-change-transform
+"          >
 
             <p className="uppercase tracking-[0.3em] text-[10px] md:text-sm text-[#d6b98c] mb-4 md:mb-6">
               Luxury Consultation
@@ -235,8 +249,22 @@ const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
   whileInView={{ opacity: 1, x: 0 }}
   viewport={{ once: true }}
   transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-gradient-to-br from-[#111111] to-[#1c1c1c] rounded-[28px] md:rounded-[36px] border border-white/10 p-5 md:p-10 shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
-          >
+className="
+bg-gradient-to-br
+from-[#111111]
+to-[#1c1c1c]
+rounded-[28px]
+md:rounded-[42px]
+border
+border-white/10
+px-5
+py-6
+md:px-10
+md:py-10
+shadow-[0_20px_80px_rgba(0,0,0,0.45)]
+transform-gpu
+will-change-transform
+"          >
 
             <p className="uppercase tracking-[0.3em] text-[10px] md:text-sm text-[#d6b98c] mb-5">
               Get In Touch With Us

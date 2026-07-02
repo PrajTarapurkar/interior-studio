@@ -198,6 +198,7 @@ const filteredProjects =
 
           {filteredProjects.map((project) => (
   <motion.a
+   key={project.href}
   href={project.href}
   initial={{ opacity: 0, y: 40 }}
   whileInView={{ opacity: 1, y: 0 }}
