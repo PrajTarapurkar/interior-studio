@@ -197,11 +197,6 @@ const filteredProjects =
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
 
           {filteredProjects.map((project) => (
-            <Link
-            key={project.title}
-    href={project.href}
-    className="block"
-  >
   <motion.a
   href={project.href}
   initial={{ opacity: 0, y: 40 }}
@@ -221,6 +216,7 @@ const filteredProjects =
         transition-all
         duration-500
         hover:border-[#d6b98c]/60
+        hover:-translate-y-3
         hover:shadow-[0_0_40px_rgba(214,185,140,0.18)]
       "
     >
@@ -263,7 +259,6 @@ const filteredProjects =
       </div>
     </div>
   </motion.a>
-  </Link>
 ))}
 
         </div>

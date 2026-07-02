@@ -13,10 +13,12 @@ import Loader from "@/components/layout/Loader";
 import useLenis from "@/hooks/useLenis";
 
 
+
 export default function Home() {
 
    useLenis();
   return (
+    
      <>
       <Loader />
     <main className="relative overflow-hidden">
