@@ -8,18 +8,18 @@ export default function useLenis() {
     const lenis = new Lenis({
       duration: 1.1,
       smoothWheel: true,
-      syncTouch: true,
-      touchMultiplier: 1.2,
-      wheelMultiplier: 0.9,
+      syncTouch: false,
+      touchMultiplier: 1,
+      wheelMultiplier: 1,
       autoRaf: false,
     });
 
     let rafId: number;
 
-    function raf(time: number) {
+    const raf = (time: number) => {
       lenis.raf(time);
       rafId = requestAnimationFrame(raf);
-    }
+    };
 
     rafId = requestAnimationFrame(raf);
 
