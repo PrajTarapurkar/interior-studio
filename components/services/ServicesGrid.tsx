@@ -78,9 +78,17 @@ export default function ServicesGrid() {
 
             {services.map((service, index) => (
 
-              <div
+              <motion.div
                 key={index}
-                
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.04,
+                }}
+                whileHover={{
+                  y: -6,
+                }}
                 className="
                   relative
                   overflow-hidden
@@ -113,7 +121,7 @@ export default function ServicesGrid() {
 
                 </div>
 
-              </div>
+              </motion.div>
 
             ))}
 
