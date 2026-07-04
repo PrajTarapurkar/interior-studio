@@ -65,7 +65,7 @@ export default function Hero() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ delay: 0.2 }}
-          className="mx-auto mt-5 h-[2px] w-16 bg-[#d6b98c]"
+          className="mx-auto mt-5 h-[2px] w-40 bg-[#d6b98c]"
         />
 
         {/* Subtitle */}

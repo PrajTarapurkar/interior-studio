@@ -33,7 +33,7 @@ export default function VideoTestimonials() {
 
           </p>
 
-          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[family:var(--font-heading)] leading-tight">
+          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[family:var(--font-heading)] leading-tight">
 
             <span className="text-white">
               Hear From Our
@@ -165,13 +165,13 @@ export default function VideoTestimonials() {
 
                 </p>
 
-                
+                <div className="mt-6 flex items-center justify-between">
 
                  
 
                 </div>
 
-              
+              </div>
 
             </motion.a>
 
