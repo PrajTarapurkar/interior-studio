@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/providers/SmoothScroll";
-
+import FloatingContact from "@/components/ui/FloatingContact";
 
 
 
@@ -42,6 +42,8 @@ export default function RootLayout({
     {children}
 
   </SmoothScroll>
+
+  <FloatingContact />
 
 </body>
     </html>

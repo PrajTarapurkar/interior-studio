@@ -10,6 +10,7 @@ import VideoSection from "@/components/home/VideoSection";
 import HomeServices from "@/components/home/HomeServices";
 import Presence from "@/components/home/Presence";
 import Loader from "@/components/layout/Loader";
+import HowItWorks from "@/components/home/HowItWorks";
 
 
 
@@ -30,6 +31,8 @@ export default function Home() {
      <FeaturedProjects />
 
 <LuxurySlider />
+
+<HowItWorks />
       
 <VideoSection />
 

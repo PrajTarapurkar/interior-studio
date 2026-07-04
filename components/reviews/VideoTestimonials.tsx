@@ -1,11 +1,14 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import Image from "next/image";
 import { videoTestimonials } from "@/lib/reviews";
 
 export default function VideoTestimonials() {
+    const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   return (
+    
     <section className="relative py-16 sm:py-20 lg:py-28 bg-black overflow-hidden">
 
       {/* Background Glow */}
@@ -61,11 +64,9 @@ export default function VideoTestimonials() {
 
           {videoTestimonials.map((video, index) => (
 
-            <motion.a
+            <motion.div
               key={index}
-              href={video.youtube}
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={() => setSelectedVideo(video.youtube)}
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -173,11 +174,89 @@ export default function VideoTestimonials() {
 
               </div>
 
-            </motion.a>
+            </motion.div>
 
           ))}
 
         </div>
+
+        <AnimatePresence>
+
+  {selectedVideo && (
+
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="
+        fixed
+        inset-0
+        z-[9999]
+        bg-black/80
+        backdrop-blur-sm
+        flex
+        items-center
+        justify-center
+        p-4
+      "
+      onClick={() => setSelectedVideo(null)}
+    >
+
+      <motion.div
+        initial={{ scale: 0.9 }}
+        animate={{ scale: 1 }}
+        exit={{ scale: 0.9 }}
+        transition={{ duration: 0.25 }}
+        className="
+          relative
+          w-full
+          max-w-5xl
+          aspect-video
+          rounded-2xl
+          overflow-hidden
+          bg-black
+        "
+        onClick={(e) => e.stopPropagation()}
+      >
+
+        <button
+          onClick={() => setSelectedVideo(null)}
+          className="
+            absolute
+            top-4
+            right-4
+            z-20
+            w-10
+            h-10
+            rounded-full
+            bg-black/70
+            text-white
+            text-xl
+            hover:bg-[#d6b98c]
+            hover:text-black
+            transition
+          "
+        >
+          ✕
+        </button>
+
+        <iframe
+          className="w-full h-full"
+          src={`https://www.youtube.com/embed/${
+            selectedVideo.split("v=")[1]
+          }?autoplay=1&rel=0`}
+          title="Video Testimonial"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+
+      </motion.div>
+
+    </motion.div>
+
+  )}
+
+</AnimatePresence>
 
       </div>
 
