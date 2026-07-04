@@ -9,7 +9,7 @@ import CTA from "@/components/about/CTA";
 
 export default function AboutPage() {
 
-
+  
 
   return (
   <main className="bg-[#050505] min-h-screen text-white overflow-x-hidden">

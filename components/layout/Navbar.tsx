@@ -167,6 +167,17 @@ w-[clamp(48px,4vw,56px)]
   Projects
 </Link>
 
+<Link
+  href="/reviews"
+  className={`px-4 py-2 rounded-full border transition-all duration-300 ${
+    pathname === "/reviews"
+      ? "bg-[#d6b98c]/10 border-[#d6b98c]/25 text-[#d6b98c]"
+      : "border-transparent text-white hover:text-[#d6b98c]"
+  }`}
+>
+  Reviews
+</Link>
+
       <Link
   href="/services"
   className={`px-4 py-2 rounded-full border transition-all duration-300 ${
@@ -333,6 +344,20 @@ text-[clamp(34px,6vw,40px)]"
         "
       >
         Projects
+      </a>
+
+      <a
+        href="/reviews"
+        className="
+          py-4
+          border-b
+          border-white/8
+          text-[clamp(17px,2vw,18px)]
+          font-light
+          text-white
+        "
+      >
+        Reviews
       </a>
 
       <a
