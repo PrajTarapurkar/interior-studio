@@ -1,45 +1,40 @@
-"use client";
-
-
-import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
+
 import Footer from "@/components/layout/Footer";
 
 import Hero from "@/components/projects/Hero";
-import Filter from "@/components/projects/Filter";
-import { projects } from "@/lib/projects";
-import ProjectsGrid from "@/components/projects/ProjectsGrid";
+import ProjectsClient from "@/components/projects/ProjectsClient";
 
-export default function ProjectsPage() {
+import { getProjects } from "@/lib/getProjects";
 
-  
+import { urlFor } from "@/sanity/lib/image";
 
-const [activeFilter, setActiveFilter] = useState("All");
+export default async function ProjectsPage() {
+  const sanityProjects = await getProjects();
 
-const filteredProjects =
-  activeFilter === "All"
-    ? projects
-    : projects.filter((project) => project.type === activeFilter);
+  const projects = sanityProjects.map((project: any) => ({
+    title: project.title,
+    category: project.category?.title ?? "General",
+    type: project.category?.title ?? "General",
 
+    image: project.coverImage
+  ? urlFor(project.coverImage).width(800).height(600).url()
+  : "/images/project-placeholder.jpg",
 
+    href: `/projects/${project.slug.current}`,
+
+    description: project.shortDescription ?? "",
+  }));
 
   return (
-<main className="bg-[#000000] min-h-screen text-white overflow-x-hidden">      
-<Navbar />
-
+    <main className="relative overflow-hidden">
+      <Navbar />
 
       <Hero />
 
+      <ProjectsClient projects={projects} />
 
-<Filter
-  activeFilter={activeFilter}
-  setActiveFilter={setActiveFilter}
-/>
-
-      <ProjectsGrid filteredProjects={filteredProjects} />
-
-<Footer />
-
+      <Footer />
     </main>
   );
 }

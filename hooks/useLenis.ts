@@ -5,6 +5,11 @@ import Lenis from "lenis";
 
 export default function useLenis() {
   useEffect(() => {
+    // Only enable Lenis on desktop (1024px and above)
+    if (window.innerWidth < 1024) {
+      return;
+    }
+
     const lenis = new Lenis({
       duration: 1.1,
       smoothWheel: true,

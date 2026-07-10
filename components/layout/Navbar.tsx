@@ -16,19 +16,20 @@ import { usePathname } from "next/navigation";
 export default function Navbar() {
   const pathname = usePathname();   // <-- ADD THIS LINE
 
-  const [menuOpen, setMenuOpen] = useState(false);
+ const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+useEffect(() => {
+  document.body.style.overflow = menuOpen ? "hidden" : "";
 
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [menuOpen]);
+  return () => {
+    document.body.style.overflow = "";
+  };
+}, [menuOpen]);
+
+// Close menu automatically on page change
+useEffect(() => {
+  setMenuOpen(false);
+}, [pathname]);
 
   return (
     <>
@@ -134,7 +135,7 @@ w-[clamp(48px,4vw,56px)]
     <div
       className="
         hidden
-        md:flex
+        lg:flex
         items-center
        gap-[clamp(1rem,2vw,2rem)]
         text-sm
@@ -217,7 +218,7 @@ w-[clamp(48px,4vw,56px)]
     <button
       onClick={() => setMenuOpen(true)}
       className="
-  md:hidden
+  lg:hidden
   text-white
 text-[clamp(34px,6vw,40px)]"
     >
@@ -318,8 +319,9 @@ text-[clamp(34px,6vw,40px)]"
     {/* NAV LINKS */}
     <div className="mt-10 flex flex-col">
 
-      <a
+      <Link
         href="/"
+        onClick={() => setMenuOpen(false)}
         className="
           py-4
           border-b
@@ -330,10 +332,11 @@ text-[clamp(34px,6vw,40px)]"
         "
       >
         Home
-      </a>
+      </Link>
 
-      <a
+      <Link
         href="/projects"
+        onClick={() => setMenuOpen(false)}
         className="
           py-4
           border-b
@@ -344,10 +347,11 @@ text-[clamp(34px,6vw,40px)]"
         "
       >
         Projects
-      </a>
+      </Link>
 
-      <a
+      <Link
         href="/reviews"
+        onClick={() => setMenuOpen(false)}
         className="
           py-4
           border-b
@@ -358,10 +362,11 @@ text-[clamp(34px,6vw,40px)]"
         "
       >
         Reviews
-      </a>
+      </Link>
 
-      <a
+      <Link
         href="/services"
+        onClick={() => setMenuOpen(false)}
         className="
           py-4
           border-b
@@ -372,11 +377,12 @@ text-[clamp(34px,6vw,40px)]"
         "
       >
         Services
-      </a>
+      </Link>
       
 
-      <a
+      <Link
         href="/contact"
+        onClick={() => setMenuOpen(false)}
         className="
           py-4
           border-b
@@ -387,10 +393,11 @@ text-[clamp(34px,6vw,40px)]"
         "
       >
         Contact
-      </a>
+      </Link>
 
-<a
+<Link
   href="/about"
+  onClick={() => setMenuOpen(false)}
   className="
     py-4
     border-b
@@ -401,7 +408,7 @@ text-[clamp(34px,6vw,40px)]"
   "
 >
   About Us
-</a>
+</Link>
 
     </div>
 

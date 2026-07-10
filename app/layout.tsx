@@ -37,11 +37,9 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-black text-white overflow-x-hidden">
 
-  <SmoothScroll>
 
     {children}
 
-  </SmoothScroll>
 
   <FloatingContact />
 

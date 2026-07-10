@@ -10,6 +10,11 @@ type HeroProps = {
     category: string;
     image: string;
     description: string;
+
+    area: string;
+    status: string;
+    completionDate: string;
+
     requirements: string[];
   };
 };
@@ -42,46 +47,71 @@ export default function Hero({ project }: HeroProps) {
             {project.title}
           </h2>
 
-          {/* OWNER */}
-          <div className="mt-8">
-            <h4 className="text-[#d6b98c] uppercase tracking-[0.25em] text-sm">
-              Owner
-            </h4>
+          {/* PROJECT DETAILS */}
 
-            <p className="mt-2 text-lg">
-              {project.owner}
-            </p>
+          <div className="mt-10 grid grid-cols-2 gap-x-10 gap-y-8">
+
+            {/* Owner */}
+            <div>
+              <h4 className="text-[#d6b98c] uppercase tracking-[0.25em] text-xs">
+                Client
+              </h4>
+
+              <p className="mt-2 text-lg">
+                {project.owner}
+              </p>
+            </div>
+
+            {/* Location */}
+            <div>
+              <h4 className="text-[#d6b98c] uppercase tracking-[0.25em] text-xs">
+                Location
+              </h4>
+
+              <p className="mt-2 text-lg">
+                {project.location}
+              </p>
+            </div>
+
+            {/* Area */}
+            <div>
+              <h4 className="text-[#d6b98c] uppercase tracking-[0.25em] text-xs">
+                Area
+              </h4>
+
+              <p className="mt-2 text-lg">
+                {project.area}
+              </p>
+            </div>
+
+            {/* Status */}
+            <div>
+              <h4 className="text-[#d6b98c] uppercase tracking-[0.25em] text-xs">
+                Status
+              </h4>
+
+              <p className="mt-2 text-lg capitalize">
+                {project.status}
+              </p>
+            </div>
+
+            {/* Completed */}
+            <div>
+              <h4 className="text-[#d6b98c] uppercase tracking-[0.25em] text-xs">
+                Completed
+              </h4>
+
+              <p className="mt-2 text-lg">
+                {project.completionDate}
+              </p>
+            </div>
+
           </div>
 
-          {/* LOCATION */}
-          <div className="mt-8">
-            <h4 className="text-[#d6b98c] uppercase tracking-[0.25em] text-sm">
-              Location
-            </h4>
+          {/* DESIGN APPROACH */}
 
-            <p className="mt-2 text-lg">
-              {project.location}
-            </p>
-          </div>
+          <div className="mt-10 border-t border-[#d6b98c]/20 pt-8">
 
-          {/* REQUIREMENTS */}
-          <div className="mt-8">
-            <h4 className="text-[#d6b98c] uppercase tracking-[0.25em] text-sm">
-              Requirements
-            </h4>
-
-            <ul className="mt-4 space-y-3">
-              {project.requirements.map((item, index) => (
-                <li key={index} className="flex gap-3">
-                  <span className="text-[#d6b98c]">✓</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* DESCRIPTION */}
-          <div className="mt-10">
             <h4 className="text-[#d6b98c] uppercase tracking-[0.25em] text-sm">
               Design Approach
             </h4>
@@ -89,6 +119,7 @@ export default function Hero({ project }: HeroProps) {
             <p className="mt-4 leading-8 text-gray-300">
               {project.description}
             </p>
+
           </div>
 
         </div>

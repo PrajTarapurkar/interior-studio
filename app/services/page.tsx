@@ -13,7 +13,7 @@ export default function ServicesPage() {
 
   return (
 
-    <main className="bg-black text-white overflow-x-hidden min-h-screen">
+    <main className="relative overflow-hidden">
 
       <Navbar />
 

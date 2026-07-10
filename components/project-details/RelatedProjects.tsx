@@ -7,17 +7,18 @@ type Project = {
   category: string;
   location: string;
   image: string;
-};
-
-type FeaturesProps = {
-  projects: Record<string, Project>;
   slug: string;
 };
 
-export default function Features({
+type RelatedProjectsProps = {
+  projects:  Project[];
+  
+};
+
+export default function RelatedProjects({
   projects,
-  slug,
-}: FeaturesProps) {
+  
+}: RelatedProjectsProps) {
   return (
     <section className="py-24 px-5 sm:px-6 md:px-8 lg:px-12 bg-black">
 
@@ -37,14 +38,11 @@ export default function Features({
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          {Object.entries(projects)
-            .filter(([key]) => key !== slug)
-            .slice(0, 3)
-            .map(([key, item]) => (
+          {projects.map((item) => (
 
               <a
-                key={key}
-                href={`/projects/${key}`}
+                key={item.slug}
+                href={`/projects/${item.slug}`}
                 className="
                   group
                   overflow-hidden

@@ -11,7 +11,7 @@ import VideoTestimonials from "@/components/reviews/VideoTestimonials";
 
 export default function ReviewsPage() {
   return (
-    <main className="bg-black min-h-screen text-white overflow-x-hidden">
+    <main className="relative overflow-hidden">
 
       <Navbar />
 
