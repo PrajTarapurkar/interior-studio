@@ -8,7 +8,7 @@ import {
   Hammer,
   KeyRound,
 } from "lucide-react";
-import { processSteps } from "@/lib/process";
+
 
 const icons = {
   consultation: MessageCircleMore,
@@ -18,7 +18,24 @@ const icons = {
   handover: KeyRound,
 };
 
-export default function HowItWorks() {
+type HowItWorksProps = {
+  howItWorks?: {
+    badge: string;
+    heading: string;
+    highlightText: string;
+    description: string;
+    buttonText: string;
+    buttonLink: string;
+    steps: {
+      number: string;
+      title: string;
+      description: string;
+      icon: string;
+    }[];
+  };
+};
+
+export default function HowItWorks({ howItWorks }: HowItWorksProps) {
   return (
     <section className="relative bg-black py-20 overflow-hidden">
       {/* Background Glow */}
@@ -37,35 +54,43 @@ export default function HowItWorks() {
             transition={{ duration: 0.6 }}
           >
             <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-xs">
-              Our Process
+              {howItWorks?.badge || "Our Process"}
             </p>
 
             <h2 className="mt-3 text-4xl sm:text-5xl font-[family:var(--font-heading)] leading-tight">
-              <span className="text-white">How We</span>
+              <span className="text-white">
+  {howItWorks?.heading || "How We"}
+</span>
               <br />
-              <span className="text-[#d6b98c]">Work</span>
+              <span className="text-[#d6b98c]">
+  {howItWorks?.highlightText || "Work"}
+</span>
             </h2>
 
             <p className="mt-6 text-gray-400 leading-8">
-              A seamless and transparent process to bring your dream interior
-              space to life with premium craftsmanship.
+             {howItWorks?.description ||
+  "A seamless and transparent process to bring your dream interior space to life with premium craftsmanship."}
             </p>
 
-            <button
-              className="
-                mt-8
-                px-8
-                py-4
-                rounded-full
-                bg-[#d6b98c]
-                text-black
-                font-semibold
-                hover:scale-105
-                transition
-              "
-            >
-              Let's Get Started
-            </button>
+            <motion.a
+  href={howItWorks?.buttonLink || "/contact"}
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.98 }}
+  className="
+    mt-8
+    inline-flex
+    px-8
+    py-4
+    rounded-full
+    bg-[#d6b98c]
+    text-black
+    font-semibold
+    hover:scale-105
+    transition
+  "
+>
+  {howItWorks?.buttonText || "Book Consultation"}
+</motion.a>
           </motion.div>
 
           {/* RIGHT SIDE */}
@@ -81,7 +106,7 @@ export default function HowItWorks() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-4">
 
-                {processSteps.map((step, index) => {
+                {howItWorks?.steps?.map((step, index) => {
                   const Icon =
                     icons[step.icon as keyof typeof icons];
 
@@ -98,7 +123,7 @@ export default function HowItWorks() {
                       className="relative text-center group"
                     >
                       {/* Mobile Vertical Line */}
-                      {index !== processSteps.length - 1 && (
+                      {index !== (howItWorks?.steps?.length ?? 0) - 1 && (
                         <div className="lg:hidden absolute left-1/2 top-20 -translate-x-1/2 h-20 w-px bg-white/10" />
                       )}
 

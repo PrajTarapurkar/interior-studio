@@ -12,7 +12,7 @@ export default function AboutPage() {
   
 
   return (
-  <main className="bg-[#050505] min-h-screen text-white overflow-x-hidden">
+    <main className="relative overflow-hidden">
 
     <Navbar />
 

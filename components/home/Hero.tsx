@@ -1,7 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-export default function Hero() {
+import { urlFor } from "@/sanity/lib/image";
+
+type HeroProps = {
+  hero?: {
+    badge: string;
+    heading: string;
+    highlightText: string;
+    description: string;
+    backgroundImage: any;
+    primaryButtonText: string;
+    primaryButtonLink: string;
+    secondaryButtonText: string;
+    secondaryButtonLink: string;
+  };
+};
+
+export default function Hero({ hero }: HeroProps) {
   return (
     <>
       {/* Hero Section */}
@@ -24,8 +40,10 @@ lg:px-10
 xl:px-12
 2xl:px-16
 "  style={{
-    backgroundImage: "url('/images/hero.jpg')",
-  }}
+  backgroundImage: hero?.backgroundImage
+    ? `url(${urlFor(hero.backgroundImage).url()})`
+    : "url('/images/hero.jpg')",
+}}
 >
 
   {/* DARK CINEMATIC OVERLAY */}
@@ -111,7 +129,7 @@ px-2
         drop-shadow-[0_0_20px_rgba(214,185,140,0.4)]
       "
     >
-      Luxury Interior Design
+      {hero?.badge || "Luxury Interior Design"}
     </p>
 
     {/* MAIN HEADING */}
@@ -130,8 +148,8 @@ px-2
       <span className="relative inline-block">
 
         <span className="relative z-10">
-          Designing Timeless
-        </span>
+  {hero?.heading || "Designing Timeless"}
+</span>
 
         {/* GOLD HIGHLIGHT */}
         <motion.span
@@ -164,8 +182,8 @@ px-2
       <span className="relative inline-block mt-2">
 
         <span className="relative z-10">
-          Modern Spaces
-        </span>
+  {hero?.highlightText || "Modern Spaces"}
+</span>
 
         {/* WHITE GLOW */}
         <motion.span
@@ -210,8 +228,8 @@ px-2
       "
     >
 
-      Creating elegant interiors that blend modern sophistication
-      with timeless comfort, premium craftsmanship, and luxury living.
+      {hero?.description ||
+  "Creating elegant interiors that blend modern sophistication with timeless comfort, premium craftsmanship, and luxury living."}
 
     </p>
 
@@ -231,7 +249,7 @@ px-2
 
       {/* VIEW PROJECTS BUTTON */}
       <motion.a
-        href="/projects"
+        href={hero?.primaryButtonLink || "/projects"}
         whileHover={{
           scale: 1.06,
           y: -3,
@@ -282,7 +300,7 @@ will-change-transform
         {/* TEXT */}
         <span className="relative z-10 flex items-center gap-3">
 
-          View Projects
+          {hero?.primaryButtonText || "View Projects"}
 
           <motion.span
             animate={{
@@ -302,7 +320,7 @@ will-change-transform
 
       {/* CONTACT BUTTON */}
       <motion.a
-        href="/contact"
+        href={hero?.secondaryButtonLink || "/contact"}
         whileHover={{
           scale: 1.06,
           y: -3,
@@ -367,7 +385,7 @@ will-change-transform
         {/* TEXT */}
         <span className="relative z-10 flex items-center gap-3">
 
-          Contact Us
+          {hero?.secondaryButtonText || "Contact Us"}
 
           <motion.span
             animate={{

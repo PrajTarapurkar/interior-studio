@@ -102,6 +102,13 @@ export const projectType = defineType({
       },
     }),
 
+    defineField({
+  name: "featuredOnHome",
+  title: "Show on Home Page",
+  type: "boolean",
+  initialValue: false,
+}),
+
     // ===========================
     // CONTENT
     // ===========================

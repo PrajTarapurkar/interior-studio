@@ -2,7 +2,29 @@
 
 import { motion } from "framer-motion";
 
-export default function Services() {
+
+type ServicesSection = {
+  badge: string;
+  heading: string;
+  description: string;
+  bottomHeading: string;
+  additionalServices: string[];
+  featuredServices: {
+    
+    title: string;
+    shortDescription: string;
+  }[];
+};
+
+type HomeServicesProps = {
+  
+  section: ServicesSection;
+};
+
+export default function HomeServices({
+  
+  section,
+}: HomeServicesProps) {
   return (
     <>
       {/* SERVICES SECTION */}
@@ -21,45 +43,23 @@ export default function Services() {
     <div className="text-center mb-16 md:mb-20">
 
       <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-xs md:text-sm mb-4 font-medium">
-        Services
-      </p>
+  {section.badge}
+</p>
 
       <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
-        What We Offer
-      </h2>
+  {section.heading}
+</h2>
 
       <p className="mt-6 text-gray-400 text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-light">
-
-        Premium luxury interior solutions designed with timeless elegance,
-        modern sophistication, and functional comfort.
-
-      </p>
+  {section.description}
+</p>
 
     </div>
 
     {/* TOP SERVICE CARDS */}
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
-      {[
-        {
-          title: "Residential Design",
-          desc: "Elegant luxury interiors crafted for modern living spaces.",
-        },
-        {
-          title: "Commercial Spaces",
-          desc: "Premium office and commercial interiors with sophistication.",
-        },
-        {
-          title: "Space Planning",
-          desc: "Optimized layouts balancing beauty and functionality.",
-        },
-        {
-          title: "Furniture Styling",
-          desc: "Custom styling solutions for timeless interior aesthetics.",
-        },
-      ].map((service, index) => (
-
-        <motion.div
+{(section.featuredServices ?? []).map((service, index) => (        <motion.div
           key={index}
           whileHover={{ y: -10, scale: 1.02 }}
           whileTap={{ scale: 0.96 }}
@@ -71,9 +71,9 @@ export default function Services() {
             {service.title}
           </h3>
 
-          <p className="text-gray-400 leading-relaxed text-sm md:text-base font-light">
-            {service.desc}
-          </p>
+         <p className="text-gray-400 leading-relaxed text-sm md:text-base font-light">
+  {service.shortDescription}
+</p>
 
         </motion.div>
 
@@ -91,22 +91,13 @@ export default function Services() {
 
       {/* Small Heading */}
       <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-xs md:text-sm mb-10 font-medium">
-        Our Services
-      </p>
+  {section.bottomHeading}
+</p>
 
       {/* INLINE SERVICES */}
       <div className="flex flex-wrap justify-center gap-x-6 gap-y-5 md:gap-x-8">
 
-        {[
-          "Modular Kitchens",
-          "Modular Wardrobes",
-          "Lighting",
-          "Flooring",
-          "Electrical Work",
-          "Civil Work",
-          "False Ceiling",
-          "Wall Design & Painting",
-        ].map((item, index) => (
+        {(section?.additionalServices ?? []).map((item, index) => (
 
           <motion.div
             key={index}
