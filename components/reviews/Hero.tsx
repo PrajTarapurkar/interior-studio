@@ -2,7 +2,16 @@
 
 import { motion } from "framer-motion";
 
-export default function Hero() {
+interface ReviewsHeroProps {
+  hero: {
+    badge: string;
+    heading: string;
+    highlightText: string;
+    subtitle: string;
+  };
+}
+
+export default function Hero({ hero }: ReviewsHeroProps) {
   return (
     <section className="relative overflow-hidden bg-black border-b border-white/10">
 
@@ -29,7 +38,7 @@ export default function Hero() {
           <div className="w-14 h-[1px] bg-[#d6b98c]" />
 
           <span className="uppercase tracking-[0.45em] text-[#d6b98c] text-[10px] md:text-xs">
-            Testimonials
+            {hero.badge}
           </span>
 
           <div className="w-14 h-[1px] bg-[#d6b98c]" />
@@ -52,10 +61,10 @@ export default function Hero() {
             font-semibold
           "
         >
-          <span className="text-white">Client </span>
+          <span className="text-white">{hero.heading} </span>
 
           <span className="text-[#d6b98c]">
-            Reviews
+            {hero.highlightText}
           </span>
         </motion.h1>
 
@@ -84,7 +93,7 @@ export default function Hero() {
             leading-relaxed
           "
         >
-          Happy Clients. Beautiful Homes.
+          {hero.subtitle}
         </motion.p>
 
       </div>

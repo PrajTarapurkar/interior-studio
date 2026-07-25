@@ -1,4 +1,4 @@
-import Navbar from "@/components/layout/Navbar";
+  import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { notFound } from "next/navigation";
 import { getProjectBySlug } from "@/lib/getProjectBySlug";
@@ -47,13 +47,13 @@ export async function generateMetadata({
 
       images: project.coverImage
         ? [
-            {
-              url: urlFor(project.coverImage)
-                .width(1200)
-                .height(630)
-                .url(),
-            },
-          ]
+          {
+            url: urlFor(project.coverImage)
+              .width(1200)
+              .height(630)
+              .url(),
+          },
+        ]
         : [],
     },
   };
@@ -70,80 +70,174 @@ export default async function ProjectDetail({
   const sanityProject = await getProjectBySlug(slug);
   const relatedProjects = await getRelatedProjects(slug);
 
-if (!sanityProject) {
-  notFound();
-}
+  if (!sanityProject) {
+    notFound();
+  }
 
-const project = {
-  title: sanityProject.title,
+  const project = {
+    title: sanityProject.title,
 
-  owner: sanityProject.clientName,
+    owner: sanityProject.clientName,
 
-  location: sanityProject.location,
+    location: sanityProject.location,
 
-  category: sanityProject.category?.title ?? "General",
+    category: sanityProject.category?.title ?? "General",
 
-  area: sanityProject.area,
+    area: sanityProject.area,
 
-status: sanityProject.status,
+    status: sanityProject.status,
 
-completionDate: sanityProject.completionDate
-  ? new Date(sanityProject.completionDate).toLocaleDateString("en-IN", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    })
-  : "",
+    completionDate: sanityProject.completionDate
+      ? new Date(sanityProject.completionDate).toLocaleDateString("en-IN", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      })
+      : "",
 
-  image: sanityProject.coverImage
-    ? urlFor(sanityProject.coverImage).width(1600).url()
-    : "",
+    image: sanityProject.coverImage
+      ? urlFor(sanityProject.coverImage).width(1600).url()
+      : "",
 
-  description: sanityProject.description,
+    description: sanityProject.description,
 
-  requirements: [],
+    requirements: [],
 
-  gallery:
-    sanityProject.gallery?.map((img: any) =>
-      urlFor(img).width(1200).url()
-    ) ?? [],
-};
+    gallery:
+      sanityProject.gallery?.map((img: any) =>
+        urlFor(img).width(1200).url()
+      ) ?? [],
+  };
 
-const related = relatedProjects.map((item: any) => ({
-  title: item.title,
+  const related = relatedProjects.map((item: any) => ({
+    title: item.title,
 
-  category: item.category?.title ?? "General",
+    category: item.category?.title ?? "General",
 
-  location: item.location,
+    location: item.location,
 
-  image: item.coverImage
-    ? urlFor(item.coverImage).width(800).url()
-    : "",
+    image: item.coverImage
+      ? urlFor(item.coverImage).width(800).url()
+      : "",
 
-  slug: item.slug.current,
-}));
+    slug: item.slug.current,
+  }));
 
   return (
-    
+
     <>
+
       <Navbar />
 
-<main className="relative overflow-hidden">       
+      <main className="bg-black text-white overflow-hidden">
 
         <Hero project={project} />
 
         <Gallery project={project} />
 
 
- <Features
-  projects={related}
-  
-/> 
+        <Features
+          projects={related}
 
-<CTA />
+        />
+
+        <CTA />
 
       </main>
       <Footer />
     </>
   );
+} 
+
+
+ 
+
+
+
+ /* import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+
+import HeroNew from "@/components/project-details/HeroNew";
+
+import { getProjectBySlug } from "@/lib/getProjectBySlug";
+import { urlFor } from "@/sanity/lib/image";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+
+  const project = await getProjectBySlug(slug);
+
+  if (!project) {
+    return {
+      title: "Project Not Found | Kulal Interiors",
+    };
+  }
+
+  return {
+    title: project.seoTitle ?? `${project.title} | Kulal Interiors`,
+    description:
+      project.seoDescription ??
+      project.shortDescription ??
+      "Luxury Interior Design by Kulal Interiors.",
+  };
 }
+
+export default async function ProjectDetail({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
+  const sanityProject = await getProjectBySlug(slug);
+
+  if (!sanityProject) {
+    notFound();
+  }
+
+  const project = {
+    title: sanityProject.title,
+    owner: sanityProject.clientName,
+    location: sanityProject.location,
+    category: sanityProject.category?.title ?? "General",
+    area: sanityProject.area,
+    status: sanityProject.status,
+
+    completionDate: sanityProject.completionDate
+      ? new Date(sanityProject.completionDate).toLocaleDateString("en-IN", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        })
+      : "",
+
+    image: sanityProject.coverImage
+      ? urlFor(sanityProject.coverImage).width(1800).url()
+      : "",
+
+    description: sanityProject.description,
+
+    gallery:
+      sanityProject.gallery?.map((img: any) =>
+        urlFor(img).width(1800).url()
+      ) ?? [],
+  };
+
+  return (
+    <>
+      <Navbar />
+
+      <main className="bg-black text-white">
+        <HeroNew project={project} />
+      </main>
+
+      <Footer />
+    </>
+  );
+}  */

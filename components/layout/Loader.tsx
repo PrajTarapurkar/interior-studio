@@ -10,14 +10,17 @@ export default function Loader() {
 
   useEffect(() => {
   // Start GSAP animation
+
+  requestAnimationFrame(() => {
   startLoaderAnimation();
+});
 
   // Temporary auto hide
   const timer = setTimeout(() => {
   requestAnimationFrame(() => {
     setLoading(false);
   });
-}, 2200);
+}, 3200);
 
   return () => clearTimeout(timer);
 }, []);
@@ -31,20 +34,7 @@ export default function Loader() {
   aria-live="polite"
   className="fixed inset-0 z-[9999] bg-black flex items-center justify-center overflow-hidden will-change-transform select-none"
 >
-      {/* Gold Glow */}
-      <div
-  id="loader-glow"
-  style={{ opacity: 0 }}
- className="
-absolute
-w-[clamp(260px,45vw,550px)]
-h-[clamp(260px,45vw,550px)]
-rounded-full
-bg-[#d6b98c]/10
-blur-[140px]
-md:blur-[180px]
-"
-/>
+      
 
       <div
   className="

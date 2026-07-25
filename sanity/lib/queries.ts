@@ -144,3 +144,159 @@ export const HOME_VIDEO_SECTION_QUERY = groq`
   }
 }
 `;
+
+export const REVIEWS_HERO_QUERY = `
+*[_type == "reviewsHero"][0]{
+  badge,
+  heading,
+  highlightText,
+  subtitle
+}
+`;
+
+export const REVIEWS_VIDEO_TESTIMONIALS_QUERY = groq`
+*[_type == "reviewsVideoTestimonials"][0]{
+  badge,
+  heading,
+  highlightText,
+  description,
+  videos[]{
+    title,
+    location,
+    youtubeUrl,
+    thumbnail{
+      asset->{
+        url
+      }
+    }
+  }
+}
+`;
+
+export const REVIEWS_GOOGLE_RATING_QUERY = groq`
+*[_type == "reviewsGoogleRating"][0]{
+  badge,
+  heading,
+  highlightText,
+  description,
+  rating,
+  ratingLabel,
+  reviewCount,
+  buttonText,
+  googleReviewUrl
+}
+`;
+
+export const REVIEWS_SLIDER_QUERY = groq`
+*[_type == "reviewsSlider"][0]{
+  badge,
+  heading,
+  highlightText,
+  reviews[]{
+    name,
+    project,
+    location,
+    rating,
+    review
+  }
+}
+`;
+
+export const SERVICES_HERO_QUERY = `
+*[_type == "servicesHero"][0]{
+  badge,
+  heading,
+  highlightText,
+  description
+}
+`;
+
+export const SERVICES_GRID_QUERY = `
+*[_type == "servicesGrid"][0]{
+  services[]{
+    title,
+    description
+  }
+}
+`;
+
+export const ABOUT_HERO_QUERY = `
+*[_type == "aboutHero"][0]{
+  badge,
+  heading,
+  highlightText,
+  description
+}
+`;
+
+export const ABOUT_STORY_QUERY = `
+*[_type == "aboutStory"][0]{
+  image,
+  experienceNumber,
+  experienceLabel,
+  badge,
+  heading,
+  highlightText,
+  story,
+  challengesTitle,
+  challenges,
+  visionTitle,
+  vision
+}
+`;
+
+export const ABOUT_CTA_QUERY = `
+*[_type == "aboutCTA"][0]{
+  badge,
+  heading,
+  highlightText,
+  content
+}
+`;
+
+export const CONTACT_HERO_QUERY = `
+*[_type == "contactHero"][0]{
+  badge,
+  heading,
+  highlightText,
+  description
+}
+`;
+
+export const CONTACT_INFO_QUERY = `
+*[_type == "contactInfo"][0]{
+  badge,
+  heading,
+  description,
+
+  phoneLabel,
+  phone,
+  phoneLink,
+
+  emailLabel,
+  email,
+  emailLink,
+
+  locationLabel,
+  location,
+  locationLink,
+
+  mapEmbedUrl
+}
+`;
+
+export const CONTACT_FORM_QUERY = `
+*[_type=="contactForm"][0]{
+  badge,
+  heading,
+  namePlaceholder,
+  emailPlaceholder,
+  phonePlaceholder,
+  servicePlaceholder,
+  messagePlaceholder,
+  submitButton,
+  sendingButton,
+  successMessage,
+  projectTypes
+}
+`;

@@ -2,7 +2,10 @@
 
 import { motion } from "framer-motion";
 
-export default function CTA() {
+export default function CTA({ section }: { section: any }) {
+  if (!section) return null;
+
+  
   return (
     <>
       {/* BOTTOM STORY CARD */}
@@ -57,7 +60,7 @@ export default function CTA() {
               mb-5
             ">
 
-              Growth & Evolution
+              {section.badge}
 
             </p>
 
@@ -70,9 +73,9 @@ export default function CTA() {
               text-white
             ">
 
-              Delivering A New
+               {section.heading}
               <span className="block text-[#d6b98c] mt-2">
-                Dimension Of Elegance
+                {section.highlightText}
               </span>
 
             </h3>
@@ -89,75 +92,9 @@ export default function CTA() {
             leading-relaxed
           ">
 
-            <p>
-
-              Although there were established players in the market,
-              customers often felt disconnected due to high costs
-              and inconsistent project experiences.
-
-            </p>
-
-            <p>
-
-              Recognizing this opportunity,
-              Mr. Sanket Kulal envisioned a firm
-              that would combine luxury aesthetics,
-              technical expertise,
-              transparent execution,
-              and affordability.
-
-            </p>
-
-            <p>
-
-              With this vision, Kulal Interiors was established —
-              not just as an interior design company,
-              but as a brand committed to creating spaces
-              that truly reflect the client’s lifestyle,
-              aspirations, and emotions.
-
-            </p>
-
-            <p>
-
-              Over the years, the firm has grown from
-              a local service provider into a trusted
-              interior brand with a strong presence across
-              Pune, Mumbai, Nanded, and Parbhani.
-
-            </p>
-
-            <p>
-
-              Today, Kulal Interiors proudly serves
-              100+ happy clients and continues to build
-              spaces that blend elegance,
-              functionality, and innovation.
-
-            </p>
-
-            <p>
-
-              A major milestone in this journey
-              was the launch of the new design studio
-              in Punawale, Pune —
-              a thoughtfully curated experience center
-              where textures, tones,
-              creativity, and ideas come together beautifully.
-
-            </p>
-
-            <p>
-
-              Today, Kulal Interiors stands as a symbol
-              of trust, professionalism,
-              and modern design thinking —
-              continuously working toward delivering
-              <span className="text-[#d6b98c]">
-                {" "}“A New Dimension of Elegance.”
-              </span>
-
-            </p>
+            {section.content?.map((paragraph: string, index: number) => (
+  <p key={index}>{paragraph}</p>
+))}
 
           </div>
 

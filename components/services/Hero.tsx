@@ -1,6 +1,8 @@
 "use client";
 
-export default function Hero() {
+
+
+export default function Hero({ section }: { section: any }) {
   return (
     <>
       
@@ -25,22 +27,21 @@ export default function Hero() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
           <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-[10px] sm:text-xs md:text-sm mb-5">
-            What We Offer
+               {section?.badge || "What We Offer"}
           </p>
 
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.05] max-w-5xl mx-auto">
 
-            Premium Interior
+            {section?.heading || "Premium Interior"}
             <span className="block text-[#d6b98c] mt-2">
-              Design Services
+              {section?.highlightText || "Design Services"}
             </span>
 
           </h1>
 
           <p className="mt-6 sm:mt-8 text-gray-400 text-sm sm:text-base lg:text-xl leading-relaxed max-w-3xl mx-auto px-2">
 
-            At Kulal Interiors, we blend creativity with technical precision
-            to deliver spaces that are both luxurious and functional.
+            {section?.description || "At Kulal Interiors, we blend creativity with technical precision to deliver spaces that are both luxurious and functional."}
 
           </p>
 

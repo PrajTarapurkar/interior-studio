@@ -3,7 +3,22 @@
 import { motion } from "framer-motion";
 import { Star, ExternalLink } from "lucide-react";
 
-export default function GoogleRating() {
+interface GoogleRatingProps {
+  section: {
+    badge: string;
+    heading: string;
+    highlightText: string;
+    description: string;
+    rating: string;
+    ratingLabel: string;
+    reviewCount: string;
+    buttonText: string;
+    googleReviewUrl: string;
+  };
+}
+export default function GoogleRating({
+  section,
+}: GoogleRatingProps) {
   return (
     <section className="relative py-14 sm:py-16 md:py-20 lg:py-24 overflow-hidden bg-black">
 
@@ -42,7 +57,7 @@ export default function GoogleRating() {
 
               <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-[10px] sm:text-xs">
 
-                Google Reviews
+                {section.badge}
 
               </p>
 
@@ -50,13 +65,13 @@ export default function GoogleRating() {
 
                 <span className="text-white">
 
-                  Trusted By
+                  {section.heading}
 
                 </span>
 
                 <span className="block text-[#d6b98c] mt-2">
 
-                  Happy Homeowners
+                  {section.highlightText}
 
                 </span>
 
@@ -64,9 +79,7 @@ export default function GoogleRating() {
 
               <p className="mt-5 sm:mt-6 text-gray-400 leading-7 sm:leading-8 text-sm sm:text-base lg:text-lg max-w-xl mx-auto lg:mx-0">
 
-                Every review reflects our commitment to quality,
-                transparency, timely execution and delivering
-                luxurious interiors that exceed expectations.
+                {section.description}
 
               </p>
 
@@ -94,26 +107,26 @@ export default function GoogleRating() {
 
               <h3 className="mt-5 text-5xl sm:text-6xl lg:text-7xl font-bold text-white">
 
-                4.9
+                {section.rating}
 
               </h3>
 
               <p className="mt-2 text-base sm:text-lg text-gray-300">
 
-                Average Google Rating
+                {section.ratingLabel}
 
               </p>
 
               <p className="mt-1 text-sm sm:text-base text-gray-500">
 
-                Based on 30+ Happy Clients
+                {section.reviewCount}
 
               </p>
 
               {/* Button */}
 
               <a
-                href="https://www.google.com/search?sca_esv=ef956476037e39db&sxsrf=APpeQnvBWZd0_cLemrb-QkUnNrZH2wcNpw:1783137652242&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_y95_cpT6UbzUzwX30sHAReWFUL7EnWWaMVguHIf9oEM8RSDbq5XVhuZ_hfRJqmEV3CMsXVQy9Ez1-8oBE6lFrYRHwyJ&q=Kulal+Interiors+Reviews&sa=X&ved=2ahUKEwiareOykbiVAxVD2DgGHRJBCmgQ0bkNegQIIBAF&biw=1536&bih=776&dpr=1.25"
+                href={section.googleReviewUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
@@ -138,7 +151,7 @@ export default function GoogleRating() {
                 "
               >
 
-                View Google Reviews
+                {section.buttonText}
 
                 <ExternalLink size={18} />
 

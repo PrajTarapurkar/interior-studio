@@ -2,7 +2,10 @@
 
 import { motion } from "framer-motion";
 
-export default function ContactInfo() {
+export default function ContactInfo({ section }: { section: any }) {
+
+  if (!section) return null;
+
   return (
     <>
       {/* LEFT SIDE */}
@@ -29,18 +32,16 @@ will-change-transform
 "          >
 
             <p className="uppercase tracking-[0.3em] text-[10px] md:text-sm text-[#d6b98c] mb-4 md:mb-6">
-              Luxury Consultation
+              {section.badge}
             </p>
 
             <h2 className="text-3xl md:text-5xl font-bold leading-[1.1] tracking-tight text-white">
-              Contact Info
+              {section.heading}
             </h2>
 
             <p className="mt-5 md:mt-8 text-sm md:text-lg text-gray-400 leading-[1.8]">
 
-              Whether it’s a luxury residence, modern workspace,
-              or premium commercial interior — our studio crafts
-              timeless spaces designed around elegance and comfort.
+              {section.description}
 
             </p>
 
@@ -49,7 +50,7 @@ will-change-transform
 
               {/* PHONE */}
 <motion.a
-  href="tel:+917709943271"
+  href={section.phoneLink}
   whileHover={{ scale: 1.02 }}
   whileTap={{ scale: 0.98 }}
   className="flex items-center gap-4 bg-white/[0.04] border border-white/10 rounded-[22px] px-5 py-4 md:px-7 md:py-4 hover:bg-white/[0.07] hover:border-[#d6b98c]/30 transition-all duration-300 cursor-pointer"
@@ -60,18 +61,18 @@ will-change-transform
 
   <div>
     <p className="uppercase tracking-[0.25em] text-[8px] md:text-[10px] text-[#d6b98c] mb-1">
-      Phone
+      {section.phoneLabel}
     </p>
 
     <p className="font-[family:var(--font-body)] text-lg md:text-[20px] font-semibold text-white">
-      +91 7709 943 271
+      {section.phone}
     </p>
   </div>
 </motion.a>
 
               {/* EMAIL */}
               <motion.a
-                href="mailto:kulalinteriors@gmail.com"
+                href={section.emailLink}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                className="flex items-center gap-4 bg-white/[0.04] border border-white/10 rounded-[22px] px-5 py-4 md:px-7 md:py-4 hover:bg-white/[0.07] hover:border-[#d6b98c]/30 transition-all duration-300 cursor-pointer"
@@ -84,11 +85,11 @@ will-change-transform
                 <div className="min-w-0">
 
                   <p className="uppercase tracking-[0.25em] text-[8px] md:text-[10px] text-[#d6b98c] mb-1">
-                    Email
+                    {section.emailLabel}
                   </p>
 
                   <h3 className="text-xs sm:text-sm md:text-[18px] font-semibold text-white break-words">
-                    kulalinteriors@gmail.com
+                    {section.email}
                   </h3>
 
                 </div>
@@ -97,7 +98,7 @@ will-change-transform
 
               {/* LOCATION */}
               <motion.a
-                href="https://maps.google.com/?q=Pune,Maharashtra,India"
+                href={section.locationLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
@@ -112,11 +113,11 @@ will-change-transform
                 <div>
 
                   <p className="uppercase tracking-[0.25em] text-[8px] md:text-[10px] text-[#d6b98c] mb-1">
-                    Location
+                    {section.locationLabel}
                   </p>
 
                   <h3 className="text-sm md:text-[20px] font-semibold text-white">
-                    Pune, Maharashtra, India
+                    {section.location}
                   </h3>
 
                 </div>
@@ -132,7 +133,7 @@ will-change-transform
             >
 
               <iframe
-                src="https://www.google.com/maps?q=Kulal%20Interiors&output=embed"
+                src={section.mapEmbedUrl}
                 width="100%"
                 height="180"
                 style={{ border: 0 }}

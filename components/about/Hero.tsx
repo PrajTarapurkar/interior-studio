@@ -1,7 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 
-export default function Hero() {
+export default function Hero({ section }: { section: any }) {
+  if (!section) {
+  return null;
+}
   return (
     <>
       {/* HERO */}
@@ -35,7 +38,7 @@ export default function Hero() {
           sm:text-xs
         ">
 
-          The Origin Story
+          {section.badge}
 
         </p>
 
@@ -55,9 +58,9 @@ export default function Hero() {
         text-white
       ">
 
-        From Vision 
+        {section.heading}
         <span className="block text-[#d6b98c] mt-2">
-          To Reality
+          {section.highlightText}
         </span>
 
       </h1>
@@ -74,9 +77,7 @@ export default function Hero() {
         leading-relaxed
       ">
 
-        Kulal Interiors was founded with a simple yet powerful vision —
-        to bridge the gap between beautiful design,
-        practical execution, and affordable elegance.
+        {section.description}
 
       </p>
 

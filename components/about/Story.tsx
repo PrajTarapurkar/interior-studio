@@ -1,8 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { urlFor } from "@/sanity/lib/image";
 
-export default function Story() {
+export default function Story({ section }: { section: any }) {
+  if (!section) {
+    return null;
+  }
   return (
     <>
       {/* MAIN CONTENT */}
@@ -36,16 +40,20 @@ export default function Story() {
         ">
 
           <img
-            src="/images/about.jpg"
-            alt="Kulal Interiors"
-            className="
-              w-full
-              h-[420px]
-              sm:h-[580px]
-              lg:h-[760px]
-              object-cover
-            "
-          />
+  src={
+    section.image
+      ? urlFor(section.image).width(900).url()
+      : "/images/about.jpg"
+  }
+  alt="Kulal Interiors"
+  className="
+    w-full
+    h-[420px]
+    sm:h-[580px]
+    lg:h-[760px]
+    object-cover
+  "
+/>
 
           {/* OVERLAY */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
@@ -80,7 +88,7 @@ export default function Story() {
             text-[#d6b98c]
           ">
 
-            100+
+            {section.experienceNumber}
 
           </h3>
 
@@ -93,7 +101,7 @@ export default function Story() {
             text-gray-300
           ">
 
-            Happy Clients
+            {section.experienceLabel}
 
           </p>
 
@@ -123,7 +131,7 @@ export default function Story() {
             text-[#d6b98c]
           ">
 
-            Since 2020
+            {section.badge}
 
           </p>
 
@@ -148,67 +156,29 @@ export default function Story() {
           text-white
         ">
 
-          A Brand Built On
+          {section.heading}
           <span className="block text-[#d6b98c] mt-2">
-            Trust, Design & Innovation
+            {section.highlightText}
           </span>
 
         </h2>
 
         {/* STORY */}
-        <div className="
-          mt-8
-          space-y-6
-          text-gray-400
-          text-sm
-          sm:text-base
-          lg:text-lg
-          leading-relaxed
-        ">
-
-          <p>
-
-            The journey began with its founder,
-            <span className="text-white font-medium">
-              {" "}Mr. Sanket Kulal
-            </span>,
-            whose strong technical foundation in Civil Engineering
-            and a Master’s degree provided him with a deep understanding
-            of construction, planning, and execution.
-
-          </p>
-
-          <p>
-
-            Before entering the world of interiors full-time,
-            he gained valuable corporate experience working
-            for a US-based multinational company,
-            where he developed a professional,
-            process-driven, and client-focused approach
-            toward business operations.
-
-          </p>
-
-          <p>
-
-            While working in the corporate sector,
-            Mr. Sanket Kulal closely observed the rapidly evolving
-            interior design market. Through extensive research
-            and real-world interactions,
-            he identified a critical gap in the industry.
-
-          </p>
-
-          <p>
-
-            Many homeowners struggled with budget escalations,
-            lack of transparency, poor communication,
-            and interiors that failed to reflect
-            their personality and lifestyle.
-
-          </p>
-
-        </div>
+        <div
+  className="
+    mt-8
+    space-y-6
+    text-gray-400
+    text-sm
+    sm:text-base
+    lg:text-lg
+    leading-relaxed
+  "
+>
+  {section.story?.map((paragraph: string, index: number) => (
+    <p key={index}>{paragraph}</p>
+  ))}
+</div>
 
         {/* CHALLENGES */}
         <div className="mt-12">
@@ -225,7 +195,7 @@ export default function Story() {
               sm:text-xs
             ">
 
-              Challenges Homeowners Faced
+              {section.challengesTitle}
 
             </p>
 
@@ -233,14 +203,7 @@ export default function Story() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-            {[
-              "Lack of transparency in pricing",
-              "Unexpected budget escalations during execution",
-              "Designs that failed to match lifestyle and personality",
-              "Limited access to premium interiors at practical budgets",
-              "Poor communication during execution",
-              "Lack of professionalism in project management",
-            ].map((item, index) => (
+            {section.challenges?.map((item: string, index: number) => (
 
               <motion.div
                 key={index}
@@ -315,7 +278,7 @@ export default function Story() {
               sm:text-xs
             ">
 
-              The Vision Behind The Brand
+              {section.visionTitle}
 
             </p>
 
@@ -323,14 +286,7 @@ export default function Story() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-            {[
-              "Modern and trend-driven designs",
-              "Technical expertise",
-              "Transparent budgeting",
-              "Professional project management",
-              "Personalized customer experience",
-              "Cost-effective interior solutions",
-            ].map((item, index) => (
+            {section.vision?.map((item: string, index: number) => (
 
               <motion.div
                 key={index}

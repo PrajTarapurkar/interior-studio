@@ -5,16 +5,35 @@ import { PanInfo } from "framer-motion";
 import { motion, AnimatePresence } from "framer-motion";
 import { clientReviews } from "@/lib/reviews";
 
-export default function ReviewsSlider() {
+
+interface ReviewsSliderProps {
+  section: {
+    badge: string;
+    heading: string;
+    highlightText: string;
+    reviews: {
+      name: string;
+      project: string;
+      location: string;
+      rating: number;
+      review: string;
+    }[];
+  };
+}
+
+
+export default function ReviewsSlider({
+  section,
+}: ReviewsSliderProps) {
   const [current, setCurrent] = useState(0);
 
   const nextReview = () => {
-    setCurrent((prev) => (prev + 1) % clientReviews.length);
+    setCurrent((prev) => (prev + 1) % section.reviews.length);
   };
 
   const prevReview = () => {
     setCurrent(
-      (prev) => (prev - 1 + clientReviews.length) % clientReviews.length
+      (prev) => (prev - 1 + section.reviews.length) % section.reviews.length
     );
   };
 
@@ -31,7 +50,7 @@ export default function ReviewsSlider() {
   }
 };
 
-  const review = clientReviews[current];
+const review = section.reviews[current];
 
   return (
     <section className="relative py-16 sm:py-20 lg:py-24 bg-black overflow-hidden">
@@ -54,7 +73,7 @@ export default function ReviewsSlider() {
     justify-center
   "
 >          <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-[10px] sm:text-xs">
-            Client Reviews
+            {section.badge}
           </p>
 
           <h2
@@ -72,11 +91,11 @@ whitespace-nowrap
   "
 >
   <span className="text-white">
-    What Our{" "}
+    {section.heading}{" "}
   </span>
 
   <span className="text-[#d6b98c]">
-    Clients Say
+    {section.highlightText}
   </span>
 </h2>
 
@@ -275,7 +294,7 @@ whitespace-nowrap
 
         <div className="flex justify-center gap-3 mt-8">
 
-          {clientReviews.map((_, index) => (
+          {section.reviews.map((_, index) => (
 
             <button
               key={index}

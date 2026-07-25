@@ -3,9 +3,44 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
-import { videoTestimonials } from "@/lib/reviews";
+// import { videoTestimonials } from "@/lib/reviews";
 
-export default function VideoTestimonials() {
+interface VideoTestimonialsProps {
+  section: {
+    badge: string;
+    heading: string;
+    highlightText: string;
+    description: string;
+    videos: {
+      title: string;
+      location: string;
+      youtubeUrl: string;
+      thumbnail?: {
+        asset?: {
+          url: string;
+        };
+      };
+    }[];
+  };
+}
+
+
+function getYoutubeVideoId(url: string) {
+  try {
+    const parsedUrl = new URL(url);
+
+    if (parsedUrl.hostname === "youtu.be") {
+      return parsedUrl.pathname.slice(1);
+    }
+
+    return parsedUrl.searchParams.get("v");
+  } catch {
+    return null;
+  }
+}
+export default function VideoTestimonials({
+  section,
+}: VideoTestimonialsProps) {
     const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   return (
     
@@ -32,27 +67,25 @@ export default function VideoTestimonials() {
 
           <p className="uppercase tracking-[0.35em] text-[#d6b98c] text-[10px] sm:text-xs md:text-sm">
 
-            Video Testimonials
+            {section.badge}
 
           </p>
 
           <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[family:var(--font-heading)] leading-tight">
 
             <span className="text-white">
-              Hear From Our
+              {section.heading}
             </span>
 
             <span className="block text-[#d6b98c] mt-2">
-              Happy Clients
+              {section.highlightText}
             </span>
 
           </h2>
 
           <p className="mt-5 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed">
 
-            Every completed project tells a story.
-            Watch our clients share their journey,
-            experience and satisfaction with Kulal Interiors.
+            {section.description}
 
           </p>
 
@@ -62,11 +95,11 @@ export default function VideoTestimonials() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
 
-          {videoTestimonials.map((video, index) => (
+          {section.videos.map((video, index) => (
 
             <motion.div
               key={index}
-              onClick={() => setSelectedVideo(video.youtube)}
+              onClick={() => setSelectedVideo(video.youtubeUrl)}
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -96,7 +129,7 @@ export default function VideoTestimonials() {
               <div className="relative overflow-hidden">
 
                 <Image
-                  src={video.thumbnail}
+                  src={video.thumbnail?.asset?.url ?? ""}
                   alt={video.title}
                   width={700}
                   height={500}
@@ -243,8 +276,8 @@ export default function VideoTestimonials() {
         <iframe
           className="w-full h-full"
           src={`https://www.youtube.com/embed/${
-            selectedVideo.split("v=")[1]
-          }?autoplay=1&rel=0`}
+  getYoutubeVideoId(selectedVideo)
+}?autoplay=1&rel=0`}
           title="Video Testimonial"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

@@ -5,6 +5,7 @@ import {
   FEATURED_HOME_PROJECTS_QUERY,
   HOME_HOW_IT_WORKS_QUERY,
   HOME_VIDEO_SECTION_QUERY,
+  REVIEWS_HERO_QUERY,
 } from "./queries";
 
 export async function getHomeHero() {
@@ -25,4 +26,8 @@ export async function getHomeHowItWorks() {
 
 export async function getHomeVideoSection() {
   return client.fetch(HOME_VIDEO_SECTION_QUERY);
+}
+
+export async function getReviewsHero() {
+  return client.fetch(REVIEWS_HERO_QUERY);
 }

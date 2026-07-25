@@ -20,23 +20,10 @@ export function startLoaderAnimation() {
   }
 );
 
-  // Glow
-  tl.fromTo(
-    "#loader-glow",
-    {
-      opacity: 0,
-      scale: 0.6,
-    },
-    {
-      opacity: 1,
-      scale: 1,
-      duration: 0.7,
-      ease: "power2.out",
-    }
-  )
+ 
 
     // Logo
-    .fromTo(
+    tl.fromTo(
       "#loader-logo",
       {
         opacity: 0,
@@ -167,15 +154,5 @@ export function startLoaderAnimation() {
   "-=0.4"
 )
 
-    // Start breathing glow AFTER intro
-    .call(() => {
-  gsap.to("#loader-glow", {
-    scale: 1.08,
-    opacity: 0.9,
-    duration: 2,
-    repeat: -1,
-    yoyo: true,
-    ease: "sine.inOut",
-  });
-});
+ 
 }

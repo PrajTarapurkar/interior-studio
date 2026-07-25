@@ -1,4 +1,4 @@
-"use client";
+
 
 
 import Navbar from "@/components/layout/Navbar";
@@ -7,10 +7,16 @@ import Hero from "@/components/about/Hero";
 import Story from "@/components/about/Story";
 import CTA from "@/components/about/CTA";
 
-export default function AboutPage() {
+import { getAboutHero } from "@/lib/getAboutHero";
+import { getAboutStory } from "@/lib/getAboutStory";
+import { getAboutCTA } from "@/lib/getAboutCTA";
+
+export default async function AboutPage() {
+  const aboutHero = await getAboutHero();
+  const aboutStory = await getAboutStory();
+  const aboutCTA = await getAboutCTA();
 
   
-
   return (
     <main className="relative overflow-hidden">
 
@@ -56,11 +62,11 @@ export default function AboutPage() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <Hero />
+        <Hero section={aboutHero} />
 
-        <Story />
+        <Story section={aboutStory} />
 
-        <CTA />
+        <CTA section={aboutCTA} />
 
       </div>
 

@@ -45,27 +45,14 @@ const services = [
     },
   ];
 
-  const sectors = [
-    {
-      title: "Residential",
-      desc: "Modern apartments, flats, and homes designed for comfort and elegance.",
-    },
-    {
-      title: "Villas",
-      desc: "Luxury villa interiors crafted with bespoke premium aesthetics.",
-    },
-    {
-      title: "Office Spaces",
-      desc: "Productive and ergonomic workspaces aligned with modern business needs.",
-    },
-    {
-      title: "Commercial Spaces",
-      desc: "Retail stores, showrooms, and hospitality interiors with functional sophistication.",
-    },
-  ];
+  
 
+  
+export default function ServicesGrid({ section }: { section: any }) {
+if (!section) {
+  return null;
+}
 
-export default function ServicesGrid() {
   return (
     <>
 
@@ -76,7 +63,7 @@ export default function ServicesGrid() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-6">
 
-            {services.map((service, index) => (
+            {section.services.map((service: any, index: number) => (
 
               <motion.div
                 key={index}
@@ -116,7 +103,7 @@ export default function ServicesGrid() {
                   </h3>
 
                   <p className="mt-4 text-gray-400 text-sm sm:text-base leading-relaxed">
-                    {service.desc}
+                    {service.description}
                   </p>
 
                 </div>

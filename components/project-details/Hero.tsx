@@ -21,7 +21,7 @@ type HeroProps = {
 
 export default function Hero({ project }: HeroProps) {
   return (
-    <section className="bg-black py-30 px-5 sm:px-6 md:px-8 lg:px-12">
+    <section className="bg-black py-30 px-5 sm:px-6 md:px-8 lg:px-12 overflow-hidden">
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
