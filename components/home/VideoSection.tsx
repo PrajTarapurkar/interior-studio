@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 type VideoSectionProps = {
   videoSection?: {
@@ -25,6 +26,8 @@ type VideoSectionProps = {
 export default function VideoSection({
   videoSection,
 }: VideoSectionProps) {
+
+  const [videoTypes, setVideoTypes] = useState<Record<number, boolean>>({});
   return (
     <>
       {/* VIDEO TOUR SECTION */}
@@ -97,17 +100,29 @@ export default function VideoSection({
             <video
   src={item.video?.asset?.url}
   controls
-              className="
-                h-[260px]
-                sm:h-[320px]
-                md:h-[420px]
-                w-full
-                object-cover
-                group-hover:scale-[1.02]
-                transition
-                duration-700
-              "
-            />
+  onLoadedMetadata={(e) => {
+    const video = e.currentTarget;
+
+    setVideoTypes((prev) => ({
+      ...prev,
+      [index]: video.videoHeight > video.videoWidth,
+    }));
+  }}
+  className={`
+    w-full
+    h-[260px]
+    sm:h-[320px]
+    md:h-[420px]
+    transition
+    duration-700
+    group-hover:scale-[1.02]
+    ${
+      videoTypes[index]
+        ? "object-contain bg-black"
+        : "object-cover"
+    }
+  `}
+/>
 
             {/* VIDEO OVERLAY */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>

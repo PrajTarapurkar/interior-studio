@@ -1,4 +1,4 @@
-  import Navbar from "@/components/layout/Navbar";
+import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { notFound } from "next/navigation";
 import { getProjectBySlug } from "@/lib/getProjectBySlug";
@@ -127,9 +127,10 @@ export default async function ProjectDetail({
 
     <>
 
-      <Navbar />
+      
 
-      <main className="bg-black text-white overflow-hidden">
+      <main className="relative overflow-hidden">
+<Navbar />
 
         <Hero project={project} />
 
@@ -143,101 +144,11 @@ export default async function ProjectDetail({
 
         <CTA />
 
+        <Footer />
       </main>
-      <Footer />
+
     </>
   );
-} 
-
-
- 
-
-
-
- /* import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-
-import HeroNew from "@/components/project-details/HeroNew";
-
-import { getProjectBySlug } from "@/lib/getProjectBySlug";
-import { urlFor } from "@/sanity/lib/image";
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
-
-  const project = await getProjectBySlug(slug);
-
-  if (!project) {
-    return {
-      title: "Project Not Found | Kulal Interiors",
-    };
-  }
-
-  return {
-    title: project.seoTitle ?? `${project.title} | Kulal Interiors`,
-    description:
-      project.seoDescription ??
-      project.shortDescription ??
-      "Luxury Interior Design by Kulal Interiors.",
-  };
 }
 
-export default async function ProjectDetail({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
 
-  const sanityProject = await getProjectBySlug(slug);
-
-  if (!sanityProject) {
-    notFound();
-  }
-
-  const project = {
-    title: sanityProject.title,
-    owner: sanityProject.clientName,
-    location: sanityProject.location,
-    category: sanityProject.category?.title ?? "General",
-    area: sanityProject.area,
-    status: sanityProject.status,
-
-    completionDate: sanityProject.completionDate
-      ? new Date(sanityProject.completionDate).toLocaleDateString("en-IN", {
-          day: "numeric",
-          month: "long",
-          year: "numeric",
-        })
-      : "",
-
-    image: sanityProject.coverImage
-      ? urlFor(sanityProject.coverImage).width(1800).url()
-      : "",
-
-    description: sanityProject.description,
-
-    gallery:
-      sanityProject.gallery?.map((img: any) =>
-        urlFor(img).width(1800).url()
-      ) ?? [],
-  };
-
-  return (
-    <>
-      <Navbar />
-
-      <main className="bg-black text-white">
-        <HeroNew project={project} />
-      </main>
-
-      <Footer />
-    </>
-  );
-}  */
