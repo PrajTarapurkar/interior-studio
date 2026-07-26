@@ -19,7 +19,8 @@ import { aboutCTAType } from "./aboutCTA";
 import { contactHeroType } from "./contactHero";
 import { contactInfoType } from "./contactInfo";
 import { contactFormType } from "./contactForm";
-
+import { brandType } from "./brands";
+import { homeCounterType } from "./homeCounter";
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -43,5 +44,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     contactHeroType,
     contactInfoType,
     contactFormType,
+    brandType,
+    homeCounterType,
   ],
 };

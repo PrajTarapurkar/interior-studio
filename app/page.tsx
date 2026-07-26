@@ -11,6 +11,12 @@ import HomeServices from "@/components/home/HomeServices";
 import Presence from "@/components/home/Presence";
 import Loader from "@/components/layout/Loader";
 import HowItWorks from "@/components/home/HowItWorks";
+import CounterSection from "@/components/home/CounterSection";
+import TrustedBy from "@/components/home/TrustedBrands";
+import { getBrands } from "@/sanity/lib/fetch";
+import { getHomeCounter } from "@/sanity/lib/fetch";
+
+
 import {
   getHomeHero,
   getHomeServicesSection,
@@ -24,6 +30,8 @@ import {
 export default async function Home() {
   const hero = await getHomeHero();
   const featuredProjects = await getFeaturedHomeProjects();
+  const brands = await getBrands();
+  const counterSection = await getHomeCounter();
   
 const servicesSection = await getHomeServicesSection();
 const howItWorks = await getHomeHowItWorks();
@@ -43,6 +51,10 @@ const videoSection = await getHomeVideoSection();
 
         {/* <FeaturedProjects /> */}
 
+        
+
+        <CounterSection counterSection={counterSection} />
+
         <LuxurySlider projects={featuredProjects} />
 
         <HowItWorks howItWorks={howItWorks} />
@@ -50,6 +62,8 @@ const videoSection = await getHomeVideoSection();
         <VideoSection videoSection={videoSection} />
 
         <HomeServices section={servicesSection}/>
+
+        <TrustedBy brands={brands} />
 
         <Presence />
 

@@ -20,7 +20,7 @@ export default function Loader() {
   requestAnimationFrame(() => {
     setLoading(false);
   });
-}, 3200);
+}, 2200);
 
   return () => clearTimeout(timer);
 }, []);

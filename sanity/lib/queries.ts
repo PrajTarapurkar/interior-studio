@@ -300,3 +300,26 @@ export const CONTACT_FORM_QUERY = `
   projectTypes
 }
 `;
+
+export const BRANDS_QUERY = `
+*[_type == "brand"][0]{
+  logos[]{
+    "logo": asset->url
+  }
+}
+`;
+
+
+export const HOME_COUNTER_QUERY = `
+*[_type == "homeCounter"][0]{
+  badge,
+  heading,
+  highlightText,
+  description,
+  counters[]{
+    number,
+    suffix,
+    label
+  }
+}
+`;
