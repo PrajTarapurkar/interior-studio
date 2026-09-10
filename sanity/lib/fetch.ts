@@ -3,6 +3,7 @@ import {
   HOME_HERO_QUERY,
   HOME_SERVICES_SECTION_QUERY,
   FEATURED_HOME_PROJECTS_QUERY,
+  PROJECTS_QUERY,
   HOME_HOW_IT_WORKS_QUERY,
   HOME_VIDEO_SECTION_QUERY,
   REVIEWS_HERO_QUERY,
@@ -23,6 +24,10 @@ export async function getFeaturedHomeProjects() {
   return client.fetch(FEATURED_HOME_PROJECTS_QUERY);
 }
 
+export async function getProjects() {
+  return client.fetch(PROJECTS_QUERY);
+}
+
 export async function getHomeHowItWorks() {
   return client.fetch(HOME_HOW_IT_WORKS_QUERY);
 }
@@ -41,5 +46,5 @@ export async function getBrands() {
 }
 
 export async function getHomeCounter() {
-  return  client.fetch(HOME_COUNTER_QUERY);
+  return client.fetch(HOME_COUNTER_QUERY);
 }

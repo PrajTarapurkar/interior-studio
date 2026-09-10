@@ -35,7 +35,22 @@ export async function generateMetadata({
       project.shortDescription ??
       "Luxury Interior Design by Kulal Interiors.",
 
+    alternates: {
+      canonical: `/projects/${slug}`,
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+    },
+
     openGraph: {
+      type: "article",
+
+      url: `/projects/${slug}`,
+
+      siteName: "Kulal Interiors",
+
       title:
         project.seoTitle ??
         `${project.title} | Kulal Interiors`,
@@ -43,7 +58,7 @@ export async function generateMetadata({
       description:
         project.seoDescription ??
         project.shortDescription ??
-        "Luxury Interior Design by Kulal Interiors",
+        "Luxury Interior Design by Kulal Interiors.",
 
       images: project.coverImage
         ? [
@@ -52,10 +67,36 @@ export async function generateMetadata({
               .width(1200)
               .height(630)
               .url(),
+            width: 1200,
+            height: 630,
+            alt: project.title,
           },
         ]
         : [],
     },
+
+    twitter: {
+      card: "summary_large_image",
+
+      title:
+        project.seoTitle ??
+        `${project.title} | Kulal Interiors`,
+
+      description:
+        project.seoDescription ??
+        project.shortDescription ??
+        "Luxury Interior Design by Kulal Interiors.",
+
+      images: project.coverImage
+        ? [
+          urlFor(project.coverImage)
+            .width(1200)
+            .height(630)
+            .url(),
+        ]
+        : [],
+    },
+
   };
 }
 
@@ -127,10 +168,10 @@ export default async function ProjectDetail({
 
     <>
 
-      
+
 
       <main className="relative overflow-hidden">
-<Navbar />
+        <Navbar />
 
         <Hero project={project} />
 

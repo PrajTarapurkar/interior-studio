@@ -14,6 +14,19 @@ import GoogleRating from "@/components/reviews/GoogleRating";
 import ReviewsSlider from "@/components/reviews/ReviewsSlider";
 // import CTA from "@/components/reviews/CTA";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Client Reviews",
+
+  description:
+    "Read genuine client testimonials and discover why homeowners and businesses trust Kulal Interiors for luxury interior design and exceptional project execution.",
+
+  alternates: {
+    canonical: "/reviews",
+  },
+};
+
 export default async function ReviewsPage() {
   const reviewsHero = await getReviewsHero();
   const reviewsVideoTestimonials = await getReviewsVideoTestimonials();

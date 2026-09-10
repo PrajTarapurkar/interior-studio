@@ -15,6 +15,7 @@ import CounterSection from "@/components/home/CounterSection";
 import TrustedBy from "@/components/home/TrustedBrands";
 import { getBrands } from "@/sanity/lib/fetch";
 import { getHomeCounter } from "@/sanity/lib/fetch";
+import type { Metadata } from "next";
 
 
 import {
@@ -25,6 +26,16 @@ import {
   getHomeVideoSection,
 } from "@/sanity/lib/fetch";
 
+
+export const metadata: Metadata = {
+  title: "Luxury Interior Designers | Kulal Interiors",
+
+  description:
+  "Kulal Interiors is a luxury interior design studio specializing in premium residential, commercial, office, and villa interiors with timeless elegance and exceptional craftsmanship.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 
 export default async function Home() {

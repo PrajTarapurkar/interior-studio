@@ -9,6 +9,20 @@ import { getProjects } from "@/lib/getProjects";
 
 import { urlFor } from "@/sanity/lib/image";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Interior Design Projects",
+
+  description:
+    "Explore Kulal Interiors' portfolio of luxury residential, commercial, office, villa, and hospitality interior design projects showcasing premium craftsmanship and timeless elegance.",
+
+  alternates: {
+    canonical: "/projects",
+  },
+};
+
+
 export default async function ProjectsPage() {
   const sanityProjects = await getProjects();
 

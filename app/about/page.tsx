@@ -11,6 +11,19 @@ import { getAboutHero } from "@/lib/getAboutHero";
 import { getAboutStory } from "@/lib/getAboutStory";
 import { getAboutCTA } from "@/lib/getAboutCTA";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Kulal Interiors",
+
+  description:
+    "Learn about Kulal Interiors, our design philosophy, craftsmanship, and passion for creating luxurious residential and commercial interior spaces.",
+
+  alternates: {
+    canonical: "/about",
+  },
+};
+
 export default async function AboutPage() {
   const aboutHero = await getAboutHero();
   const aboutStory = await getAboutStory();

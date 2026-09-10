@@ -12,6 +12,19 @@ import { getContactHero } from "@/lib/getContactHero";
 import { getContactInfo } from "@/lib/getContactInfo";
 import { getContactForm } from "@/lib/getContactForm";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Kulal Interiors",
+
+  description:
+    "Get in touch with Kulal Interiors to discuss your residential or commercial interior design project. Schedule a consultation and bring your vision to life.",
+
+  alternates: {
+    canonical: "/contact",
+  },
+};
+
 export default async function ContactPage() {
 
   const contactHero = await getContactHero();
