@@ -24,6 +24,7 @@ import {
   getFeaturedHomeProjects,
   getHomeHowItWorks,
   getHomeVideoSection,
+  getSiteSettings,
 } from "@/sanity/lib/fetch";
 
 
@@ -47,6 +48,7 @@ export default async function Home() {
 const servicesSection = await getHomeServicesSection();
 const howItWorks = await getHomeHowItWorks();
 const videoSection = await getHomeVideoSection();
+const siteSettings = await getSiteSettings();
   
 
 
@@ -56,7 +58,7 @@ const videoSection = await getHomeVideoSection();
       <Loader />
       <main className="relative overflow-hidden">
 
-        <Navbar />
+        <Navbar settings={siteSettings} />
 
         <Hero hero={hero} />
 
@@ -78,7 +80,7 @@ const videoSection = await getHomeVideoSection();
 
         <Presence />
 
-        <Footer />
+        <Footer settings={siteSettings} />
 
 
       </main>

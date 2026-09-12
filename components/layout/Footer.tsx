@@ -3,7 +3,19 @@
 import { motion } from "framer-motion";
 import { FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 
-export default function Footer() {
+type SiteSettings = {
+  businessName?: string;
+  tagline?: string;
+  instagram?: string;
+  linkedin?: string;
+  youtube?: string;
+};
+
+type FooterProps = {
+  settings: SiteSettings;
+};
+
+export default function Footer({ settings }: FooterProps) {
   return (
     <>
       {/* PREMIUM FOOTER */}
@@ -58,11 +70,13 @@ lg:flex-row items-center justify-between gap-8">
     md:text-left
   "
                 >
-                  <span className="text-white">KULAL</span>
+                  <span className="text-white">
+  {settings.businessName?.split(" ")[0] || "KULAL"}
+</span>
 
-                  <span className="text-[#d6b98c] ml-[clamp(.3rem,.8vw,.75rem)]">
-                    INTERIORS
-                  </span>
+<span className="text-[#d6b98c] ml-[clamp(.3rem,.8vw,.75rem)]">
+  {settings.businessName?.split(" ").slice(1).join(" ") || "INTERIORS"}
+</span>
                 </h2>
 
                 <p className="
@@ -75,7 +89,7 @@ md:tracking-[0.45em]
 text-gray-400
 ">
 
-                  Luxury Interior Design Studio
+                  {settings.tagline || "Luxury Interior Design Studio"}
 
                 </p>
 
@@ -94,7 +108,7 @@ text-gray-400
                     scale: 1.05,
                   }}
                   whileTap={{ scale: 0.95 }}
-                  href="https://www.instagram.com/kulal_interiors?igsh=OHhwNm9yMHd6aDll"
+                  href={settings.instagram || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="h-[clamp(60px,7vw,80px)]
@@ -110,7 +124,7 @@ w-[clamp(60px,7vw,80px)] rounded-full border border-[#d6b98c]/60 flex items-cent
                     scale: 1.05,
                   }}
                   whileTap={{ scale: 0.95 }}
-                  href="https://linkedin.com"
+                  href={settings.linkedin || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="h-[clamp(60px,7vw,80px)]
@@ -126,7 +140,7 @@ w-[clamp(60px,7vw,80px)] rounded-full border border-[#d6b98c]/60 flex items-cent
                     scale: 1.05,
                   }}
                   whileTap={{ scale: 0.95 }}
-                  href="https://youtube.com"
+                  href={settings.youtube || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="h-[clamp(60px,7vw,80px)]

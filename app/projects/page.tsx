@@ -1,15 +1,11 @@
 import Navbar from "@/components/layout/Navbar";
-
 import Footer from "@/components/layout/Footer";
-
 import Hero from "@/components/projects/Hero";
 import ProjectsClient from "@/components/projects/ProjectsClient";
-
 import { getProjects } from "@/lib/getProjects";
-
 import { urlFor } from "@/sanity/lib/image";
-
 import type { Metadata } from "next";
+import { getSiteSettings } from "@/sanity/lib/fetch";
 
 export const metadata: Metadata = {
   title: "Our Interior Design Projects",
@@ -25,6 +21,7 @@ export const metadata: Metadata = {
 
 export default async function ProjectsPage() {
   const sanityProjects = await getProjects();
+  const siteSettings = await getSiteSettings();
 
   const projects = sanityProjects.map((project: any) => ({
     title: project.title,
@@ -42,13 +39,13 @@ export default async function ProjectsPage() {
 
   return (
     <main className="relative overflow-hidden">
-      <Navbar />
+      <Navbar settings={siteSettings} />
 
       <Hero />
 
       <ProjectsClient projects={projects} />
 
-      <Footer />
+      <Footer settings={siteSettings} />
     </main>
   );
 }

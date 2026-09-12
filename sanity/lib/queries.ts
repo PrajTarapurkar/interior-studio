@@ -323,3 +323,21 @@ export const HOME_COUNTER_QUERY = `
   }
 }
 `;
+
+export const SITE_SETTINGS_QUERY = groq`
+  *[_type == "settings"][0]{
+    businessName,
+    tagline,
+    logo,
+    phone,
+    whatsapp,
+    email,
+    address,
+    instagram,
+    linkedin,
+    youtube,
+    consultationText,
+    consultationLink,
+    businessHours
+  }
+`;

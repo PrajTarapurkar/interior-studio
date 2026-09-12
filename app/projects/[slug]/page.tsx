@@ -9,6 +9,7 @@ import Features from "@/components/project-details/RelatedProjects";
 import CTA from "@/components/project-details/CTA";
 import { getRelatedProjects } from "@/lib/getRelatedProjects";
 import { Metadata } from "next";
+import { getSiteSettings } from "@/sanity/lib/fetch";
 
 export async function generateMetadata({
   params,
@@ -16,6 +17,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  
 
   const project = await getProjectBySlug(slug);
 
@@ -110,6 +112,7 @@ export default async function ProjectDetail({
 
   const sanityProject = await getProjectBySlug(slug);
   const relatedProjects = await getRelatedProjects(slug);
+const siteSettings = await getSiteSettings();
 
   if (!sanityProject) {
     notFound();
@@ -171,7 +174,7 @@ export default async function ProjectDetail({
 
 
       <main className="relative overflow-hidden">
-        <Navbar />
+        <Navbar settings={siteSettings} />
 
         <Hero project={project} />
 
@@ -185,7 +188,7 @@ export default async function ProjectDetail({
 
         <CTA />
 
-        <Footer />
+        <Footer settings={siteSettings} />
       </main>
 
     </>

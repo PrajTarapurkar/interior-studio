@@ -7,6 +7,7 @@ import {
   HOME_HOW_IT_WORKS_QUERY,
   HOME_VIDEO_SECTION_QUERY,
   REVIEWS_HERO_QUERY,
+  SITE_SETTINGS_QUERY,
 } from "./queries";
 
 import { BRANDS_QUERY } from "./queries";
@@ -47,4 +48,8 @@ export async function getBrands() {
 
 export async function getHomeCounter() {
   return client.fetch(HOME_COUNTER_QUERY);
+}
+
+export async function getSiteSettings() {
+  return client.fetch(SITE_SETTINGS_QUERY);
 }

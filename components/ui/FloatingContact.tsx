@@ -2,8 +2,16 @@
 
 import { Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+type SiteSettings = {
+  phone?: string;
+  whatsapp?: string;
+};
 
-export default function FloatingContact() {
+export default function FloatingContact({
+  settings,
+}: {
+  settings: SiteSettings;
+}) {
   return (
     <div
       
@@ -24,7 +32,7 @@ export default function FloatingContact() {
       {/* Call */}
 
       <a
-        href="tel:+917709943271"
+        href={`tel:${settings.phone?.replace(/\s+/g, "") || "917709943271"}`}
         aria-label="Call Kulal Interiors"
         className="
           w-14
@@ -58,7 +66,7 @@ export default function FloatingContact() {
       {/* WhatsApp */}
 
       <a
-        href="https://wa.me/917709943271?text=Hi%20Kulal%20Interiors,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+        href={`https://wa.me/${settings.whatsapp || "917709943271"}?text=Hi%20Kulal%20Interiors,%20I%20would%20like%20to%20know%20more%20about%20your%20services.`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp Kulal Interiors"

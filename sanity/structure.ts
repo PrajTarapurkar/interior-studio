@@ -92,4 +92,12 @@ export const structure: StructureResolver = (S) =>
               S.documentTypeListItem("contactForm").title("Contact Form"),
             ])
         ),
+
+      S.listItem()
+        .title("Site Settings")
+        
+        .child(
+          S.documentTypeList("settings")
+            .title("Site Settings")
+        ),
     ]);

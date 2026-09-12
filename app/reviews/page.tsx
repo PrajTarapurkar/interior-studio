@@ -12,6 +12,7 @@ import Hero from "@/components/reviews/Hero";
 import VideoTestimonials from "@/components/reviews/VideoTestimonials";
 import GoogleRating from "@/components/reviews/GoogleRating";
 import ReviewsSlider from "@/components/reviews/ReviewsSlider";
+import { getSiteSettings } from "@/sanity/lib/fetch";
 // import CTA from "@/components/reviews/CTA";
 
 import type { Metadata } from "next";
@@ -32,10 +33,12 @@ export default async function ReviewsPage() {
   const reviewsVideoTestimonials = await getReviewsVideoTestimonials();
   const reviewsGoogleRating = await getReviewsGoogleRating();
   const reviewsSlider = await getReviewsSlider();
+  const siteSettings = await getSiteSettings();
+
   return (
     <main className="relative overflow-hidden">
 
-      <Navbar />
+      <Navbar settings={siteSettings} />
 
       <Hero hero={reviewsHero} />
 
@@ -49,7 +52,7 @@ export default async function ReviewsPage() {
 
       {/*  <CTA />  */}
 
-      <Footer />
+      <Footer settings={siteSettings} />
 
     </main>
   );

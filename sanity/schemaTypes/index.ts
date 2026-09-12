@@ -21,6 +21,7 @@ import { contactInfoType } from "./contactInfo";
 import { contactFormType } from "./contactForm";
 import { brandType } from "./brands";
 import { homeCounterType } from "./homeCounter";
+import { settingsType } from "./settings";
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -46,5 +47,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     contactFormType,
     brandType,
     homeCounterType,
+    settingsType,
   ],
 };

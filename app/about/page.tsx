@@ -10,6 +10,7 @@ import CTA from "@/components/about/CTA";
 import { getAboutHero } from "@/lib/getAboutHero";
 import { getAboutStory } from "@/lib/getAboutStory";
 import { getAboutCTA } from "@/lib/getAboutCTA";
+import { getSiteSettings } from "@/sanity/lib/fetch";
 
 import type { Metadata } from "next";
 
@@ -28,12 +29,13 @@ export default async function AboutPage() {
   const aboutHero = await getAboutHero();
   const aboutStory = await getAboutStory();
   const aboutCTA = await getAboutCTA();
+  const siteSettings = await getSiteSettings();
 
   
   return (
     <main className="relative overflow-hidden">
 
-    <Navbar />
+    <Navbar settings={siteSettings} />
 
     <section className="relative bg-black overflow-hidden py-26 sm:py-24 lg:py-32">
 
@@ -85,7 +87,7 @@ export default async function AboutPage() {
 
     </section>
 
-    <Footer />
+    <Footer settings={siteSettings} />
 
   </main>
 );

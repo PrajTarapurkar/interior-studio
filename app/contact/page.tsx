@@ -11,10 +11,12 @@ import ContactForm from "@/components/contacts/ContactForm";
 import { getContactHero } from "@/lib/getContactHero";
 import { getContactInfo } from "@/lib/getContactInfo";
 import { getContactForm } from "@/lib/getContactForm";
+import { getSiteSettings } from "@/sanity/lib/fetch";
 
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  
   title: "Contact Kulal Interiors",
 
   description:
@@ -30,12 +32,13 @@ export default async function ContactPage() {
   const contactHero = await getContactHero();
   const contactInfo = await getContactInfo();
   const contactForm = await getContactForm();
+  const siteSettings = await getSiteSettings();
 
     
   return (
     <main className="relative overflow-hidden">
 
-<Navbar />
+<Navbar settings={siteSettings} />
 
       {/* Animated Background Glow */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
@@ -62,7 +65,7 @@ export default async function ContactPage() {
 
       </section>
 
-<Footer />
+<Footer settings={siteSettings} />
 
     </main>
   );

@@ -9,6 +9,7 @@ import { getServicesHero } from "@/lib/getServicesHero";
 import { getServicesGrid } from "@/lib/getServicesGrid";
 
 import type { Metadata } from "next";
+import { getSiteSettings } from "@/sanity/lib/fetch";
 
 export const metadata: Metadata = {
   title: "Interior Design Services",
@@ -25,18 +26,19 @@ export const metadata: Metadata = {
 export default async function ServicesPage() {
   const servicesHero = await getServicesHero();
   const servicesGrid = await getServicesGrid();
+  const siteSettings = await getSiteSettings();
 
   return (
 
     <main className="relative overflow-hidden">
 
-      <Navbar />
+      <Navbar settings={siteSettings} />
 
       <Hero section={servicesHero} />
 
       <ServicesGrid section={servicesGrid} />
 
-      <Footer />
+      <Footer settings={siteSettings} />
     </main>
   );
 }

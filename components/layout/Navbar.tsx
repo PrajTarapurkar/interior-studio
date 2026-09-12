@@ -12,8 +12,26 @@ import {
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { urlFor } from "@/sanity/lib/image";
 
-export default function Navbar() {
+type SiteSettings = {
+  businessName?: string;
+  tagline?: string;
+  phone?: string;
+  whatsapp?: string;
+  instagram?: string;
+  linkedin?: string;
+  youtube?: string;
+  consultationText?: string;
+  consultationLink?: string;
+  logo?: any;
+};
+
+type NavbarProps = {
+  settings: SiteSettings;
+};
+
+export default function Navbar({ settings }: NavbarProps) {
   const pathname = usePathname();   // <-- ADD THIS LINE
 
  const [menuOpen, setMenuOpen] = useState(false);
@@ -84,7 +102,16 @@ py-4
 
         <img
   id="navbar-logo"
-  src="/images/logo.png"
+  src={
+  settings.logo
+  ? urlFor(settings.logo)
+      .width(200)
+      .height(200)
+      .fit("crop")
+      .focalPoint(0.15, 0.5)
+      .url()
+  : "/images/logo.png"
+}
   alt="Logo"
   className="
                   relative
@@ -259,7 +286,16 @@ text-[clamp(34px,6vw,40px)]"
 
         {/* LOGO */}
         <img
-          src="/images/logo.png"
+          src={
+  settings.logo
+  ? urlFor(settings.logo)
+      .width(200)
+      .height(200)
+      .fit("crop")
+      .focalPoint(0.15, 0.5)
+      .url()
+  : "/images/logo.png"
+}
           alt="Logo"
           className="
             h-[52px]
@@ -283,7 +319,7 @@ text-[clamp(34px,6vw,40px)]"
               leading-none
             "
           >
-            KULAL INTERIORS
+            {settings.businessName || "KULAL INTERIORS"}
           </h2>
 
           <p
@@ -295,7 +331,7 @@ text-[clamp(34px,6vw,40px)]"
               mt-1
             "
           >
-            Luxury Interior Design
+            {settings.tagline || "Luxury Interior Design Studio"}
           </p>
 
         </div>
@@ -444,14 +480,14 @@ text-[clamp(34px,6vw,40px)]"
         </p>
 
       <p className="font-[family:var(--font-body)] text-xl font-semibold text-white">
-  +91 7709 943 271
+  {settings.phone || "+91 7709 943 271"}
 </p>
 
       </div>
 
       {/* WHATSAPP */}
       <a
-        href="https://wa.me/917709943271"
+       href={`https://wa.me/${settings.whatsapp || "917709943271"}`}
         target="_blank"
         rel="noopener noreferrer"
         className="
@@ -476,7 +512,7 @@ text-[clamp(34px,6vw,40px)]"
 
     {/* BUTTON */}
     <a
-      href="/contact"
+      href={settings.consultationLink || "/contact"}
       className="
         mt-5
         w-full
@@ -493,7 +529,7 @@ text-[clamp(34px,6vw,40px)]"
         shadow-[0_10px_30px_rgba(214,185,140,0.25)]
       "
     >
-      Get Free Consultation
+      {settings.consultationText || "Get Free Consultation"}
     </a>
 
     {/* FOLLOW */}
@@ -515,7 +551,7 @@ text-[clamp(34px,6vw,40px)]"
   <div className="flex items-center justify-center gap-5">
 
     <a
-      href="https://www.instagram.com/kulal_interiors?igsh=OHhwNm9yMHd6aDll"
+      href={settings.instagram || "https://www.instagram.com/kulal_interiors?igsh=OHhwNm9yMHd6aDll"}
       target="_blank"
       rel="noopener noreferrer"
       className="
@@ -535,7 +571,7 @@ w-[clamp(56px,7vw,64px)]
     </a>
 
     <a
-      href="https://linkedin.com"
+     href={settings.linkedin || "#"}
       target="_blank"
       rel="noopener noreferrer"
       className="
@@ -555,7 +591,7 @@ w-[clamp(56px,7vw,64px)]
     </a>
 
     <a
-      href="https://youtube.com"
+      href={settings.youtube || "#"}
       target="_blank"
       rel="noopener noreferrer"
       className="

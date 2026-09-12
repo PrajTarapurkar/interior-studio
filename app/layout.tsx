@@ -4,7 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import FloatingContact from "@/components/ui/FloatingContact";
 import StructuredData from "@/components/seo/StructuredData";
-
+import { getSiteSettings } from "@/sanity/lib/fetch";
 
 
 const montserrat = Montserrat({
@@ -90,11 +90,12 @@ export const metadata: Metadata = {
 };
 
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const siteSettings = await getSiteSettings();
   return (
     <html
       lang="en"
@@ -106,7 +107,7 @@ export default function RootLayout({
         {children}
 
 
-        <FloatingContact />
+        <FloatingContact settings={siteSettings} />
 
       </body>
     </html>
