@@ -5,7 +5,7 @@ import SmoothScroll from "@/components/providers/SmoothScroll";
 import FloatingContact from "@/components/ui/FloatingContact";
 import StructuredData from "@/components/seo/StructuredData";
 import { getSiteSettings } from "@/sanity/lib/fetch";
-
+import GoldParticles from "@/components/GoldParticles";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -101,15 +101,16 @@ export default async function RootLayout({
       lang="en"
       className={`${montserrat.variable} ${cormorant.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-black text-white overflow-x-hidden">
+      <body className="relative min-h-full flex flex-col bg-black text-white overflow-x-hidden">
+  <StructuredData />
 
-        <StructuredData />
-        {children}
+  <GoldParticles />
 
-
-        <FloatingContact settings={siteSettings} />
-
-      </body>
+  <div className="relative z-[10] flex min-h-screen flex-col">
+    {children}
+    <FloatingContact settings={siteSettings} />
+  </div>
+</body>
     </html>
 
   );
